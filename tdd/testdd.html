@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>tdd</title>
+    <link href="https://cdn.bootcss.com/mocha/3.2.0/mocha.css" rel="stylesheet">
+    <style type="text/css">
+        .test-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<form class="test-form">
+    <input name="first-name" type="text" data-validation="alphabetical"/>
+    <input name="age" type="text" data-validation="numeric"/>
+</form>
+<div id="mocha"></div>
+<!-- <script src="./mocha.js"></script> -->
+<script src="https://cdn.bootcss.com/chai/4.1.2/chai.js"></script>
+<script src="https://cdn.bootcss.com/mocha/3.2.0/mocha.js"></script>
+<script type="text/javascript">
+    //http://codepen.io/SitePoint/pen/NpZLzR
+    (function () {
+        'use strict';
+
+        // Implementation
+        function validateForm(form) {
+            const result = {
+                errors: []
+            };
+
+            const inputs = Array.from(form.querySelectorAll('input'));
+            let isValid = true;
+
+            for (let input of inputs) {
+                if (input.dataset.validation === 'alphabetical') {
+                    isValid = isValid && /^[a-z]+$/i.test(input.value);
+                } else if (input.dataset.validation === 'numeric') {
+                    isValid = isValid && /^[0-9]+$/.test(input.value);
+                }
+            }
+
+            result.isValid = isValid;
+            return result;
+        }
+
+        // Test Setup
+        mocha.setup('bdd');
+        const {expect} = chai;
+
+        describe('the form validator', function () {
+            let form;
+
+            beforeEach(function () {
+                form = document.querySelector('.test-form').cloneNode(true);
+            });
+
+            describe('the validateForm function', function () {
+                // Write your first test case here :)
+                it('should validate a form with all of the possible validation types', function () {
+                    const name = form.querySelector('input[name="first-name"]');
+                    const age = form.querySelector('input[name="age"]');
+
+                    name.value = 'Bob';
+                    age.value = '42';
+
+                    const result = validateForm(form);
+                    expect(result.isValid).to.be.true;
+                    expect(result.errors.length).to.equal(0);
+                });
+            });
+        });
+
+        mocha.run();
+    }());
+</script>
+</body>
+</html>
