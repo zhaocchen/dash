@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>render</title>
+</head>
+<body>
+<div id="app">
+    <child v-bind:level="3">Hello world!</child>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript">
+Vue.component('child', {
+    render: function (createElement) {
+        return createElement(
+            'h' + this.level, // tag name 标签名称<h3></h3>
+             [
+                '文本',
+                createElement('h1', '子节点'),
+              ],
+            //this.$slots.default, // 子组件中的阵列,失效
+        )
+    },
+    props: {
+        level: {
+            type: Number,
+            required: true
+        }
+    }
+})
+
+new Vue({
+    el: "#app"
+})
+</script>
+
+</body>
+</html>
