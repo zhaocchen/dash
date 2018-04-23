@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'iconbms';
+  src:  url('fonts/iconbms.eot?hzog47');
+  src:  url('fonts/iconbms.eot?hzog47#iefix') format('embedded-opentype'),
+    url('fonts/iconbms.ttf?hzog47') format('truetype'),
+    url('fonts/iconbms.woff?hzog47') format('woff'),
+    url('fonts/iconbms.svg?hzog47#iconbms') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-bms-"], [class*=" icon-bms-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iconbms' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bms-dbleft:before {
+  content: "\e934";
+}
+.icon-bms-dbright:before {
+  content: "\e933";
+}
+.icon-bms-dbup:before {
+  content: "\e932";
+}
+.icon-bms-dbdown:before {
+  content: "\e931";
+}
+.icon-bms-close:before {
+  content: "\e930";
+}
+.icon-bms-about:before {
+  content: "\e92b";
+}
+.icon-bms-sysinfo:before {
+  content: "\e92c";
+}
+.icon-bms-system:before {
+  content: "\e92d";
+}
+.icon-bms-syswarn:before {
+  content: "\e92e";
+}
+.icon-bms-password:before {
+  content: "\e929";
+}
+.icon-bms-username:before {
+  content: "\e92a";
+}
+.icon-bms-upfill:before {
+  content: "\e92f";
+}
+.icon-bms-reportoff:before {
+  content: "\e927";
+}
+.icon-bms-reporton:before {
+  content: "\e928";
+}
+.icon-bms-tobottom:before {
+  content: "\e923";
+}
+.icon-bms-totop:before {
+  content: "\e924";
+}
+.icon-bms-behind:before {
+  content: "\e925";
+}
+.icon-bms-front:before {
+  content: "\e926";
+}
+.icon-bms-logic:before {
+  content: "\e91f";
+}
+.icon-bms-reset:before {
+  content: "\e91d";
+}
+.icon-bms-timeaxis:before {
+  content: "\e919";
+}
+.icon-bms-add:before {
+  content: "\e917";
+}
+.icon-bms-import:before {
+  content: "\e918";
+}
+.icon-bms-baseline:before {
+  content: "\e920";
+}
+.icon-bms-detect:before {
+  content: "\e914";
+}
+.icon-bms-configure:before {
+  content: "\e913";
+}
+.icon-bms-toleft:before {
+  content: "\e911";
+}
+.icon-bms-toright:before {
+  content: "\e912";
+}
+.icon-bms-logout:before {
+  content: "\e916";
+}
+.icon-bms-timeout:before {
+  content: "\e915";
+}
+.icon-bms-speakeroff:before {
+  content: "\e90f";
+}
+.icon-bms-speakeron:before {
+  content: "\e910";
+}
+.icon-bms-database:before {
+  content: "\e90e";
+}
+.icon-bms-tridown:before {
+  content: "\e90d";
+}
+.icon-bms-wall:before {
+  content: "\e90c";
+}
+.icon-bms-topoedit:before {
+  content: "\e90b";
+}
+.icon-bms-topo:before {
+  content: "\e90a";
+}
+.icon-bms-alert:before {
+  content: "\e909";
+}
+.icon-bms-home:before {
+  content: "\e908";
+}
+.icon-bms-health:before {
+  content: "\e921";
+}
+.icon-bms-heart:before {
+  content: "\e922";
+}
+.icon-bms-delete:before {
+  content: "\e91a";
+}
+.icon-bms-path:before {
+  content: "\e91b";
+}
+.icon-bms-rename:before {
+  content: "\e91c";
+}
+.icon-bms-downfill:before {
+  content: "\e906";
+}
+.icon-bms-up:before {
+  content: "\e907";
+}
+.icon-bms-search:before {
+  content: "\e91e";
+}
+.icon-bms-calendar:before {
+  content: "\e903";
+}
+.icon-bms-area:before {
+  content: "\e902";
+}
+.icon-bms-bar:before {
+  content: "\e904";
+}
+.icon-bms-pie:before {
+  content: "\e905";
+}
+.icon-bms-square:before {
+  content: "\e901";
+}
+.icon-bms-more:before {
+  content: "\e900";
+}
