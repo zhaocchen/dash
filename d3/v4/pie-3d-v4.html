@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>bar-v3</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./d3.v4.js"></script>
+    <script type="text/javascript" src="../v3/Pie3D.js"></script>
+    <style type="text/css">
+        .svg-div {
+            margin-left: 20%;
+            width: 80%;
+            height: 400px;
+        }
+
+        .pei-3d-svg text {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="svg-div">
+
+</div>
+<script type="text/javascript">
+    /*=========DATA=========*/
+    var testData = [{label: "直接访问", value: "234"},
+        {label: "邮件营销", value: "130"},
+        // {label: "联盟广告", value: "320"},
+        // {label: "视频广告", value: "145"},
+        // {label: "搜索引擎", value: "600"},
+        {label: "电话营销", value: "120"}];
+
+    /*=====SIZE SVG======*/
+    var width = 800;
+    var height = 450;
+    var rotate = -30;	//	-30
+    var multi = 1.3;
+
+    /*=========compute============*/
+    var pieX = width / 2;
+    var pieY = height / 2;
+    var rx = (d3.min([width, height]) - 30) / 2;
+    var ry = 0.618 * (d3.min([width, height]) - 30) / 2;
+    var h = 30;
+    var ir = 0;
+    var extendLen = rx / 3;
+    /*inner radius*/
+    var allPercent = 0;
+    var color = d3.schemeCategory20;
+    var data = testData.map(function (d, i) {
+        return {label: d.label, value: d.value, color: color[i]}
+    });
+    var pieData = d3.pie().sort(null).value(function (d) {
+        return d.value;
+    })(data);
+
+
+    /*=========draw============*/
+    var svg = d3.select(".svg-div").append("svg").attr("width", width).attr("height", height).attr("class", "pei-3d-svg");
+    var slices = svg.append("g").attr("transform", "translate(" + pieX + "," + pieY + ") rotate(" + rotate + ")").attr("class", "slices");
+    var labels = svg.append("g").attr("transform", "translate(" + pieX + "," + pieY + ")").attr("class", "labels");
+    var lines = svg.append("g").attr("transform", "translate(" + pieX + "," + pieY + ")").attr("class", "lines");
+
+
+    slices.selectAll(".innerSlice").data(pieData).enter().append("path").attr("class", "innerSlice")
+        .attr("fill", function (d) {
+            return d3.hsl(d.data.color).darker(0.7);
+        })
+        .transition().duration(750)
+        .attr("d", function (d) {
+            return pieInner(d, rx + 0.5, ry + 0.5, h, ir);
+        });
+
+    slices.selectAll(".bottomSlice").data(pieData).enter().append("path").attr("class", "bottomSlice")
+        .attr("fill", function (d) {
+            return d3.hsl(d.data.color).darker(1);
+        })
+        .transition().duration(150)
+        .attr("d", function (d) {
+            return pieBottom(d, rx - .5, ry - .5, ir, h);
+        });
+
+    slices.selectAll(".side").data(pieData).enter().append("path").attr("class", "side")
+        .attr("fill", '#222')
+        .transition().duration(150)
+        .attr("d", function (d) {
+            return pieSide(d, rx - .5, ry - .5, h);
+        });
+
+
+    slices.selectAll(".outerSlice").data(pieData).enter().append("path").attr("class", "outerSlice")
+        .attr("fill", function (d) {
+            return d3.hsl(d.data.color).darker(0.7);
+        })
+        .attr("fill-opacity", 0.9)
+        .transition().duration(150)
+        .attr("d", function (d) {
+            return pieOuter(d, rx - .5, ry - .5, h);
+        });
+
+    slices.selectAll(".topSlice").data(pieData).enter().append("path").attr("class", "topSlice")
+        .attr("fill", function (d) {
+            return d.data.color;
+        })
+        .attr("fill-opacity", 0.8)
+        .transition().duration(150)
+        .attr("d", function (d) {
+            return pieTop(d, rx, ry, ir);
+        });
+
+    labels.selectAll(".percent").data(pieData).enter().append("text").attr("class", "percent")
+        // .transition().duration(750)
+        .attr("x", function (d) {
+            return 0.5 * lineX(d, rx, ry, rotate);
+        })
+        .attr("y", function (d) {
+            return 0.5 * lineY(d, rx, ry, rotate);
+        })
+        .text(function (d, i) {
+            var thisPercent = getPercent(d);
+            if (i == data.length - 1) {
+                return (100 - allPercent).toFixed(1) + '%';
+            } else {
+                allPercent += thisPercent;
+                return thisPercent + '%';
+            }
+        });
+
+
+    lines.selectAll(".labelsText").data(pieData).enter().append("text").attr("class", "labelsText")
+        .attr("dx", function (d) {
+            return lineX(d, rx, ry, rotate) > 0 ? ".35em" : "-.35em";
+        })
+        .attr("dy", ".35em")
+        .attr('fill', function (d) {
+            return d.data.color;
+        })
+        .transition().duration(750)
+        .attr("transform", function (d) {
+            return "translate(" + labelsTextTran(d, rx, ry, rotate, pieX, multi) + ")";
+        })
+        .style("text-anchor", function (d) {
+            return lineX(d, rx, ry, rotate) > 0 ? "start" : "end";
+        })
+        .text(function (d) {
+            return d.data.label;
+        });
+
+    lines.selectAll(".labelPolyline").data(pieData).enter().append("polyline").attr("class", "labelPolyline")
+        .attr("fill", 'none')
+        .style("stroke", function (d) {
+            return d.data.color;
+        })
+        .transition().duration(750)
+        .attr("points", function (d) {
+            return piePolyline(d, rx, ry, rotate, pieX, multi, extendLen);
+        });
+
+</script>
+</body>
+</html>
