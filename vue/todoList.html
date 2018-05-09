@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>todoList</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		li{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<div id="app">
+	<input type="" name=""  placeholder="edit me" 
+		v-model="inputMsg"
+		>
+	<button @click="handleSubmit">添加</button>
+	<p>双击可删除</p>
+	<ul>
+			<todo-item v-for="(item, index) in list"
+			:key="index"
+			:text="item"
+			:index="index"
+			@delete="handleDelete"
+			></todo-item>
+	</ul>
+</div>
+
+<script type="text/javascript" src="./vue.v2.js"></script>
+<script type="text/javascript">
+	Vue.component('todo-item', {
+		name: 'todo-item',
+		template: '<li @dblclick="handleDelete(index)">{{ text }}</li>',
+		props: ['text', 'index'],
+		methods: {
+			handleDelete(index) {
+				this.$emit('delete', index);
+			},
+		},
+	});
+
+	new Vue({
+		el: "#app",
+		component: ['todo-item'],
+		data() {
+			return {
+				inputMsg: '',
+				list: [],
+			};
+		},
+		methods: {
+			handleSubmit() {
+				if( this.inputMsg.length > 0 && this.list.indexOf(this.inputMsg) < 0 ) {
+					this.list.push(this.inputMsg);
+				}
+			},
+			handleDelete(index) {
+				if (index < this.list.length) {
+					this.list.splice(index, 1);
+				}
+			},
+		},
+	});
+</script>
+</body>
+</html>
