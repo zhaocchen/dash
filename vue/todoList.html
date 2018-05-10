@@ -51,7 +51,8 @@
 		methods: {
 			handleSubmit() {
 				if( this.inputMsg.length > 0 && this.list.indexOf(this.inputMsg) < 0 ) {
-					this.list.push(this.inputMsg);
+					this.list.unshift(this.inputMsg);
+					this.inputMsg = '';
 				}
 			},
 			handleDelete(index) {
