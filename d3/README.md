@@ -1,10 +1,12 @@
 ## d3绘制demo（以v4为主）
 
-扇形：
+扇形：[https://daaasheng.github.io/dash/d3/v4/pie-v4.html](https://daaasheng.github.io/dash/d3/v4/pie-v4.html)
 
-环形：
+立体：[https://daaasheng.github.io/dash/d3/v4/pie-3d-v4.html](https://daaasheng.github.io/dash/d3/v4/pie-3d-v4.html)
 
-柱状：
+环形：[https://daaasheng.github.io/dash/d3/v4/dount-v4.html](https://daaasheng.github.io/dash/d3/v4/dount-v4.html)
+
+柱状：[https://daaasheng.github.io/dash/d3/v4/bar-v4.html](https://daaasheng.github.io/dash/d3/v4/bar-v4.html)
 
 折线：
 
@@ -13,6 +15,8 @@
 散点：
 
 地图：
+
+指示表：[https://daaasheng.github.io/dash/d3/v4/gauge-oil-v4.html](https://daaasheng.github.io/dash/d3/v4/gauge-oil-v4.html)
 
 ### 特殊图形
 
