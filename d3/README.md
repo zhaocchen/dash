@@ -16,11 +16,11 @@
 
 地图：
 
-指示表：[https://daaasheng.github.io/dash/d3/v4/gauge-oil-v4.html](https://daaasheng.github.io/dash/d3/v4/gauge-oil-v4.html)
-
 ### 特殊图形
 
 仪表：
+
+油表: [https://daaasheng.github.io/dash/d3/v4/gauge-oil.html](https://daaasheng.github.io/dash/d3/v4/gauge-oil.html)
 
 进度：
 
