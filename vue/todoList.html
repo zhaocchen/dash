@@ -7,16 +7,31 @@
 		li{
 			cursor: pointer;
 		}
+		.tip{
+			display: inline-block;
+		    width: auto;
+		    height: auto;
+		    margin: 0;   
+		    padding: 0;
+		    /*padding: 8px 15px;*/
+		    background-color: rgb(3, 16, 27);
+		    opacity: 0.75;
+		    border-radius: 2px;
+		    font-size: 14px;
+		    text-align: left;
+		    color: #fff;
+		}
 	</style>
 </head>
 <body>
 <div id="app">
 	<input type="" name=""  placeholder="edit me" 
 		v-model="inputMsg"
+		@keyup.enter="handleSubmit"
 		>
 	<button @click="handleSubmit">添加</button>
-	<p>双击可删除</p>
-	<ul>
+	<p class="tip" v-show="tipShow">双击可删除</p>
+	<ul @mouseover="handleMouseover" @mouseleave="handleMouseleave">
 			<todo-item v-for="(item, index) in list"
 			:key="index"
 			:text="item"
@@ -46,6 +61,7 @@
 			return {
 				inputMsg: '',
 				list: [],
+				tipShow: false,
 			};
 		},
 		methods: {
@@ -59,6 +75,12 @@
 				if (index < this.list.length) {
 					this.list.splice(index, 1);
 				}
+			},
+			handleMouseover() {
+				this.tipShow = true;
+			},
+			handleMouseleave() {
+				this.tipShow = false;
 			},
 		},
 	});
