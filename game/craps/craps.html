@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>game-craps</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{
+		margin: 0 auto;
+		padding: 0;
+		overflow: hidden;
+	}
+		.canvas{
+			/*width: 960;
+			height: 600;*/
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+
+
+<canvas class="canvas" id="canvas" width="960" height="600"></canvas>
+
+
+<script type="text/javascript">
+	var randomNum = Math.floor(Math.random() * 6);
+
+	var ctx = document.getElementById('canvas').getContext('2d');
+
+	// square
+	var squareWidth = 100;
+	ctx.strokeRect(0, 0, squareWidth, squareWidth);
+	ctx.strokeStyle = '#000';
+
+	// ciccle
+	var circleRadius = 10;
+	ctx.arc(100, 100, circleRadius, 0, 2*Math.PI, false);
+	ctx.fillStyle = '#000';
+	ctx.fill();
+
+	
+
+</script>
+</body>
+</html>
