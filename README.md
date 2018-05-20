@@ -15,5 +15,9 @@ description： demo of web
 ## vue
 
 [https://daaasheng.github.io/dash/vue](https://daaasheng.github.io/dash/vue "https://daaasheng.github.io/dash/vue")
+
+## canvas
+
+投掷骰子： [https://daaasheng.github.io/dash/game/craps/craps.html](https://daaasheng.github.io/dash/game/craps/craps.html "https://daaasheng.github.io/dash/game/craps/craps.html")
     
 
