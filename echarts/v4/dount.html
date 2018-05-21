@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>pie</title>
+	<title>dount</title>
 	<style type="text/css">
 		body{
 			margin: 0 auto;
@@ -28,7 +28,7 @@ var testData = [{name: "直接访问", value: "300"},
         {name: "联盟广告", value: "320"},
         {name: "视频广告", value: "145"},
         {name: "搜索引擎", value: "600"},
-        {name: "电话营销", value: "120"}];
+        {name: "电话", value: "120"}];
 
 var option = {
             tooltip: {
@@ -37,7 +37,27 @@ var option = {
             series: [{
                 name: '营销量',
                 type: 'pie',
+                radius: ['50%', '70%'],
                 hoverAnimation:false,	// 禁止hover特效
+                // avoidLabelOverlap: false,
+                // label: {
+                //     normal: {
+                //         show: false,
+                //         position: 'center'
+                //     },
+                //     emphasis: {
+                //         show: true,
+                //         textStyle: {
+                //             fontSize: '30',
+                //             fontWeight: 'bold'
+                //         }
+                //     }
+                // },
+                // labelLine: {
+                //     normal: {
+                //         show: false
+                //     }
+                // },
                 data: testData
             }]
         };	
