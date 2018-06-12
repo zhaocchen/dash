@@ -47,14 +47,14 @@ const binarySort = function(data) {
  */
 const traverseTree = {
 	tmpArray: [],
-	push(key) {
+	pushKey(key) {
 		this.tmpArray.push(key);
 	},
-	inOrderNode(node, callback) {
+	inOrderNode(node) {
 		if(node !== null) {
-			this.push(node.key);
-			this.inOrderNode(node.left, this.push);
-			this.inOrderNode(node.right, this.push);
+			this.pushKey(node.key);
+			this.inOrderNode(node.left);
+			this.inOrderNode(node.right);
 		}
 	},
 	/**
@@ -63,14 +63,14 @@ const traverseTree = {
 	 */
 	inOrder(binaryTree) {
 		this.tmpArray = [];
-		this.inOrderNode(binaryTree, this.push);
+		this.inOrderNode(binaryTree);
 		return this.tmpArray;
 	},
-	preOrderNode(node, callback) {
+	preOrderNode(node) {
 		if(node !== null) {
-			this.inOrderNode(node.left, this.push);
-			this.push(node.key);
-			this.inOrderNode(node.right, this.push);
+			this.inOrderNode(node.left);
+			this.pushKey(node.key);
+			this.inOrderNode(node.right);
 		}
 	},
 	/**
@@ -79,14 +79,14 @@ const traverseTree = {
 	 */
 	preOrder(binaryTree) {
 		this.tmpArray = [];
-		this.preOrderNode(binaryTree, this.push);
+		this.preOrderNode(binaryTree);
 		return this.tmpArray;
 	},
-	postOrderNode(node, callback) {
+	postOrderNode(node) {
 		if(node !== null) {
-			this.inOrderNode(node.left, this.push);
-			this.inOrderNode(node.right, this.push);
-			this.push(node.key);
+			this.inOrderNode(node.left);
+			this.inOrderNode(node.right);
+			this.pushKey(node.key);
 		}
 	},
 	/**
@@ -95,7 +95,7 @@ const traverseTree = {
 	 */
 	postOrder(binaryTree) {
 		this.tmpArray = [];
-		this.postOrderNode(binaryTree, this.push);
+		this.postOrderNode(binaryTree);
 		return this.tmpArray;
 	},
 };
