@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>bar-v4</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        .bar-svg {
+
+        }
+
+        .axis path, .axis line {
+            fill: none;
+            stroke: #263c44;
+            shape-rendering: crispEdges;
+        }
+
+        text {
+            font-family: sans-serif;
+            font-size: 12px;
+        }
+
+        .axis text{
+            fill: #59676b;
+        }
+
+        .bar {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript" src="./d3.v4.js"></script>
+<script type="text/javascript">
+    /*=========DATA=========*/
+    /*  datalength <= 10 */
+    var testData = [{label: "直接访问", value: "300"},
+        {label: "邮件营销", value: "230"},
+        // {label: "联盟广告", value: "320"},
+        // {label: "视频广告", value: "145"},
+        // {label: "视频广告", value: "145"},
+        // {label: "搜索引擎", value: "600"},
+        //  {label: "56广告", value: "145"},
+        // {label: "67广告", value: "145"},
+        // {label: "78广告", value: "145"},
+        // {label: "98广告", value: "145"},
+        {label: "电话营销", value: "120"}];
+    var xMarks = [0, 1, 2, 3, 4, 5];
+
+    /*===========COLOR=======*/
+    var color = d3.schemeCategory20;
+
+    /*=====SIZE SVG======*/
+    var svgWidth = 960;
+    var svgHeight = 600;
+    var barData = testData;
+    var extentValue = d3.extent(barData, function (d) {
+        return d.value;
+    });
+
+
+    /*=========computed============*/
+    var margin = {
+        top: 30,
+        right: 40,
+        bottom: 40,
+        left: 70
+    };
+    var width = svgWidth - margin.left - margin.right;
+    var height = svgHeight - margin.top - margin.bottom;
+    var type = "vertical";  //vertical|horizontal
+    // axis
+    if (type === "vertical") {
+        var x = d3.scaleBand().rangeRound([0, width]).padding(.1).domain(barData.map(function (d) {
+            return d.label;
+        }));
+        var xAxis = d3.axisBottom(x).ticks(barData.length).tickSize(0).tickPadding(6);
+        var y = d3.scaleLinear().domain([0, extentValue[1]]).range([height, 0]);
+        var yAxis = d3.axisLeft(y).ticks(5).tickSize(0).tickPadding(6);
+    } else { // 横向
+        var x = d3.scaleLinear().domain([0, extentValue[1]]).range([0, width]);
+        var xAxis = d3.axisBottom(x).ticks(5).tickSize(0).tickPadding(6);
+        var y = d3.scaleBand().rangeRound([height, 0]).padding(.1).domain(barData.map(function (d) {
+            return d.label;
+        }));
+        var yAxis = d3.axisLeft(y).ticks(barData.length).tickSize(0).tickPadding(6);
+    }
+
+
+
+    /*=========draw============*/
+    var svg = d3.select("body").append("svg").attr("class", "bar-svg").attr("width", svgWidth).attr("height", svgHeight);
+
+    var focus = svg.append("g").attr("class", "focus")
+        .attr("transform", 'translate(' + margin.left + ',' + margin.top + ')');
+
+
+    focus.append("g").attr("class", "x axis xAxis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+    focus.append("g")
+        .attr("class", "y axis yAxis")
+        .attr("transform", "translate(0,0)")
+        .call(yAxis);
+
+
+    if (type === "vertical") {
+        focus.selectAll(".bar").data(barData).enter().append("rect").attr("class", "bar")
+            .attr("x", function (d) {
+                return x(d.label) + x.bandwidth() / 2 -25;
+            })
+            .attr("y", function (d) {
+                return y(1) - Math.abs(y(d.value) - y(0));
+            })
+            .attr("rx", 4).attr("ry", 4)
+            .attr("width", 50)
+            .attr("height", function (d) {
+                return Math.abs(y(d.value) - y(0));
+            })
+            .attr("fill", function (d, i) {
+                return color[i];
+            });
+        focus.selectAll(".label").data(barData).enter().append("text").attr("class", "label")
+            .attr("x", function (d) {
+                return x(d.label) + x.bandwidth() / 2;
+            })
+            .attr("y", function (d) {
+                return y(1) - Math.abs(y(d.value) - y(0));
+            })
+            .attr("text-anchor", "middle")
+            .text(function (d) {
+                return d.value;
+            })
+    } else {
+        d3.select('.yAxis').append("line").attr("class", "yAxis-top")
+            .attr("transform", "translate(0,0)")
+            .attr("x2", width);
+        d3.selectAll(".xAxis line").attr("y2", -height);
+        focus.selectAll(".bar").data(barData).enter().append("rect").attr("class", "bar")
+            .attr("x", 0)
+            .attr("y", function (d) {
+                return y(d.label) + y.bandwidth() / 2 - 25;
+            })
+            .attr("rx", 4).attr("ry", 4)
+            .attr("width", function (d) {
+                return Math.abs(x(d.value) - x(0));
+            })
+            .attr("height", 50)
+            .attr("fill", function (d, i) {
+                return color[i];
+            });
+    }
+    
+
+</script>
+</body>
+</html>
