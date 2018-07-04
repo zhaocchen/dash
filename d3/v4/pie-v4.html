@@ -25,12 +25,13 @@
 	var innerRadius = 0;
 	var outerRadius = w /2
 	var arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius);
+	var textArc = d3.arc().innerRadius(innerRadius + 100).outerRadius(outerRadius);
 	// 分组
 	var arcs = svg.selectAll("g.arc")
 								.data(pie(dataset))
 								.enter()
 								.append("g")
-								.attr("class",arc)
+								.attr("class", "unit")
 								.attr("transform","translate(" + outerRadius + "," + outerRadius + ")");
 
 	// 绘制
@@ -42,7 +43,7 @@
 	// 文字
 	arcs.append("text")
 	    .attr("transform",function(d){
-	    	return "translate(" + arc.centroid(d) + ")";
+	    	return "translate(" + textArc.centroid(d) + ")";
 	    })
 	    .attr("text-anchor","middle")
 	    .text(function(d){
