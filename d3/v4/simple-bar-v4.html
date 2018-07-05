@@ -105,12 +105,15 @@
 
 
     if (type === "vertical") {
-        focus.selectAll(".bar").data(barData).enter().append("rect").attr("class", "bar")
+        var barsG= focus.append("g").attr("class", "bars-g")
+            .attr("transform", "translate(0," + height + ")");
+        barsG.selectAll(".bar").data(barData).enter().append("rect").attr("class", "bar")
             .attr("x", function (d) {
                 return x(d.label) + x.bandwidth() / 2 -25;
             })
+            .transition().duration(750)
             .attr("y", function (d) {
-                return y(1) - Math.abs(y(d.value) - y(0));
+                return -Math.abs(y(d.value) - y(0));
             })
             .attr("rx", 4).attr("ry", 4)
             .attr("width", 50)
@@ -120,12 +123,15 @@
             .attr("fill", function (d, i) {
                 return color[i];
             });
-        focus.selectAll(".label").data(barData).enter().append("text").attr("class", "label")
+
+            
+        barsG.selectAll(".label").data(barData).enter().append("text").attr("class", "label")
             .attr("x", function (d) {
                 return x(d.label) + x.bandwidth() / 2;
             })
+            .transition().duration(750)
             .attr("y", function (d) {
-                return y(1) - Math.abs(y(d.value) - y(0));
+                return -Math.abs(y(d.value) - y(0));
             })
             .attr("text-anchor", "middle")
             .text(function (d) {

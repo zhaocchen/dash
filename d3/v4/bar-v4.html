@@ -103,6 +103,7 @@
             return y(d.label) + y.bandwidth() / 2 - 25;
         })
         .attr("rx", 4).attr("ry", 4)
+        .transition().duration(750)
         .attr("width", function (d) {
             return Math.abs(x(d.value) - x(0));
         })

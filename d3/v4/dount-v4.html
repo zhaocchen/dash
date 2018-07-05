@@ -47,8 +47,9 @@
 			.attr("d",arc);
 	// 文字
 	arcs.append("text")
+		.transition().duration(250)
 	    .attr("transform",function(d){
-	    	console.log(d,arc.centroid(d));
+	    	// console.log(d,arc.centroid(d));
 	    	return "translate(" + arc.centroid(d) + ")";
 	    })
 	    .attr("text-anchor","middle")
