@@ -111,7 +111,7 @@
             .attr("x", function (d) {
                 return x(d.label) + x.bandwidth() / 2 -25;
             })
-            .transition().duration(750)
+            .transition().duration(750).ease(d3.easeLinear)
             .attr("y", function (d) {
                 return -Math.abs(y(d.value) - y(0));
             })
@@ -129,7 +129,7 @@
             .attr("x", function (d) {
                 return x(d.label) + x.bandwidth() / 2;
             })
-            .transition().duration(750)
+            .transition().duration(750).ease(d3.easeLinear)
             .attr("y", function (d) {
                 return -Math.abs(y(d.value) - y(0));
             })
