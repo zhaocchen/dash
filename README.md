@@ -4,6 +4,8 @@ author： zhaocchen@163.com
 
 description： demo of web
 
+[css](https://daaasheng.github.io/dash/css)
+
 ## d3绘制demo（以v4为主）
 
 [https://daaasheng.github.io/dash/d3](https://daaasheng.github.io/dash/d3)
@@ -18,6 +20,9 @@ description： demo of web
 
 ## canvas
 
-投掷骰子： [https://daaasheng.github.io/dash/game/craps/craps.html](https://daaasheng.github.io/dash/game/craps/craps.html "https://daaasheng.github.io/dash/game/craps/craps.html")
+[投掷骰子](https://daaasheng.github.io/dash/game/craps/craps.html)
+
+
+
     
 
