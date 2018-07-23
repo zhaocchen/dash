@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>toWayBlinding</title>
+	<style>select {width: 80px;}</style>
+</head>
+<body >
+<div id="app">
+	<!-- 文本框绑定 textarea类似-->
+	<input type="text" v-model="text_message" placeholder="edit me">
+	<p>input.value is : {{text_message}}</p><br />
+	<!-- 单选框绑定 -->
+	<input type="radio" id="one" value="male" v-model="radio_message">
+	<label for="sex">♂</label>
+	<input type="radio" id="two" value="female" v-model="radio_message">
+	<label for="sex">♀</label><br/>
+	<p>radio_message: {{ radio_message }}</p><br/>
+	<!-- 复选框绑定 -->
+	<input type="checkbox" id="jack" value="jack" v-model="checkbox_message">
+	<label for="jack">Jack</label>
+	<input type="checkbox" id="john" value="John" v-model="checkbox_message">
+	<label for="john">John</label>
+	<input type="checkbox" id="mike" value="Mike" v-model="checkbox_message">
+	<label for="mike">Mike</label><br>
+	<p>checkbox_message: {{ checkbox_message }}</p><br/>
+	<!-- select选择框的单选 -->
+	<select v-model="selected_message">
+	    <option>A</option>
+	    <option>B</option>
+	    <option>C</option>
+  	</select>
+  	<p>selected_message: {{ selected_message }}</p>
+  	<!-- select选择框的复选 -->
+  	<select v-model="SELECTED_message" multiple>
+	    <option>A</option>
+	    <option>B</option>
+	    <option>C</option>
+  	</select>
+  	<p>SELECTED_message: {{ SELECTED_message }}</p>
+</div>
+<script>
+var app
+window.onload = function (){
+		app = new Vue({
+			el: '#app',
+			data: {
+				text_message: '',
+				radio_message: '',
+				checkbox_message: [],
+				selected_message: 'A',
+				SELECTED_message: []
+			}
+		})
+}
+</script>
+</body>
+	<script src="./vue.v2.js"></script>
+</html>

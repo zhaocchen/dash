@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>toWayBlinding</title>
+	
+</head>
+<body >
+<div id="app">
+<!-- <a v-touch:tap="onTap">Tap me!</a>
+	 <a v-touch:swipeleft="onSwipeLeft">Swipe me!</a>
+	 <a v-touch:doubletap="onDoubleTap"></a>
+-->
+	<button v-on:click="addOne">加一</button> <button v-on:click="var num=2;count-=num">减二</button>
+	<p>this count is : {{count}}</p>
+	<button v-on:click="say('hello')">你好</button> <button v-on:click="say('no ok')">不好</button>
+	<p></p>
+	<button v-on:click="showMyself('',$event)">点击显示button</button>
+
+	<p v-on:click.ctrl.alt="Ctrl">你必须按着ctrl + alt点击我，我才会出来</p>
+	<input type="text" v-on:keyup.ctrl.alt.z="alert"> 按ctrl + alt + z,可以看到我 <!-- keydown -->
+	<p v-on:click.once="Once">我只会改变一次，不信你点</p>
+</div>
+<script>
+var app
+window.onload = function (){
+		Vue.config.keyCodes.z = 90
+		app = new Vue({
+			el: '#app',
+			data: {
+				count: 0 
+			},
+			methods: {
+				addOne: function (){   //普通
+					this.count++
+				},
+				subOne: function(){    //内联
+					this.count--
+				},
+				say: function(message){  //传参数
+					alert(message)
+				},
+				showMyself: function(message, event){ //处理原生event
+					if (event) event.stopPropagation()  //事件中调用event，改用.stop阻止冒泡
+					alert(message)
+					alert(event.target.tagName)
+				},
+				Ctrl: function (){
+					alert("我出来了")
+				},
+				alert: function(){
+					alert("hah")
+				},
+				Once: function(){
+					alert("老司机带带我，bye")
+				}
+			}
+		})
+}
+</script>
+</body>
+<script src="./vue2.v2.js"></script>
+</html>
+
+<!-- 修饰符
+//阻止单击事件冒泡
+<a v-on:click.stop="doThis"></a>
+
+//提交事件不再重载页面 
+<form v-on:submit.prevent="onSubmit"></form>
+
+//修饰符可以串联
+<a v-on:click.stop.prevent="doThat"></a>
+
+//只有修饰符
+<form v-on:submit.prevent></form>
+
+//添加事件侦听器时使用事件捕获模式
+<div v-on:click.capture="doThis">...</div>
+
+//只当事件在该元素本身（而不是子元素）触发时触发回调
+<div v-on:click.self="doThat">...</div>
+
+//点击事件将只会触发一次
+<a v-on:click.once="doThis"></a>
+
+
+按键修饰符
+.enter
+.tab
+.delete (捕获 “删除” 和 “退格” 键)
+.esc
+.space
+.up
+.down
+.left
+.right
+.ctrl
+.alt
+.shift
+.meta
+ -->
