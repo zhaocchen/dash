@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>列表--简介</title>
+<link rel="stylesheet" href="./bootstrap.v3.css">
+</head>
+
+<body>
+
+<ul>
+    <li>无序列表信息1</li>
+    <li>无序列表信息2</li>
+    <li>无序列表信息3</li>
+</ul>
+<ol>
+    <li>有序列表信息1</li>
+    <li>有序列表信息2</li>
+    <li>有序列表信息3</li>
+</ol>
+
+<dl>
+    <dt>定义列表标题</dt>
+    <dd>定义列表信息1</dd>
+    <dd>定义列表信息2</dd>
+</dl>
+<ol class="list-unstyled">
+        <li>列表--去点列表</li>
+        <li>不带项目编号</li>
+        <p>.list-unstyled {
+padding-left: 0;
+list-style: none;
+}</p>
+</ol>
+<ul class="list-inline">
+    <li>列表--内联列表:把垂直列表换成水平列表，而且去掉项目符号（编号），保持水平显示。</li>
+    <li>Blog</li>
+    <li>CSS3</li>
+    <li>jQuery</li>
+    <li>PHP</li>
+    <p>.list-inline {
+padding-left: 0;
+margin-left: -5px;
+list-style: none;
+}
+.list-inline > li {
+display: inline-block;
+padding-right: 5px;
+padding-left: 5px;
+}</p>
+</ul>
+<dl class="dl-horizontal">
+    <dt>水平定义列表</dt>
+    <dd>一个致力于推广国内前端行业的技术博客。它以探索为己任，不断活跃在行业技术最前沿，努力提供高质量前端技术博文</dd>
+    <dt>慕课网</dt>
+    <dd>一个专业的，真心实意在做培训的网站</dd>
+    <dt>我来测试一个标题，我来测试一个标题</dt>
+    <dd>我在写一个水平定义列表的效果，我在写一个水平定义列表的效果</dd>
+    <p>@media (min-width: 768px) {
+.dl-horizontal dt {
+float: left;
+width: 160px;
+overflow: hidden;
+clear: left;
+text-align: right;
+text-overflow: ellipsis;
+white-space: nowrap;
+  }
+.dl-horizontal dd {
+margin-left: 180px;
+  }
+}</p>
+</dl>
+</body>
+</html>

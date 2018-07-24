@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>title</title>
+		<link rel="stylesheet" type="text/css" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	</head>
+	<body>
+      hello,word!
+      <h3>
+导航加下拉菜单（二级导航）只需要将li当作父容器，使用类名“dropdown”，同时在li中嵌套另一个列表ul</h3>
+	<ul class="nav nav-pills">
+		<li class="active"><a href="##">Home</a></li>
+		<li class="dropdown"><a href="##" class="dropdown-toggle" data-toggle="dropdown">course
+		<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu"><li><a href="##">css</a></li>
+		<li><a href="##">js</a></li>
+		<li><a href="##">jquery</a></li></ul>
+		</li>
+	
+		<li class="disable"><a href="##">responsive</a></li>
+		</ul>
+		<h3>面包屑式导航(Breadcrumb)</h3>
+		<!--代码-->
+<ol class="breadcrumb">
+  <li><a href="#">首页</a></li>
+  <li><a href="#">我的书</a></li>
+  <li class="active">《图解CSS3》</li>
+</ol> 
+<!--基本导航条-->
+<div class="navbar navbar-default" role="navigation">
+     <ul class="nav navbar-nav">
+     	<li class="active"><a href="##">网站首页</a></li>
+        <li><a href="##">系列教程</a></li>
+        <li><a href="##">名师介绍</a></li>
+        <li><a href="##">成功案例</a></li>
+        <li><a href="##">关于我们</a></li>
+	 </ul>
+</div>
+<h3>带表单、带二级菜单的导航条</h3>
+<div class="navbar navbar-default" role="navigation">
+  　<div class="navbar-header">
+  　    <a href="##" class="navbar-brand">慕课网</a>
+  　</div>
+     <ul class="nav navbar-nav">
+	 	<li class="active"><a href="##">网站首页</a></li>
+      <li class="dropdown">
+        <a href="##" data-toggle="dropdown" class="dropdown-toggle">系列教程<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+        	<li><a href="##">CSS3</a></li>
+        	<li><a href="##">JavaScript</a></li>
+        	<li class="disabled"><a href="##">PHP</a></li>
+        </ul>
+     </li>
+      <li><a href="##">名师介绍</a></li>
+      <li><a href="##">成功案例</a></li>
+      <li><a href="##">关于我们</a></li>
+	 </ul>
+  <form action="##" class="navbar-form navbar-left" rol="search">
+   	<div class="form-group">
+   		<input type="text" class="form-control" placeholder="请输入关键词" />
+   	</div>
+     <button type="submit" class="btn btn-default">搜索</button>
+   </form>
+</div>
+<h3>导航条中的按钮navbar-btn、文本navbar-text和链接navbar-link</h3>
+<div class="navbar navbar-default" role="navigation">
+  　<div class="navbar-header">
+  　    <a href="##" class="navbar-brand">慕课网</a>
+  　</div>
+	 <ul class="nav navbar-nav">
+	 	<li><a href="##" class="navbar-text">Navbar Text</a></li>
+	 	<li><a href="##" class="navbar-text">Navbar Text</a></li>
+	 	<li><a href="##" class="navbar-text">Navbar Text</a></li>
+	 </ul>
+</div>
+
+<div class="navbar navbar-default" role="navigation">
+  　<div class="navbar-header">
+  　    <a href="##" class="navbar-brand">慕课网</a>
+  　</div>
+	 <div class="nav navbar-nav">
+	 	<a href="##" class="navbar-text">Navbar Text</a>
+	 	<a href="##" class="navbar-text">Navbar Text</a>
+	 	<a href="##" class="navbar-text">Navbar Text</a>
+	 </div>
+</div>
+     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</body>
+</html>

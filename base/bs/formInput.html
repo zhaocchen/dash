@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单控件——输入框input</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body style="width: 1000px;margin: auto;padding-top: 30px;">
+<form role="form">
+  <div class="form-group">
+   <p>单行输入框</p>
+   <p>为了让控件在各种表单风格中样式不出错，需要添加类名“form-control”</p>
+    <input type="email" class="form-control" placeholder="Enter email">
+      </div>
+
+      <p>表单控件(下拉选择框select)</p>
+       <div class="form-group">
+    <select class="form-control"> 
+      <option>1</option> 
+      <option>2</option> 
+      <option>3</option> 
+      <option>4</option> 
+      <option>5</option> 
+      </select>
+  </div>
+  <div class="form-group">
+      <select multiple class="form-control"> 
+        <option>1</option> 
+        <option>2</option> 
+        <option>3</option> 
+        <option>4</option> 
+        <option>5</option> 
+      </select>
+  </div>
+  <p>表单控件(文本域textarea)</p>
+ <textarea class="form-control" rows="3"></textarea>
+ <p>表单控件(单选择按钮radio)</p>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="love" checked>
+      喜欢
+    </label>
+  </div>
+    <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios2" value="hate">
+      不喜欢
+    </label>
+  </div>
+ <p>表单控件(复选框checkbox</p>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="">
+      记住密码
+    </label>
+  </div>
+  <p>表单控件(复选框和单选按钮水平排列)</p>
+   <div class="form-group">
+    <label class="checkbox-inline">
+      <input type="checkbox"  value="option1">游戏
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox"  value="option2">摄影
+    </label>
+    <label class="checkbox-inline">
+    <input type="checkbox"  value="option3">旅游
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="radio-inline">
+      <input type="radio"  value="option1" name="sex">男性
+    </label>
+    <label class="radio-inline">
+      <input type="radio"  value="option2" name="sex">女性
+    </label>
+    <label class="radio-inline">
+      <input type="radio"  value="option3" name="sex">中性
+    </label>
+  </div>
+  <P>end</P>
+</form>   
+</body>
+</html>
