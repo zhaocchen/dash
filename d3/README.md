@@ -24,6 +24,10 @@
 
 [油表](https://daaasheng.github.io/dash/d3/v4/gauge-oil.html)
 
+[油表参考1](http://bl.ocks.org/metormote/6392996)
+
+[油表参考2](http://bl.ocks.org/NPashaP/59c2c7483fb61070486835d15c807941)
+
 进度
 
 ### 基础组件
