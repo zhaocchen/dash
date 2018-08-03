@@ -8,6 +8,12 @@
 			width: 960px;
 			height: 600px;
 		}
+		text{
+			fill: #fff;
+		}
+		.gauage-title{
+			font-size: 60px;
+		}
 	</style>
 </head>
 <body>
@@ -23,6 +29,7 @@
 		key: 'finish-rate',
 		name: '完成率',
 		value: 38.56,
+		unit: '%',
 		legend: [
 			{
 				key: '',
@@ -54,68 +61,61 @@
 			outerRadius = axisRadius,
 			innerRadius = 0.6 * axisRadius,
 			scaleRadian = d3.scaleLinear().range([-Math.PI, Math.PI]).domain([0, 100]),
+			scaleLine = d3.scaleLinear().range([15, 85]).domain([0, 100]),
 			arc = d3.arc().outerRadius(outerRadius).innerRadius(innerRadius),
 			arcLine= d3.arc().outerRadius(outerRadius).innerRadius(0),
-			// pie = d3.pie().outerRadius(outerRadius),
-			// scaleAxis = d3.scaleLinear().range([-bgRadius, bgRadius]).domain([0, 100]);
-			// axisTop = d3.axisTop(scaleAxis).ticks(5).tickSize(0).tickPadding(6);
-			scaleLine = d3.lineRadial()
 			gaugeGroup = svg.append("g").attr("class", "gauge-group").attr("transform", `translate(${bgRadius},${bgRadius})`);
 			// 圆心为圆点， 绘制背景
 			gaugeGroup.append("circle").attr("r", bgRadius).attr("fill", "#515151");
-			gaugeGroup.append("path").attr("class", "bottom-arc")
-					.attr("fill", "#000")
-					.attr("d", arc({
-						startAngle : scaleRadian(15),
-						endAngle : scaleRadian(85)
-					}));
+			var bg = gaugeGroup.append("g").attr("class", "gauge-backgroup")
+			var bgDatum = [{range: [0, 100],
+				color: '#D78266'}];
+			// 排序
+			datum.legend.forEach((d) => {
+				bgDatum.push({range: d.range, color: d.color});
+			})
+			bg.selectAll('.arc').data(bgDatum).enter().append("path").attr("class", "arc")
+			.attr("fill", (d) => d.color)
+			.attr("d", (d) => {
+				var tmpRange = d.range.map((i) => scaleLine(i));
+				return  arc({
+						startAngle : scaleRadian(tmpRange[0]),
+						endAngle : scaleRadian(tmpRange[1])
+					});
+			});
+
+			// 刻度
 			var axisGroup = gaugeGroup.append("g").attr("class", "axis-c");
-
-			// 迭代
-			// var tickGroup = axisGroup.append("g").attr("class", "tick")
-			// .attr("opacity", "1");
-			// tickGroup.append("line");
-			// tickGroup.append("text");
-
-			// function toAbsoluteWAngle(per) {
-			// 	return scaleRadian(per) + 0.5 * Math.PI;
-			// };
+			// 弧长
+			var arcLen = 2 *　Math.PI * axisRadius * (85-15) / 100,
+			stepVal = scaleLine(10);
 			var toDot = (per) => {
 				var x = Math.cos(scaleRadian(per) - 0.5 * Math.PI) * axisRadius;
 				var y = Math.sin(scaleRadian(per) - 0.5 * Math.PI) * axisRadius;
 				return `${x},${y}`;
 			}
-			console.log(toDot(50));
+			for(var indexFlag=0; indexFlag<=100; indexFlag+=10) {
+				// 迭代
+				var tickGroup = axisGroup.append("g").attr("class", "tick")
+				.attr("opacity", "1")
+				.attr("transform", `translate(${toDot(scaleLine(indexFlag))})`)
+				// for(var i=0; i<10; i++) {
+				// 	tickGroup.append("line").attr("stroke", "red")
+				// 	.attr("y2", 0.24 * axisRadius).attr("dx");
+				// }
+				tickGroup.append("line").attr("stroke", "red")
+					.attr("y2", 0.4 * axisRadius);
+			 }
+			
 			axisGroup.append("path").attr("class", "domain")
 					.attr("fill", "none")
 					.attr("stroke-width", "2px")
 					.attr("stroke", '#fff')
 					.attr("d", `M ${toDot(15)} A ${axisRadius},${axisRadius} 0 1,1 ${toDot(85)}`);
-					// .attr("d", "M 0 0 L 300 200");
-	//     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-	// var parseTime = d3.timeParse("%d-%b-%y");
-	// var x = d3.scaleLinear().range([height, 0]).domain([0, 100]);
-	// var axisLeft = d3.axisLeft(x).ticks(5).tickSize(0).tickPadding(6);
-	// var y = d3.scaleBand().rangeRound([0, width]).padding(.1).domain(times.map(function (d) {
-  //           return d;
-  //       }));
-	// var axisBottom = d3.axisBottom(y).ticks(times.length).tickSize(0).tickPadding(6);	
-	// var z = d3.scaleOrdinal(d3.schemeCategory10);
-
-	// // x.domain(times);
-
-	// g.append("g")
-  //     .attr("class", "axis x-axis")
-  //     .attr("transform", "translate(0," + height + ")")
-  //     .call(axisBottom);
-
-  //  	g.append("g")
-  //     .attr("class", "axis y-axis")
-  //     .call(axisLeft);
-
-
-    
+			gaugeGroup.append('text').attr('class', 'gauage-title')
+			.attr('text-anchor', 'middle')
+			.attr('dy', 0.7 * axisRadius)
+			.text(`${datum.value}${datum.unit}`);
 </script>
 </body>
 </html>
