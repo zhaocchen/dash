@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400px" height="300px" viewBox="0 0 400 300">
+	<title>Bezier Curves</title>
+	<g style="stroke: black; fill: none;">
+		<path d="M 30 75 Q 240 30, 300 120" />
+	</g>
+</svg>

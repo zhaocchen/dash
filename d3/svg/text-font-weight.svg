@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800px" height="300px" viewBox="0 0 800 300">
+	<title>text</title>
+	<text x="10" y="30">
+		This property specifies 
+		<tspan style="font-style: italic;">spacing</tspan> behavior 
+		<tspan style="font-weight: bold;">between</tspan> words.
+	</text>
+</svg>

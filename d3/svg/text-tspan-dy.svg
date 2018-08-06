@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800px" height="300px" viewBox="0 0 800 300">
+	<title>text</title>
+	<text x="10" y="30" style="font-size: 12pt;">
+		They dined on mince, and slices of quince,
+		<tspan x="20" y="50">which they ate with a runcible spoon;</tspan>
+		<tspan x="10" y="70">And hand in hand, on the edge of the sand,</tspan>
+		<tspan x="20" dy="20">They danced by the light of the moon,</tspan>
+	</text>
+</svg>

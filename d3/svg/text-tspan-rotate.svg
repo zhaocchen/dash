@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300">
+	<title>text</title>
+	<text x="30" y="30" style="font-size: 14pt;">
+		It's 
+		<tspan dx="0 4 -3 5 -4 6"
+			     dy="0 -3 7 3 -2 -8"
+			     rotate="5 10 -5 -20 0 15">shaken</tspan>
+		, not stirred.
+  </text>
+</svg>

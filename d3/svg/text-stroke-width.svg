@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300">
+	<title>text</title>
+	<path d="M 20 10, 20 120
+		       M 10 30, 100 30
+		       M 10 70, 100 70
+		       M 10 110, 100 110" style="stroke: gray;" />
+  <g >
+		<text>Simple Text</text>
+		<text x="20" y="30">Simple Text</text>
+		<text x="20" y="70" style="stroke: black;">Outlined/filled</text>
+		<text x="20" y="110" style="stroke: red; stroke-width: 0.5px; fill: none;">Outlined only</text>
+	</g>
+</svg>

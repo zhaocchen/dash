@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" viewBox="0 0 200 200">
+	<!-- star -->
+  <polygon points="48, 16 16, 96 96,48 0, 48 80, 96" style="fill-rule: nonezero; fill: yellow; stroke: green;"/>
+  <polygon points="148, 16 116, 96 196,48 100, 48 180, 96" style="fill-rule: evenodd; fill: yellow; stroke: green;"/>
+</svg>                                                                   

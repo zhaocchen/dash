@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400px" height="300px" viewBox="0 0 400 300">
+	<title>Cubic Bezier Curves</title>
+	<g style="stroke: black; fill: none;">
+		<path d="M 30 100 C 50 30, 70 50, 110 100
+			      S 150 40, 200 80" />
+	</g>
+</svg>
+

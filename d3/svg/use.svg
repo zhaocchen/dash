@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200px" height="300px" viewBox="0 0 200 300">
+	<title>10.Clipping and Masking</title>
+	<defs>
+		<clipPath id="curveClip">
+			<path id="curve1" 
+			      d="M 5 55 C 25 5, 45 -25, 75 55, 85 85, 20 105, 40 55 Z"
+			      style="stroke: black; fill: none;" />
+		</clipPath>
+		<clipPath id="textClip">
+			<text id="text1" x="20" y="20" 
+				    style="font-family: 'Liberation Sans';font-size: 49pt; stroke: black; fill: none;"
+				    transform="rotate(60)">Clip</text>
+		</clipPath>
+		<g id="shapes">
+			<rect x="0" y="50" width="90" height="60" style="fill: #999;" />
+			<circle cx="25" cy="25" r="25" style="fill: #666;" />
+			<polygon points="30 0, 80 0, 80 100" style="fill: #ccc;" />
+		</g>
+	</defs>
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shapes" style="clip-path: url(#curveClip);" />
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shapes" style="clip-path: url(#textClip);" transform="translate(0, 150)"/>
+	<g transform="translate(100, 0)">
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shapes" />
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#curve1" />
+	</g>
+  <g transform="translate(100, 150)">
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shapes" />
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#text1" />
+	</g>
+</svg>

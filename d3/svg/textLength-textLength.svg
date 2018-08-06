@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300">
+	<title>text</title>
+	<g style="font-size: 14pt">
+		<path d="M 20 10, 20 70
+			       M 220 10, 220 70" style="stroke: gray;" />
+		<text x="20" y="30" textLength="200" lengthAdjust="spacing">two words</text>
+		<text x="20" y="60" textLength="200" lengthAdjust="spacingAndGlyphs">two words</text>
+		<text x="20" y="90">two words(normal length)</text>
+
+		<path d="M 20 100, 20 170 M 100 100, 100 170" style="stroke: gray;" />
+		<text x="20" y="120" textLength="80" lengthAdjust="spacing">two words</text>
+		<text x="20" y="160" textLength="80" lengthAdjust="spacingAndGlyphs">two words</text>
+	</g>
+</svg>
