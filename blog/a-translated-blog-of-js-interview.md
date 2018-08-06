@@ -1,5 +1,7 @@
 # 破解js面试的完美指南(开发者视角) #
 
+	console.log(2.0 == '2' == new Boolean(true) == '1')
+	// true
 
 ## 1.熟悉js函数 ##
 
@@ -25,3 +27,5 @@
 
 
 [阅读原文](https://medium.com/dev-bits/a-perfect-guide-for-cracking-a-javascript-interview-a-developers-perspective-23a5c0fa4d0d)
+
+[运行代码](https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Questions)
