@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>render</title>
+    <title>render</title>
+    <style>
+        h3{
+            margin: 300px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./tooltip.css">
 </head>
 <body>
 <div id="app">
-    <child v-bind:level="3">Hello world!</child>
+    <child v-bind:level="3" v-lang="`red`" v-tooltip="`testTip`">Hello world!</child>
 </div>
 
+<script src="https://unpkg.com/v-tooltip"></script>
 <script type="text/javascript" src="./vue.v2.js"></script>
 <script type="text/javascript">
+Vue.directive('tooltip', VTooltip.VTooltip)
+Vue.directive('close-popover', VTooltip.VClosePopover)
+Vue.component('v-popover', VTooltip.VPopover)
+
+Vue.directive('lang',function(el,binding){
+        console.log(el)//标签<div v-lang="color">{{num}}</div>
+        console.log(binding)//输出的是一个对象obj
+        el.style='color:'+binding.value//binding.value就是color颜色red。
+    })
+
 Vue.component('child', {
     render: function (createElement) {
         return createElement(
