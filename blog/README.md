@@ -1,3 +1,5 @@
+[mock教程](https://segmentfault.com/a/1190000012407192)
+
 [针对初学者的图形 数据结构](https://adrianmejia.com/blog/2018/05/14/data-structures-for-beginners-graphs-time-complexity-tutorial/)
 
 [使用svg的patterns实现背景](https://webdesign.tutsplus.com/tutorials/how-to-use-svg-patterns-as-backgrounds--cms-31507)
