@@ -8,11 +8,15 @@ version 2.7
 
 循环： 
 
-	for in :1、
+	for in （list and str）:1、17
+		遍历enumerate
+		
 	77
 
-操作符
+运算
 
+	+18
+	// 操作符
 	按位取反~55
 	异或^53
 	按位或 |52
@@ -25,6 +29,9 @@ number 拼接extend74（类似js, set）
 	长度len(str)、 str.__len__()60、70 
 	查找find62 
 	拼接86、84
+	截取[ : ]
+	去除空字符strip(), rstrip(),lstrip()
+
 数组
 
 	2
@@ -33,6 +40,7 @@ number 拼接extend74（类似js, set）
 	pop
 	深复制[:]7	
 	排序sort 5	
+	逆序reversed
 
 转字典 78、100
 
