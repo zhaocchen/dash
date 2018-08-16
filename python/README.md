@@ -15,7 +15,7 @@ version 2.7
 
 运算
 
-	+18
+	+ --18
 	// 操作符
 	按位取反~55
 	异或^53
@@ -52,9 +52,10 @@ number 拼接extend74（类似js, set）
 
 ## 模块
 
+	print|print()|,表示不换行|
 	random 50
 	stdout 23
-	time 
+	time --10
 		.time()  ---ts
 		.localtime()
 	//time.struct_time(tm_year=2018, tm_mon=8, tm_mday=15, tm_hour=15, tm_min=33, tm_sec=54, tm_wday=2, tm_yday=227, tm_isdst=0)
@@ -78,7 +79,10 @@ number 拼接extend74（类似js, set）
 
 	99乘法表8
 	素数12
-	分解因数14
+	分解因数--14 --19
 	闰年4
 	斐波那契6	
 	水仙花数13
+	弹球自由落体 --20
+	猴子摘桃子（逆向处理）--21
+	推理(排列组合) -- 22(no)
