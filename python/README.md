@@ -31,6 +31,7 @@ number 拼接extend74（类似js, set）
 	拼接86、84
 	截取[ : ]
 	去除空字符strip(), rstrip(),lstrip()
+	倒置[::-1]--27
 
 数组
 
@@ -40,7 +41,7 @@ number 拼接extend74（类似js, set）
 	pop
 	深复制[:]7	
 	排序sort 5	
-	逆序reversed
+	逆序reversed 
 
 转字典 78、100
 
@@ -54,7 +55,7 @@ number 拼接extend74（类似js, set）
 
 	print|print()|,表示不换行|
 	random 50
-	stdout 23
+	stdout --23
 	time --10
 		.time()  ---ts
 		.localtime()
@@ -81,7 +82,9 @@ number 拼接extend74（类似js, set）
 	素数12
 	分解因数--14 --19
 	闰年4
-	斐波那契6	
+	级数：
+	斐波那契--6|应用--24(0.06)
+	累乘	--25|--26(递归)
 	水仙花数13
 	弹球自由落体 --20
 	猴子摘桃子（逆向处理）--21
