@@ -22,18 +22,22 @@ version 2.7
 	按位或 |52
 	按位与 &51 
 
-number 拼接extend74（类似js, set）
+### Number%d%f
 
-字符串 
+	拼接extend74（类似js, set）
 
-	长度len(str)、 str.__len__()60、70 
+### String%s
+
+	长度len(str)、 str.__len__()60、70
+		--29
 	查找find62 
 	拼接86、84
 	截取[ : ]
+	转数组split|splitlines|import re
 	去除空字符strip(), rstrip(),lstrip()
 	倒置[::-1]--27
 
-数组
+### List
 
 	2
 	append
@@ -43,17 +47,27 @@ number 拼接extend74（类似js, set）
 	排序sort 5	
 	逆序reversed 
 
-转字典 78、100
+### 元组
+
+### Dictionary
+
+
+	转字典 78、100
 
 函数 
 
 	定义 6、47
 
-输入输出88	
+输入输出
+
+	print|print()|,表示不换行|
+	raw_input('input tip:')--88	
+	print('数位：%s\n输入的数字：%s\n逆序数字：%s' % (len(s), s, fun(s)))
+	print "长度为：{0}, \n逆序为:{1}".format(l,''.join(str(x) for x in lis) )
 
 ## 模块
 
-	print|print()|,表示不换行|
+	
 	random 50
 	stdout --23
 	time --10
