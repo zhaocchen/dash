@@ -1,3 +1,4 @@
+# time 0.277
 from math import sqrt
 
 def isPrime(num):
