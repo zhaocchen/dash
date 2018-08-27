@@ -18,8 +18,33 @@ def bubbleSort(alist):
         alist[j-1], alist[j] = alist[j], alist[j-1]
   return alist
 
-def mergeSort(alist):
 
+class MergeSort:
+  def sort(self,alist):
+    if len(alist) <= 1:
+      return alist
+    else:
+      mid = len(alist) / 2
+      left = self.sort(alist[:mid])
+      right = self.sort(alist[mid:])
+      return self.mergeList(left, right)
+  def mergeList(self, left, right):
+    tmpList = []
+    i = 0
+    j = 0
+    while i < len(left) and j < len(right):
+      if left[i] < right[j]:
+        tmpList.append(left[i])
+        i += 1
+      else:
+        tmpList.append(right[j])
+        j += 1
+    tmpList += left[i:]
+    tmpList += right[j:]
+    return tmpList
+
+def bucketSort(alist):
+  return alist
 
 def selectSort(alist):
   for i in range(len(alist)):
@@ -32,11 +57,11 @@ def selectSort(alist):
     # for j in range(len(alist)):
 
 
-unsorted_list = [8, 5, 2, 6, 9, 3, 1, 4, 0, 7]
+unsorted_list = [29, 25, 3, 49, 9, 37, 21, 43]
 
 print unsorted_list
 
 # print insertSort(unsorted_list)
 # print bubbleSort(unsorted_list)
-print mergeSort(unsorted_list)
+print MergeSort().sort(unsorted_list)
 # print selectSort(unsorted_list)
