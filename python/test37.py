@@ -44,7 +44,7 @@ class MergeSort:
     return tmpList
 
 def bucketSort(alist):
-  
+  buckets = [0] * (max() - min() + 1)
   return alist
 
 def selectSort(alist):

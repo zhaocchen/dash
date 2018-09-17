@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>防抖和节流</title>
+</head>
+<body>
+	<div>
+		输入
+		<input type="text" name="" id="input1">
+		<span id="count1">0</span>
+	</div>
+
+	<script type="text/javascript">
+		var count1 = 0;
+		const input1 = document.getElementById('input1')
+		input1.addEventListener('keyup', (e) => {
+			console.log(e);
+			console.log(count1++);
+			document.getElementById('count1').innerText = count1;
+		});
+	</script>
+</body>
+</html>
