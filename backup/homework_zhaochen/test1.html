@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>homework--测试</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{font-family:  theta
+			/*Arial,Lucida,Verdana,"宋体","微软雅黑",Helvetica,sans-serif*/;}
+	</style>
+</head>
+<body>
+<h1>羽毛球俱乐部收支费用--测试</h1>
+<p>输入格式为{活动时间yyyy-MM-dd HH:mm~HH:mm} {人数}</p>
+<p>例如：2016-06-02 20:00~22:00 7</p>
+<textarea id="input" rows="8" cols="40" placeholder="请在此输入！" wrap="hard"></textarea>
+<input type="button" name="button" value="提 交" id="btn">
+<p id="summary"></p>
+<script type="text/javascript">
+	var input=document.getElementById("input"),
+		btn=document.getElementById("btn"),
+		summary=document.getElementById("summary");
+	var strs= new Array(); //定义一数组来储存每一行
+	var i;
+	var str="[Summary]<br><br>";//用于输出的文本字符串
+	
+	//提交按钮事件
+    btn.onclick=function(){   
+    	generateSummary(input);	
+	}
+
+	//生成总计
+function generateSummary(input){
+	strs=input.value.split("\n"); //字符分割，一行分割为三个数组
+    	for (i=0;i<strs.length ;i++ )
+		{		
+			str=str.concat(strs[i]);
+			str=str.concat("<br> ");//分割后的字符输出
+		} 
+		str=str.concat("<br>end");
+		summary.innerHTML=str;
+	
+}
+</script>
+</body>
+</html>

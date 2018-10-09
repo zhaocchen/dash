@@ -1,0 +1,52 @@
+
+/*************************************全局样式*******************************************/
+*{ }
+
+body,div,ul,li,a,span{font: 14px 'Microsoft YaHei','PT Sans', Helvetica, Arial, sans-serif;
+	/*text-align:center center;*/
+	margin:0px;padding:0px;}
+ul,li{list-style:none;}
+
+
+
+/*全局链接*/
+a:link,a:visited{color:#444;text-decoration:none;}
+a:hover{color:#ff0000;}
+
+
+/*box层的样式*/
+
+body{	background: #E5C2A5;	}
+	
+	
+/*top层样式*/	
+.header{ height:40px;  background:#EEA08C;
+	padding:15px 100px 0px 100px;
+	font-size:18px ;
+	font-weight:bold;
+	}
+	
+.topleft{margin:0px auto;
+	float:left;}	
+.topleft li{width:80px;
+	float:left;}	
+.topright{float:right;}	
+
+/*content层样式*/
+.main{width:1000px;height:800px;
+	padding:40px; margin:0px auto;
+	background:#FBF2EC;
+	text-align:center;
+	
+}
+
+/*页脚样式*/
+.footer{
+	background:url(../images/bbg.jpg) repeat-x;
+	text-align:center;
+	padding:15px 0px;
+}
+
+.footer p{line-height:30px;}
+
+
