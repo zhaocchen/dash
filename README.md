@@ -16,7 +16,7 @@ description： demo of web
 [d3实现](https://daaasheng.github.io/dash/d3)
 
 
-[echarts实现](https://daaasheng.github.io/dash/echarts/)
+[echarts实现](https://daaasheng.github.io/dash/echarts)
 
 ## vue
 
