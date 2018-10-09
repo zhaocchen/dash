@@ -12,13 +12,11 @@ description： demo of web
 
 [css](https://daaasheng.github.io/dash/css)
 
-## d3绘制demo（以v4为主）
 
-[https://daaasheng.github.io/dash/d3](https://daaasheng.github.io/dash/d3)
+[d3实现](https://daaasheng.github.io/dash/d3)
 
-## echarts实现
 
-[https://daaasheng.github.io/dash/echarts/](https://daaasheng.github.io/dash/echarts/)
+[echarts实现](https://daaasheng.github.io/dash/echarts/)
 
 ## vue
 

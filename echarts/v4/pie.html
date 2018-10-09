@@ -41,7 +41,8 @@ var option = {
                 data: testData
             }]
         };	
-echarts.init(document.getElementById('chart1'))
+var targetDom = document.getElementById('chart1');
+echarts.init(targetDom, null, { renderer: 'svg' })
 	.setOption(option);
 
 </script>
