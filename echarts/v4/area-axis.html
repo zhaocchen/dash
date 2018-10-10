@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>area-axis</title>
+	<style type="text/css">
+		body{
+			margin: 0 auto;
+			padding: 0;
+		}
+		.wrap-chart{
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap-chart" id="chart1">
+	
+</div>
+
+<script type="text/javascript" src="./echarts.v4.js"></script>
+<script type="text/javascript">
+// /*================= test data ===============*/
+var dataLen = Math.round(Math.random() * 100), // 数据长度
+// var dataLen = 5, // 数据长度
+    xData = Array.from({ length: dataLen } , (v, i) => i + 1), // x轴数据
+    s1Data = Array.from({ length: dataLen } , v => Math.round(Math.random() * 10000)),
+    s2Data = Array.from({ length: dataLen } , v => Math.round(Math.random() * 10000));
+console.log('数据', `长度:${dataLen}`, xData, s1Data);
+
+var xIntreval = 'auto';
+if (dataLen > 6) {
+    xIntreval = Math.ceil(dataLen / 6) - 1;
+}
+
+var option = {
+            xAxis: {
+                data: xData,
+                boundaryGap: false,
+                axisTick: {
+                    inside: true,
+                    alignWidthLabel: true,
+                    interval: xIntreval,
+                },
+                axisLabel: {
+                    interval: xIntreval,
+                },
+                splitLine: {
+                    show: true,
+                }
+            },
+            yAxis: {
+                // type: 'value',
+                // show: false,
+            },
+            tooltip: {
+                trigger: 'axis',
+                // formatter: '{b} <br/>{a}: {c}笔',
+            },
+            series: [{
+                name: '1st',
+                type: 'line',
+                areaStyle: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                        { offset: 0, color: 'red'},
+                        { offset: 1, color: '#ffe'},
+                    ])
+                },
+                data: s1Data,
+                symbol: 'none',
+            }]
+        };	
+var targetDom = document.getElementById('chart1');
+echarts.init(targetDom, null, { renderer: 'svg' })
+	.setOption(option);
+
+</script>
+</body>
+</html>
