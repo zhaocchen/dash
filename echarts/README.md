@@ -17,7 +17,7 @@
 
 堆积柱状图
 
-[条形图(水平直方图) barH](https://daaasheng.github.io/dash/echarts/v4/barH-axis.html)
+[(并列)条形图(水平直方图) barH](https://daaasheng.github.io/dash/echarts/v4/barH-multi.html)
 
 堆积条形图
 
