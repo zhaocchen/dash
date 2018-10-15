@@ -4,20 +4,137 @@
 	<title>防抖和节流</title>
 </head>
 <body>
+	<h3>源码实现</h3>
 	<div>
 		输入
 		<input type="text" name="" id="input1">
 		<span id="count1">0</span>
 	</div>
+	<div>
+		防抖-仅单次调用测试
+		<input type="text" name="" id="input0">
+		<span id="count0">0</span>
+	</div>
+	<div>
+		防抖
+		<input type="text" name="" id="input2">
+		<span id="count2">0</span>
+	</div>
+	<div>
+		节流
+		<input type="text" name="" id="input3">
+		<span id="count3">0</span>
+	</div>
 
 	<script type="text/javascript">
+
 		var count1 = 0;
 		const input1 = document.getElementById('input1')
-		input1.addEventListener('keyup', (e) => {
-			console.log(e);
-			console.log(count1++);
+		input1.addEventListener('keydown', (e) => {
+			count1++;
 			document.getElementById('count1').innerText = count1;
 		});
+
+
+/**
+ * 防抖函数
+ * 错误写法
+*/
+function tdebounce(fn, delay) {
+	return function() {
+		console.log(fn.timer, count0);
+		let _this = this;
+		let _args = arguments;
+		fn.timer !== undefined && clearTimeout(fn.timer);
+		fn.timer = setTimeout(function() {
+			fn.apply(_this, _args);
+		}, delay);
+	}
+}
+
+function change0() {
+	count0++;
+	document.getElementById('count0').innerText = count0;
+}	
+
+var count0 = 0;
+const input0 = document.getElementById('input0');
+input0.addEventListener('keydown', (e) => {
+	// change0();
+	tdebounce(change0, 50)();
+});
+
+
+
+		
+/**
+ * 防抖函数
+*/
+function debounce(fn, delay) {
+	let timer;
+	return function () {
+		let _this = this;
+		let _args = arguments;
+		console.log(timer, count2)
+		timer !== undefined && clearTimeout(timer);
+		timer = setTimeout(function () {
+			fn.apply(_this, _args);
+		}, delay);
+	}
+}
+		
+		function change2() {
+			count2++;
+			document.getElementById('count2').innerText = count2;
+		}	
+		
+		var newChange2 = debounce(change2, 100);
+
+		var count2 = 0;
+		const input2 = document.getElementById('input2')
+		input2.addEventListener('keydown', (e) => {
+			// change2();
+			newChange2();
+			
+		});
+
+/**
+ * 节流函数
+*/
+function throttle(fn, threshhold) {
+	let last;
+	let timer;
+	return function() {
+		let _this = this;
+		let _args = arguments;
+		let now = +new Date();
+		console.log(last, now, now < last + threshhold);
+		if (last && now < last + threshhold) {
+			clearTimeout(timer)
+			timer = setTimeout(function() {
+				last = now;
+				fn.apply(_this, _args);
+			}, threshhold);
+		} else {
+			last = now;
+			fn.apply(_this, _args);
+		}
+	}
+}
+
+function change3() {
+	count3++;
+	document.getElementById('count3').innerText = count3;
+}
+
+var newChange3 = throttle(change3, 100);
+
+		var count3 = 0;
+		const input3 = document.getElementById('input3')
+		input3.addEventListener('keydown', (e) => {
+			newChange3();
+		});
+
 	</script>
 </body>
 </html>
