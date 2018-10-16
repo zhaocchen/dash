@@ -5,7 +5,7 @@ version 2.7
 判断：
 
 	if ：--3|--15
-	比大小 -- 48
+	比大小 -- 48 --49	排序--66
 
 循环： 
 
@@ -32,7 +32,7 @@ version 2.7
 
 	长度len(str)、 str.__len__()--60|--70
 		--29
-	查找find--62 
+	查找find，return index --62 
 	拼接--86、--84
 	截取[ : ]
 	转数组split|splitlines|import re
@@ -101,10 +101,10 @@ version 2.7
 
 	绘制线.create_line(x0,y0,x0,y1, width=1, fill='red') --57
 	绘制矩形rectangle(int left, int top, int right, int bottom)--58 
-	绘制圆create_oval(310 - k,250 - k,310 + k,250 + k, width=1)--56
-	复杂图形 -- 59
-	--64unfinished
+	绘制圆、椭圆create_oval(310 - k,250 - k,310 + k,250 + k, width=1)--56 -- 63 --64（略）
+	复杂图形 -- 59 --65（No）
 	
+
 
 ## 练习
 
@@ -118,6 +118,7 @@ version 2.7
 	级数：
 	斐波那契--6|应用--24(0.06)
 	累乘	--25|--26(递归)
+	杨辉三角 -- 61
 	水仙花数--13
 	弹球自由落体 --20
 	猴子摘桃子（逆向处理）--21
