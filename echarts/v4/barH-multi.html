@@ -66,16 +66,24 @@ var option = {
                     icon: 'circle',
                 }],
             },
+            toolbox: {
+                feature: {
+                    saveAsImage: {
+                        title: '导出png'
+                    }
+                },
+                right: 30,
+            },
             series: [{
                 name: '1st',
                 type: 'bar',
                 data: s1Data,
-                symbol: 'none',
+                // symbol: 'none',
             }, {
                 name: '2ed',
                 type: 'bar',
                 data: s2Data,
-                symbol: 'none',
+                // symbol: 'none',
             }]
         };	
 var targetDom = document.getElementById('chart1');

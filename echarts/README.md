@@ -17,7 +17,7 @@
 
 [堆积柱状图](https://daaasheng.github.io/dash/echarts/v4/bar-stack.html)
 
-[(并列)条形图(水平直方图) barH-底部图例](https://daaasheng.github.io/dash/echarts/v4/barH-multi.html)
+[(并列)条形图(水平直方图) barH-底部图例-保存png](https://daaasheng.github.io/dash/echarts/v4/barH-multi.html)
 
 [堆积条形图](https://daaasheng.github.io/dash/echarts/v4/barH-stack.html)
 
