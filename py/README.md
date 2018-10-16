@@ -22,6 +22,7 @@ version 2.7
 	异或^53
 	按位或 |--52
 	按位与 &--51 
+	移位 << >> -- 54
 
 ### Number%d%f
 
@@ -98,10 +99,12 @@ version 2.7
 
 ## 绘图
 
-	.create_line(x0,y0,x0,y1, width=1, fill='red') --57
-	rectangle(int left, int top, int right, int bottom)--58 
-	create_oval(310 - k,250 - k,310 + k,250 + k, width=1)--56
+	绘制线.create_line(x0,y0,x0,y1, width=1, fill='red') --57
+	绘制矩形rectangle(int left, int top, int right, int bottom)--58 
+	绘制圆create_oval(310 - k,250 - k,310 + k,250 + k, width=1)--56
+	复杂图形 -- 59
 	--64unfinished
+	
 
 ## 练习
 
