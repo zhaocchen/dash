@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>bar-multi</title>
+	<title>barH-stack</title>
 	<style type="text/css">
 		body{
 			margin: 0 auto;
@@ -34,7 +34,8 @@ if (dataLen > 6) {
 }
 
 var option = {
-            xAxis: {
+            yAxis: {
+                // type: 'category',
                 data: xData,
                 axisTick: {
                     show: false,
@@ -42,8 +43,8 @@ var option = {
                     alignWidthLabel: true,
                 },
             },
-            yAxis: {
-                // type: 'value',
+            xAxis: {
+                type: 'value',
                 // show: false,
             },
             tooltip: {
@@ -53,14 +54,28 @@ var option = {
                     type: 'shadow', // 默认是根线
                 }
             },
+            legend: { // 图例
+                // type: 'plain',
+                bottom: 10,
+                // data: ['1st', '2ed'], // 简写
+                data: [{
+                    name: '1st',
+                    icon: 'image://./square.svg',
+                }, {
+                    name: '2ed',
+                    icon: 'circle',
+                }],
+            },
             series: [{
                 name: '1st',
                 type: 'bar',
+                stack: 'one',
                 data: s1Data,
                 symbol: 'none',
             }, {
                 name: '2ed',
                 type: 'bar',
+                stack: 'one',
                 data: s2Data,
                 symbol: 'none',
             }]
