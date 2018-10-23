@@ -10,9 +10,10 @@ version 2.7
 循环： 
 
 	for in （list and str）:--1|--17
-		遍历enumerate
-		
+	for i, v in enumerate(list)   --69
+	
 	--77
+	while 分桃子--80
 
 运算
 
@@ -27,6 +28,9 @@ version 2.7
 ### Number%d%f
 
 	拼接extend--74（类似js, set）
+	bin() 二进制 --82
+	oct() 八进制
+	hex() 十六进制
 
 ### String%s
 
@@ -50,8 +54,10 @@ version 2.7
 	upper()
 	深复制[:]--7	--31
 	排序sort --5	
-	逆序list(reversed()) 	-- 40
-	[::-1] --32
+	逆序list(reversed()) 	-- 40  list.reverse()
+	[::-1] --32 --68
+	插入有序列表 -- 39
+	max()、min() --67
 
 ### 元组
 
@@ -103,7 +109,7 @@ version 2.7
 	绘制矩形rectangle(int left, int top, int right, int bottom)--58 
 	绘制圆、椭圆create_oval(310 - k,250 - k,310 + k,250 + k, width=1)--56 -- 63 --64（略）
 	复杂图形 -- 59 --65（No）
-	
+
 
 
 ## 练习
@@ -125,4 +131,4 @@ version 2.7
 	推理(排列组合) -- 22(no)
 	排序 --37（no）
 	输入3*3矩阵，求对角线和 -- 38， 矩阵加法 -- 44
-	插入有序列表 -- 39
+	
