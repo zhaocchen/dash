@@ -37,15 +37,16 @@ version 2.7
 	长度len(str)、 str.__len__()--60|--70
 		--29
 	查找find，return index --62 
-	拼接--86、--84
+	拼接--86、--84  +|* --85
 	截取[ : ]
 	转数组split|splitlines|import re
 	去除空字符strip(), rstrip(),lstrip()
 	倒置 list(reversed()) --32
 		[::-1]--27
-	str.join( seq )
+	str.join( seq )  // list转str, 需要list中个元素type必须是str
+	count() --96
 
-### List
+### List --90
 
 	应用  --2
 	append()
@@ -77,30 +78,45 @@ version 2.7
 
 	print|print()|,表示不换行|
 	raw_input('input tip:')--88	
+	注：int(raw_input()) 等同 input()
 	print('数位：%s\n输入的数字：%s\n逆序数字：%s' % (len(s), s, fun(s)))
 	print "长度为：{0}, \n逆序为:{1}".format(l,''.join(str(x) for x in lis) )
 
 ## 模块
 
+- random 
+```
+random.random()--50
+```
 
-	random random.random()--50
-	stdout --23
-	time --10
-		.time()  ---ts
-		.localtime()
+- time
+
+```
+time --10
+	.time()  ---ts
+	.localtime(
 	//time.struct_time(tm_year=2018, tm_mon=8, tm_mday=15, tm_hour=15, tm_min=33, tm_sec=54, tm_wday=2, tm_yday=227, tm_isdst=0)
-		.sleep()延时--9
-		.strftime()--10
-	datetime --16
-		.datetime.now()
+	.sleep()延时--9
+	.strftime()--10
+	.clock() --91-94
+datetime --16
+	.datetime.now()
+dateutil --95（need install）
+```
+- sys
 
+```
+stdout --23
+	.write()
+```
 
 ## 高级
 
 	作用域演示 -- 42
 	class
-		color:--35
+		color:--35 --87
 	静态变量， -- 41 -- 43
+	文件 open('', w).write().close() --97-98-99
 
 
 ## 绘图
@@ -131,4 +147,4 @@ version 2.7
 	推理(排列组合) -- 22(no)
 	排序 --37（no）
 	输入3*3矩阵，求对角线和 -- 38， 矩阵加法 -- 44
-	
+	简单加密 --89
