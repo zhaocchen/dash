@@ -55,10 +55,11 @@ version 2.7
 	upper()
 	深复制[:]--7	--31
 	排序sort --5	
-	逆序list(reversed()) 	-- 40  list.reverse()
+	逆序 	-- 40  list.reverse()  list(reversed())
 	[::-1] --32 --68
 	插入有序列表 -- 39
 	max()、min() --67
+	list转str  =====  "".join(list)
 
 ### 元组
 
@@ -148,3 +149,8 @@ stdout --23
 	排序 --37（no）
 	输入3*3矩阵，求对角线和 -- 38， 矩阵加法 -- 44
 	简单加密 --89
+
+[python100例](http://www.runoob.com/python/python-100-examples.html)
+
+### LeetCode
+- 
