@@ -41,7 +41,6 @@ version 2.7
 	截取[ : ]
 	转数组split|splitlines|import re
 	去除空字符strip(), rstrip(),lstrip()
-	倒置 list(reversed()) --32
 		[::-1]--27
 	str.join( seq )  // list转str, 需要list中个元素type必须是str
 	count() --96
@@ -55,7 +54,8 @@ version 2.7
 	upper()
 	深复制[:]--7	--31
 	排序sort --5	
-	逆序 	-- 40  list.reverse()  list(reversed())
+	逆序 	-- 40  list.reverse() 改变list而不是return  
+	list(reversed())
 	[::-1] --32 --68
 	插入有序列表 -- 39
 	max()、min() --67
