@@ -58,7 +58,7 @@ version 2.7
 	list(reversed())
 	[::-1] --32 --68
 	插入有序列表 -- 39
-	max()、min() --67
+	max()、min() --67 取大取小， return Ele， max(1,2,3,3) // 3
 	list转str  =====  "".join(list)
 
 ### 元组
@@ -153,4 +153,6 @@ stdout --23
 [python100例](http://www.runoob.com/python/python-100-examples.html)
 
 ### LeetCode
-- 
+- 二叉树深度104(.2DFS)
+
+[密码学简明教材-python实现](http://davidlowryduda.com/a-brief-notebook-on-cryptography/)
