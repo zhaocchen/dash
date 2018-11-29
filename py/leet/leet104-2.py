@@ -13,7 +13,7 @@ class Solution:
     # :rtype: int
     stack = []
     if root is not None:
-      stack.append(1, root)
+      stack.append((1, root))
     depth = 0
     while stack != []:
       current_depth, root = stack.pop()
