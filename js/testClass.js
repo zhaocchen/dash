@@ -11,6 +11,7 @@ class Point {
 
 var a = new Point(2,4)
 
+// right
 function Point1(x, y) {
   this.x = x;
   this.y = y;}
@@ -30,10 +31,11 @@ function Point2(x, y) {
 
 var c = new Point2(5, 6);
 
+// right
 function Point3(x, y) {
   this.x = x;
   this.y = y;
-  this.prototype.toString = function () {
+  this.__proto__.toString = function () {
     return '(' + this.x + ', ' + this.y + ')';
   };
 }
