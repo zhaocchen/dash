@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="app">
+  <my-form v-model="formData"></my-form>
+  <div>
+    表单信息： {{
+      JSON.stringify(formData)
+    }}
+  </div>
+</div>
+<script type="text/javascript" src="./vue.v2.js"></script>
+<script type="text/javascript">
+
+// 自定义组件
+Vue.component('my-form', {
+  template: `<form>
+    <p><label>编号：</label><input v-model="val.id"/></p>
+    <p><label>性别：</label>
+      <input type="radio" value="male" v-model="val.sex">
+      <label for="sex">女</label>
+      <input type="radio" value="female" v-model="val.sex">
+      <label for="sex">男</label><br/>
+    </p>
+    <p><label>负责流水线：</label>
+      <input type="checkbox" value="dutyA" v-model="val.duty">
+      <label for="dutyA">流水线A</label>
+      <input type="checkbox" value="dutyB" v-model="val.duty">
+      <label for="dutyB">流水线B</label>
+      <input type="checkbox" value="dutyC" v-model="val.duty">
+      <label for="dutyC">流水线C</label>
+    </p>
+    <p><label>所属小组：</label>
+      <select v-model="val.section">
+        <option value="A">A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+    </p>
+    <p><label>对接小组：</label>
+      <select v-model="val.target" multiple>
+        <option value="A">A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+    </p>
+    <p><label>描述：</label><textarea v-model="val.note"></textarea></p>
+    </form>`,
+  model: {
+    prop: 'val',
+    event: 'change',
+  },
+	props: ['val'],
+})
+
+
+
+// 挂在
+new Vue({
+	el: '#app',
+	data: {
+		formData: {
+      id: '08769',
+      sex: 'female',
+      duty: ['dutyA'],
+      section: 'B',
+      target: ['A'],
+      note: '--',
+    },
+	},
+	mounted() {
+		window.setTimeout(() => {
+			this.message = 'temp show!'
+		}, 3000);
+	},
+})
+
+
+</script>
+</body>
+</html>

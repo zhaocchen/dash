@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="app">
+	<input v-model="message" placeholder="edit me">
+	<p>Message is: {{ message }}</p>
+	<my-input :price="2"/>
+</div>
+<script type="text/javascript" src="./vue.v2.js"></script>
+<script type="text/javascript">
+
+// 自定义组件
+Vue.component('my-input', {
+	template: `<div><label>单价：</label><input v-model="val"/>
+		<div>共计: {{ 34 * val }}</div></div>`,
+	props: ['price'],
+	data() {
+		return {
+			val: this.price,
+		};
+	},
+})
+
+
+
+// 挂在
+new Vue({
+	el: '#app',
+	data: {
+		message: '',
+	},
+	mounted() {
+		window.setTimeout(() => {
+			this.message = 'temp show!'
+		}, 3000);
+	},
+})
+
+
+</script>
+</body>
+</html>
