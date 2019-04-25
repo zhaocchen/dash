@@ -153,6 +153,9 @@ stdout --23
 [python100例](http://www.runoob.com/python/python-100-examples.html)
 
 ### LeetCode
+
+return res即可
+
 - 二叉树深度104(.2DFS)
 
 [密码学简明教材-python实现](http://davidlowryduda.com/a-brief-notebook-on-cryptography/)
