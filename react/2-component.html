@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>hello</title>
+	<title>Component</title>
 	<style>
 		.root{
 			width: 600px;
@@ -20,7 +20,36 @@
 
 <script type="text/babel">
 
-ReactDOM.render(<h1>cc</h1>, document.getElementById('root'));
+// function Hello(props) {
+// 	return (
+// 		<div>
+// 			<h2>hello!</h2>
+// 			<h3>this is { props.name }</h3>
+// 		</div>
+// 	);
+// }
+
+class Hello extends React.Component {
+	render() {
+		return (
+			<div>
+				<h2>hello!</h2>
+				<h3>this is { this.props.name }</h3>
+			</div>
+		);
+	}
+}
+
+function rendHello() {
+	ReactDOM.render(
+		<Hello name={'Jack'} />,
+		document.getElementById('root')
+	);
+}
+
+rendHello();
+
+
 
 </script>
 </body>
