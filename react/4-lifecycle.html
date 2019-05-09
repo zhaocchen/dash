@@ -20,27 +20,36 @@
 
 <script type="text/babel">
 
-// function Hello(props) {
-// 	return (
-// 		<div>
-// 			<h2>hello!</h2>
-// 			<h3>this is { props.name }</h3>
-// 		</div>
-// 	);
-// }
-
 class Hello extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			date: new Date()
+		};
+	}
+	componentDidMount() {
+		this.timerID = setInterval(() => this.tick(), 1000);
+	}
+	componentWillUnmount() {
+		clearInterval(this.timerID);
+	}
+	tick() {
+		console.log(this.state.date);
+		this.setState({
+			date: new Date()
+		});
+	}
 	render() {
 		return (
 			<div>
 				<h2>hello!</h2>
-				<h3>this is { this.props.name }</h3>
+				<h4>it is { this.state.date.toLocaleTimeString() } </h4>
 			</div>
 		);
 	}
 }
 
-const ele = <Hello name={'Jack'} />;
+const ele = <Hello />;
 
 function rendHello() {
 	ReactDOM.render(
