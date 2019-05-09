@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event</title>
+	<style>
+		.root{
+			width: 600px;
+			height: 600px;
+		}
+	</style>
+</head>
+<body>
+	<div id="root"></div>
+<!-- <script src="./react.v16.js"></script>
+<script src="./react-dom.v16.js"></script> -->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+
+<script type="text/babel">
+
+class Hello extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			date: new Date(),
+			count: 0,
+		};
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.plus = this.plus.bind(this);
+	}
+	componentDidMount() {
+		this.timerID = setInterval(() => this.tick(), 1000);
+	}
+	componentWillUnmount() {
+		clearInterval(this.timerID);
+	}
+	tick() {
+		console.log(this.state.date);
+		this.setState({
+			date: new Date()
+		});
+	}
+	handleSubmit(evt) {
+			console.log(evt);
+			alert('提交成功!')
+		}
+	plus() {
+		this.setState({
+			count: this.state.count +1 
+		})
+	}
+	preventPop(name, e){    //事件对象e要放在最后
+			e.preventDefault();
+			alert(name);
+	}
+	render() {
+		// function handleSubmit(evt) {
+		// 	console.log(evt);
+		// 	alert('提交成功!')
+		// }
+
+		return (
+			<div>
+				<h2>hello!</h2>
+				<button onClick={this.plus}>+</button>
+				<h4>count is { this.state.count } </h4>
+				<button onClick={this.handleSubmit}>提交</button>
+			</div>
+		);
+	}
+}
+
+const ele = <Hello />;
+
+function rendHello() {
+	ReactDOM.render(
+		ele,
+		document.getElementById('root')
+	);
+}
+
+rendHello();
+
+
+
+</script>
+</body>
+</html>
