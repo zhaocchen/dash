@@ -9,6 +9,7 @@ leecode
 |177| 第N高的薪水|sql|b|true|DESC LIMIT|
 |4| 寻找两个有序数组的中位数 |py2|c|true|sort|
 |33| 搜索旋转排序数组 |py2|b|true|二分法搜索|
+|119| 杨辉三角 |py2|a|true|--|
 
 
 
