@@ -12,9 +12,11 @@
 |33| 搜索旋转排序数组 |py2|b|true|二分法搜索|
 |119| 杨辉三角 |py2|a|true|--|
 |1094（142周赛）| 拼车 |py2|b|true|乘车问题|
+|--| --------------二叉树------------- |--|--|--|--|
 |965| 单值二叉树 |py2|a|true|创建二叉树|
 |101| 对称二叉树 |py2|a|true|遍历二叉树|
 |226| 翻转二叉树 |py2|a|true|遍历二叉树|
+|617| 合并二叉树 |py2|a|true|遍历二叉树|
 
 
 
@@ -30,6 +32,16 @@ Traversals遍历二叉树(先序遍历, 中序遍历, 后序遍历, 深度优先
 [geeksforgeeks-tree](https://www.geeksforgeeks.org/binary-tree-data-structure/)
 
 [lectures/Trees](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html)
+
+
+
+二叉搜索树：一种基于节点的二叉树数据结构。具有如下特点:
+
+- 节点的左子树只包含键值小于节点键值的节点。
+- 节点的右子树只包含键值大于节点键值的节点。
+- 左右子树也必须是二叉搜索树。
+
+
 
 完全二叉树：
 
