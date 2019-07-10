@@ -13,6 +13,7 @@
 |177| 第N高的薪水|sql|b|true|DESC LIMIT|
 |561| [数组拆分I](<https://leetcode-cn.com/problems/array-partition-i/>) |py2|a|true|冒泡排序会超时，推荐sort\sorted|
 |4| 寻找两个有序数组的中位数 |py2|c|true|sort|
+|665| [非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) |py2|a|true|移除间断点|
 |33| 搜索旋转排序数组 |py2|b|true|二分法搜索|
 |119| 杨辉三角 |py2|a|true|嵌套循环|
 |448| 找到所有数组中消失的数字 |py2|a|true|超时，元素转索引|
