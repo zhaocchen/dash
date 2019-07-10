@@ -11,14 +11,19 @@
 |977|有序数组的平方|py2|a|true|双指针|
 |88|合并两个有序数组|py2|a|true|双指针|
 |177| 第N高的薪水|sql|b|true|DESC LIMIT|
+|561| [数组拆分I](<https://leetcode-cn.com/problems/array-partition-i/>) |py2|a|true|冒泡排序会超时，推荐sort\sorted|
 |4| 寻找两个有序数组的中位数 |py2|c|true|sort|
 |33| 搜索旋转排序数组 |py2|b|true|二分法搜索|
 |119| 杨辉三角 |py2|a|true|嵌套循环|
+|448| 找到所有数组中消失的数字 |py2|a|true|超时，元素转索引|
+|442| 数组中重复的数据 |py2|b|true|元素转索引|
 |1094（142周赛）| 拼车 |py2|b|true|乘车问题|
-|--| --------------二叉树------------- |--|--|--|--|
+|--| --------------二叉树--------- |--|--|--|--|
 |965| 单值二叉树 |py2|a|true|创建二叉树|
 |101| 对称二叉树 |py2|a|true|遍历二叉树|
 |102| 二叉树的层序遍历 |py2|b|true|层序遍历|
+|107|  |||||
+|637| [二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/) |py2|a|true|层序遍历|
 |226| 翻转二叉树 |py2|a|true|遍历二叉树|
 |617| 合并二叉树 |py2|a|true|遍历二叉树|
 
@@ -57,7 +62,7 @@ Traversals遍历二叉树(先序遍历, 中序遍历, 后序遍历, 深度优先
 
 测试用例中先转成二叉树
 
-```
+```py
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
@@ -78,13 +83,12 @@ def creatTree(data, index):
 
 def levelOrder(root):
   nodeList = []
-  pList = []
   if not root:
     return
   nodeList.append(root)
   while(len(nodeList) > 0):
-    pList.append(nodeList[0].val)
     pNode = nodeList.pop(0)
+    pList.append(pNode.val)
     if pNode.left is not None:
       nodeList.append(pNode.left)
     if pNode.right is not None:
