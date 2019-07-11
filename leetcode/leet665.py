@@ -1,6 +1,8 @@
 # py2
 # non-decreasing-array
 
+import unittest
+
 class Solution(object):
     def checkPossibility(self, nums):
         """
@@ -23,15 +25,14 @@ class Solution(object):
           return False
       return True
 
+class Test(unittest.TestCase):
+  def test(self):
+    s = Solution()
+    self.assertEqual(True, s.checkPossibility([4,2,3]))
+    self.assertEqual(False, s.checkPossibility([4,2,1]))
+    self.assertEqual(False, s.checkPossibility([3,4,2,3]))
+    self.assertEqual(True, s.checkPossibility([2,3,3,2,4]))
+    self.assertEqual(True, s.checkPossibility([1,2,4,5,3]))
+
 if __name__ == "__main__":
-  testData = [
-    [4,2,3], # t
-    [4,2,1], # f
-    [3,4,2,3], # f
-    [2,3,3,2,4], # t
-    [1,2,4,5,3], # t
-  ]
-  test = Solution()
-  for i in testData:
-    print i
-    print test.checkPossibility(i)
+  unittest.main()
