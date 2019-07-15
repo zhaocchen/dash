@@ -20,6 +20,8 @@
 |448| 找到所有数组中消失的数字 |py2|a|true|超时，元素转索引|
 |442| 数组中重复的数据 |py2|b|true|元素转索引|
 |1094（142周赛）| 拼车 |py2|b|true|乘车问题|
+|--| ---------------链表----------- |--|--|--|--|
+|237| 删除链表中的节点 |py2|a|true|链表删除|
 |--| --------------二叉树--------- |--|--|--|--|
 |965| 单值二叉树 |py2|a|true|创建二叉树|
 |101| 对称二叉树 |py2|a|true|遍历二叉树|
@@ -32,8 +34,49 @@
 ### 统计
 
 - 平均值
+
 - 中位数
+
 - 众数
+
+
+## 链表
+
+链表, 线性数据结构。相比数组, 元素不存储在相邻位置， 通指针链接。
+
+优势：
+
+1. 元素个数无上限。
+2. 插入/删除元素， 无需创建空间， 无需移动插入位置以后的元素。
+
+```py
+====================单链表======================
+# Definition for singly-linked list.
+class listNode(object):
+  def __init__(self, x):
+    self.val = x
+    self.next = None
+    
+def creatLinkedList(data, index):
+  pNode = None
+  if index < len(data):
+    if not data[index]:
+      return
+    pNode = listNode(data[index])
+    pNode.next = creatLinkedList(data, index + 1)
+  return pNode
+
+def linkedList2list(head):
+  pNode = head
+  res = []
+  while pNode:
+    res.append(pNode.val)
+    pNode = pNode.next
+  return res
+
+
+```
+
 
 ## 二叉树
 
