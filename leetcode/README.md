@@ -16,6 +16,7 @@
 |4| 寻找两个有序数组的中位数 |py2|c|true|sort|
 |665| [非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) |py2|a|true|移除间断点|
 |33| 搜索旋转排序数组 |py2|b|true|二分法搜索|
+|81（147周赛精选）| 搜索旋转排序数组ii |py2|b|true|二分法搜索|
 |119| 杨辉三角 |py2|a|true|嵌套循环|
 |448| 找到所有数组中消失的数字 |py2|a|true|超时，元素转索引|
 |442| 数组中重复的数据 |py2|b|true|元素转索引|
@@ -34,11 +35,46 @@
 ### 统计
 
 - 平均值
-
 - 中位数
-
 - 众数
 
+## 数组
+
+- 二分法搜索(长度大于1)
+
+```
+function bs(nums, target, start_index, end_index) {
+  while(start_index <= end_index) {
+    mid_index = (start_index+end_index) / 2
+    cur_num = nums[mid_index]
+    if (target == cur_num) {
+      return mid_index
+    } else if (target < cur_num) {
+      end_index = mid_index - 1
+    } else {
+      start_index = mid_index + 1
+    }
+  }
+  return -1
+}
+
+=======================递归写法==============================
+function bs(nums, target, start_index, end_index) {
+  if(start_index > end_index) {
+    return -1
+  }
+  mid_index = (start_index+end_index) / 2
+  cur_num = nums[mid_index]
+  if (target == cur_num) {
+    return mid_index
+  } else if (target < cur_num) {
+    return bs(nums, target, start_index, mid_index - 1)
+  } else {
+    return bs(nums, target, mid_index + 1, end_index)
+  }
+}
+
+```
 
 ## 链表
 
