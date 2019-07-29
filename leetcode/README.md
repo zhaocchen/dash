@@ -7,6 +7,8 @@
 |#|题目|语言|难度|完成|注释|
 |:-|:-:|:-:|:-:|:-:|:-:|
 |69|x的平方根|py2|a|true|牛顿迭代法|
+|1137（147周赛）|[第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/)|py2|a|true|循环|
+|119|杨辉三角|py2|a|true|嵌套循环|
 |401|二进制手表|py2|a|--|--|
 |179|最大数|py2|b|true|冒泡排序|
 |977|有序数组的平方|py2|a|true|双指针|
@@ -17,7 +19,6 @@
 |665| [非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) |py2|a|true|移除间断点|
 |33| 搜索旋转排序数组 |py2|b|true|二分法搜索|
 |81（147周赛精选）| 搜索旋转排序数组ii |py2|b|true|二分法搜索|
-|119| 杨辉三角 |py2|a|true|嵌套循环|
 |448| 找到所有数组中消失的数字 |py2|a|true|超时，元素转索引|
 |442| 数组中重复的数据 |py2|b|true|元素转索引|
 |1094（142周赛）| 拼车 |py2|b|true|乘车问题|
