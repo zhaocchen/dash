@@ -25,12 +25,13 @@
 |1094（142周赛）| 拼车 |py2|b|乘车问题|
 |--| ---------------链表----------- |--|--|--|
 |237| 删除链表中的节点 |py2|a|链表删除|
-|--| --------------二叉树--------- |--|--|--|
+|treenode| --------------二叉树--------- |--|--|--|
 |965| 单值二叉树 |py2|a|创建二叉树|
 |101| 对称二叉树 |py2|a|遍历二叉树|
 |102| 二叉树的层序遍历 |py2|b|层序遍历|
 |107|  ||||
 |637| [二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/) |py2|a|层序遍历|
+|110| 平衡二叉树 |py2|a|DFS|
 |226| 翻转二叉树 |py2|a|遍历二叉树|
 |617| 合并二叉树 |py2|a|遍历二叉树|
 
@@ -120,10 +121,10 @@ def linkedList2list(head):
 
 Traversals遍历二叉树(先序遍历, 中序遍历, 后序遍历, 深度优先DFS, 广度优先BFS)
 
-- PreOrder 先序遍历: 根节点 -> 左子树 -> 右子树
-- InOrder 中序遍历：左子树 -> 根节点 -> 右子树
-- PostOrder 后序遍历：左子树 -> 右子树 -> 根节点 
-- LevelOrder 层序遍历
+- PreOrder 先序遍历: 根节点 -> 左子树 -> 右子树 (DFS)
+- InOrder 中序遍历：左子树 -> 根节点 -> 右子树  (DFS)
+- PostOrder 后序遍历：左子树 -> 右子树 -> 根节点  (DFS)
+- LevelOrder 层序遍历 (BFS)
 
 [geeksforgeeks-tree](https://www.geeksforgeeks.org/binary-tree-data-structure/)
 
@@ -141,7 +142,11 @@ Traversals遍历二叉树(先序遍历, 中序遍历, 后序遍历, 深度优先
 
 完全二叉树：
 
-一般输入的是水平顺序遍历的二叉树，null/None表示空节点
+一般输入的是水平顺序遍历的二叉树，null/None表示空节点、。
+
+平衡二叉树：
+
+一个二叉树*每个节点* 的左右两个子树的高度差的绝对值不超过1。
 
 测试用例中先转成二叉树
 
@@ -166,6 +171,7 @@ def creatTree(data, index):
 
 def levelOrder(root):
   nodeList = []
+  pList = []
   if not root:
     return
   nodeList.append(root)
@@ -179,6 +185,27 @@ def levelOrder(root):
     # print pList
   return pList
 
+def preOrder(root):
+  if root == None:
+    return []
+  left = preOrder(root.left)
+  right = preOrder(root.right)
+  return [root.val] + left  + right
+
+def inOrder(root):
+  if root == None:
+    return []
+  left = inOrder(root.left)
+  right = inOrder(root.right)
+  return  left + [root.val] + right
+
+def postOrder(root):
+  if root == None:
+    return []
+  left = postOrder(root.left)
+  right = postOrder(root.right)
+  return left + right + [root.val]
+  
 if __name__ == "__main__":
   creatTree([1,2,3,4,5,6,7], 0)
 ```
