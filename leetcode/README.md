@@ -4,34 +4,35 @@
 难度(a简单, b中等, c困难)
 
 
-|#|题目|语言|难度|完成|注释|
-|:-|:-:|:-:|:-:|:-:|:-:|
-|69|x的平方根|py2|a|true|牛顿迭代法|
-|1137（147周赛）|[第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/)|py2|a|true|循环|
-|119|杨辉三角|py2|a|true|嵌套循环|
-|401|二进制手表|py2|a|--|--|
-|179|最大数|py2|b|true|冒泡排序|
-|977|有序数组的平方|py2|a|true|双指针|
-|88|合并两个有序数组|py2|a|true|双指针|
-|177| 第N高的薪水|sql|b|true|DESC LIMIT|
-|561| [数组拆分I](<https://leetcode-cn.com/problems/array-partition-i/>) |py2|a|true|冒泡排序会超时，推荐sort\sorted|
-|4| 寻找两个有序数组的中位数 |py2|c|true|sort|
-|665| [非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) |py2|a|true|移除间断点|
-|33| 搜索旋转排序数组 |py2|b|true|二分法搜索|
-|81（147周赛精选）| 搜索旋转排序数组ii |py2|b|true|二分法搜索|
-|448| 找到所有数组中消失的数字 |py2|a|true|超时，元素转索引|
-|442| 数组中重复的数据 |py2|b|true|元素转索引|
-|1094（142周赛）| 拼车 |py2|b|true|乘车问题|
-|--| ---------------链表----------- |--|--|--|--|
-|237| 删除链表中的节点 |py2|a|true|链表删除|
-|--| --------------二叉树--------- |--|--|--|--|
-|965| 单值二叉树 |py2|a|true|创建二叉树|
-|101| 对称二叉树 |py2|a|true|遍历二叉树|
-|102| 二叉树的层序遍历 |py2|b|true|层序遍历|
-|107|  |||||
-|637| [二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/) |py2|a|true|层序遍历|
-|226| 翻转二叉树 |py2|a|true|遍历二叉树|
-|617| 合并二叉树 |py2|a|true|遍历二叉树|
+|#|题目|语言|难度|注释|
+|:-|:-:|:-:|:-:|:-:|
+|69|x的平方根|py2|a|牛顿迭代法|
+|1137（147周赛）|[第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/)|py2|a|循环|
+|119|杨辉三角|py2|a|嵌套循环|
+|54|旋转矩阵|py2\题解|b|操作数组|
+|401|二进制手表|py2|a|--未完成-|
+|179|最大数|py2|b|冒泡排序|
+|977|有序数组的平方|py2|a|双指针|
+|88|合并两个有序数组|py2|a|双指针|
+|177| 第N高的薪水|sql|b|DESC LIMIT|
+|561| [数组拆分I](<https://leetcode-cn.com/problems/array-partition-i/>) |py2|a|冒泡排序会超时，推荐sort\sorted|
+|4| 寻找两个有序数组的中位数 |py2|c|sort|
+|665| [非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) |py2|a|移除间断点|
+|33| 搜索旋转排序数组 |py2|b|二分法搜索|
+|81（147周赛精选）| 搜索旋转排序数组ii |py2|b|二分法搜索|
+|448| 找到所有数组中消失的数字 |py2|a|超时，元素转索引|
+|442| 数组中重复的数据 |py2|b|元素转索引|
+|1094（142周赛）| 拼车 |py2|b|乘车问题|
+|--| ---------------链表----------- |--|--|--|
+|237| 删除链表中的节点 |py2|a|链表删除|
+|--| --------------二叉树--------- |--|--|--|
+|965| 单值二叉树 |py2|a|创建二叉树|
+|101| 对称二叉树 |py2|a|遍历二叉树|
+|102| 二叉树的层序遍历 |py2|b|层序遍历|
+|107|  ||||
+|637| [二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/) |py2|a|层序遍历|
+|226| 翻转二叉树 |py2|a|遍历二叉树|
+|617| 合并二叉树 |py2|a|遍历二叉树|
 
 ### 统计
 
