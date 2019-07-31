@@ -32,6 +32,7 @@
 |107|  ||||
 |637| [二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/) |py2|a|层序遍历|
 |110| 平衡二叉树 |py2|a|DFS|
+|662| 二叉树最大宽度 |py2|b|DFS(一些节点为空)，creatTree不适用|
 |226| 翻转二叉树 |py2|a|遍历二叉树|
 |617| 合并二叉树 |py2|a|遍历二叉树|
 
@@ -130,7 +131,26 @@ Traversals遍历二叉树(先序遍历, 中序遍历, 后序遍历, 深度优先
 
 [lectures/Trees](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html)
 
+完全二叉树（Complete Binary Tree）：
 
+若设二叉树的深度为h
+
+1.  (1～h-1) 各层的结点数都达到最大个数。
+2.  第 h 层所有的结点都连续集中在最左边。
+
+因此。如果根节点存储在索引i中，那么它的左子节点和右子节点分别存储在索引2*i+1、2*i+2中。
+
+
+
+满二叉树（Full Binary Tree）：
+
+每个节点都有0或2个子节点
+
+
+
+平衡二叉树：
+
+一个二叉树*每个节点* 的左右两个子树的高度差的绝对值不超过1。
 
 二叉搜索树：一种基于节点的二叉树数据结构。具有如下特点:
 
@@ -139,14 +159,6 @@ Traversals遍历二叉树(先序遍历, 中序遍历, 后序遍历, 深度优先
 - 左右子树也必须是二叉搜索树。
 
 
-
-完全二叉树：
-
-一般输入的是水平顺序遍历的二叉树，null/None表示空节点、。
-
-平衡二叉树：
-
-一个二叉树*每个节点* 的左右两个子树的高度差的绝对值不超过1。
 
 测试用例中先转成二叉树
 
@@ -157,6 +169,7 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+###################一般输入的是水平顺序遍历的二叉树，null/None表示空节点、。############################
 def creatTree(data, index):
   pNode = None
   if index < len(data):
@@ -177,13 +190,39 @@ def levelOrder(root):
   nodeList.append(root)
   while(len(nodeList) > 0):
     pNode = nodeList.pop(0)
-    pList.append(pNode.val)
+    pList.append(pNode.val) 
     if pNode.left is not None:
       nodeList.append(pNode.left)
     if pNode.right is not None:
       nodeList.append(pNode.right)
     # print pList
   return pList
+  
+def levelOrder(self, root):
+    """
+    :type root: TreeNode
+    :rtype: List[List[int]]
+    """
+    res = []  
+    nodeList = []
+    level = 0
+    if not root:
+      return res
+    nodeList.append(root)
+    while len(nodeList) > 0:
+      res.append([])
+      # print len(res)
+      levelLen = len(nodeList)
+      for i in range(levelLen):
+        res[level].append(nodeList[0].val)
+        pNode = nodeList.pop(0)
+        if pNode.left is not None:
+          nodeList.append(pNode.left)
+        if pNode.right is not None:
+          nodeList.append(pNode.right)
+      level += 1
+    print res
+    return res
 
 def preOrder(root):
   if root == None:
