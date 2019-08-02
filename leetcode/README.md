@@ -6,6 +6,7 @@
 
 |#|题目|语言|难度|注释|
 |:-|:-:|:-:|:-:|:-:|
+|66|加一|py2|a|操作list|
 |69|x的平方根|py2|a|牛顿迭代法|
 |1137（147周赛）|[第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/)|py2|a|循环|
 |119|杨辉三角|py2|a|嵌套循环|
