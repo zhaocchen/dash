@@ -1,3 +1,27 @@
+## 实现汇总
+
+
+|#|图形|语言|难度|注释|
+|:-|:-:|:-:|:-:|:-:|
+|#|横向进度条|-|-|-|
+|#|环形进度条|-|-|-|
+|#|网格|-|-|-|
+|#|刻度|-|-|-|
+|#|竖直刻度|-|-|-|
+|#|直角坐标系|-|-|-|
+|#|环形坐标轴|-|-|-|
+|#|图例|-|-|-|
+|#|扇形|-|-|-|
+|#|3d扇形|-|-|-|
+|#|环形|-|-|-|
+|#|柱状图|-|-|-|
+|#|条形图(柱状横向)|-|-|-|
+|#|折线图|-|-|-|
+|#|面积图|-|-|-|
+|===|==组合图==|====|===|===|
+|#|折线图|-|-|-|
+
+
 ## d3绘制demo（以v4为主）
 
 [扇形](https://daaasheng.github.io/dash/d3/v4/pie-v4.html)
@@ -55,3 +79,24 @@
 [动画](http://bl.ocks.org/brattonc/b1abb535227b2f722b51)
 
 [path-w3](https://www.w3.org/TR/SVG/paths.html)
+
+
+### svg 学习图例
+
+- 画布
+- 文本<text>
+	- 分割<tspan>， 布局dx，dy
+	- 字体font-style: italic
+	- 粗细font-weight: bold
+	- 对齐text-anchor: start|middle|end
+	- 上下标baseline-shift: super|sub
+	- 轮廓stroke: color;stroke-width: 0.5px; fill: none;
+	- 装饰text-decoration: underline|overline|line-through
+	- 书写方向writing-mode: tb
+	- 方向direction: rtl
+- 直线（线条）
+- 曲线
+- 矩形
+- 圆形
+- 
+

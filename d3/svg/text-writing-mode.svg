@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300">
-	<title>text</title>
-	<g style="font-size: 14pt">
-		<text x="10" y="20" transform="rotate(90, 10, 20)">Rotated 90</text>
-		<text x="50" y="20" style="writing-mode: tb;">Writing Mode tb</text>
-		<text x="90" y="20" style="writing-mode: tb; glyph-orientation-vertical: 0;">Vertical zero</text>
-	</g>
-</svg>

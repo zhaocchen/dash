@@ -20,5 +20,116 @@
     </text>
   </switch>
 </g>
+
+<h6>分割</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300">
+	<title>text</title>
+	<text x="10" y="30" style="font-size: 12pt;">
+		f
+		<tspan dy="4">a</tspan>
+		<tspan >l</tspan>
+		<tspan dy="8">l</tspan>
+
+	</text>
+</svg>
+
+<h6>粗细</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="800px" height="300px" viewBox="0 0 800 300">
+	<title>text</title>
+	<text x="10" y="30">
+		This property specifies 
+		<tspan style="font-style: italic;">spacing</tspan> behavior 
+		<tspan style="font-weight: bold;">between</tspan> words.
+	</text>
+</svg>
+<h6>对齐</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300">
+	<title>text</title>
+	<g style="font-size: 14pt;">
+		<path d="M 100 10, 100 120" style="stroke: gray; fill: none;" />
+		<text x="100" y="30" >test</text>
+		<text x="100" y="60" style="text-anchor: start;">start</text>
+		<text x="100" y="90" style="text-anchor: middle;">middle</text>
+		<text x="100" y="120" style="text-anchor: end;">end</text>
+	</g>
+</svg>
+
+<h6>轮廓+填充</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300">
+	<title>text</title>
+	<path d="M 20 10, 20 120
+		       M 10 30, 100 30
+		       M 10 70, 100 70
+		       M 10 110, 100 110" style="stroke: gray;" />
+  <g >
+		<text>Simple Text</text>
+		<text x="20" y="30">Simple Text</text>
+		<text x="20" y="70" style="stroke: black;">Outlined/filled</text>
+		<text x="20" y="110" style="stroke: red; stroke-width: 0.5px; fill: none;">Outlined only</text>
+	</g>
+</svg>
+
+<h6>文字装饰</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="600px" height="300px" viewBox="0 0 600 300">
+	<title>text-style</title>
+	<g style="font-size: 18pt;">
+		<text x="20" y="20" style="font-weight: bold;">bold</text>
+		<text x="150" y="20" style="font-style: italic;">italic</text>
+		<text x="20" y="60" style="text-decoration: underline;">underline</text>
+		<text x="150" y="60" style="text-decoration: overline;">overline</text>
+		<text x="300" y="60" style="text-decoration: line-through;">line-through</text>
+		<text x="20" y="90" style="word-spacing: 10pt;">word word word--more word space</text>
+		<text x="20" y="120" style="word-spacing: -3pt;">word word word--less word space</text>
+		<text x="20" y="150" style="letter-spacing: 5pt;">word word word--wide letter space</text>
+	</g>
+</svg> 
+
+<h6>书写方向</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300">
+	<title>text</title>
+	<g style="font-size: 14pt">
+		<text x="10" y="20" transform="rotate(90, 10, 20)">Rotated 90</text>
+		<text x="50" y="20" style="writing-mode: tb;">Writing Mode tb</text>
+		<text x="90" y="20" style="writing-mode: tb; glyph-orientation-vertical: 0;">Vertical zero</text>
+	</g>
+</svg>
+
+<h6>旋转</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300">
+	<title>text</title>
+	<text x="30" y="30" style="font-size: 14pt;">
+		It's 
+		<tspan dx="0 4 -3 5 -4 6"
+			     dy="0 -3 7 3 -2 -8"
+			     rotate="5 10 -5 -20 0 15">shaken</tspan>
+		, not stirred.
+  </text>
+</svg>
+
+<h6>方向</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300">
+	<title>text</title>
+	<g style="font-size: 14pt;">
+		<text x="10" y="30">Greek:</text>
+		<text x="100" y="30"></text>
+
+		<text x="10" y="50">Russian:</text>
+		<text x="100" y="50"></text>
+
+		<text x="10" y="70">Hebrew:</text>
+		<text x="100" y="70"></text>
+
+		<text x="10" y="90">Arabic:</text>
+		<text x="100" y="90"></text>
+
+		<text x="10" y="130">This is
+			<tspan style="direction: rtl; unicode-bidi: bidi-override; font-weight: bold;">
+				right-to-left
+			</tspan>
+			writing.
+		</text>
+	</g>
+
+</svg>
 </body>
 </html>
