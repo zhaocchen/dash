@@ -33,6 +33,25 @@
   </g>
 </svg>
 
+<h6>圆-虚线-填充</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" viewBox="0 0 200 200">
+	<title>5.Internal Stylesheets</title>
+	<defs>
+		<style type="text/css">
+			circle{
+				fill: #ffc;
+				stroke: blue;
+				stroke-width: 2;
+				stroke-dasharray: 5 3;
+			}			
+		</style>
+	</defs>
+	<circle cx="20" cy="20" r="10"></circle>
+	<circle cx="60" cy="20" r="15"></circle>
+	<circle cx="20" cy="60" r="10" style="fill: #cfc;"></circle>
+	<circle cx="60" cy="60" r="15" style="stroke-width: 1; stroke-dasharray: none;"></circle>
+</svg>
+
 <h6>阴影-绘制两个圆, 借助平移</h6>
 <svg xmlns="http://www.w3.org/2000/svg" width="310px" height="310px" viewBox="0 0 310 310" >
 	<title>5.Document Structure </title>
@@ -48,6 +67,18 @@
     <text x="125" y="125" dy="0.5em" text-anchor="middle">
       Look Ma, Same Font!
     </text>      
+</svg>
+
+<h6>path实现椭圆</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="400px" height="300px" viewBox="0 0 400 300">
+	<title>Elliptical Arc</title>
+	<g style="stroke: black; fill: none;">
+		<path d="M 125 75 A 100 50 0 0 0 225 125" />
+		<path d="M 125 75 A 100 50 0 0 1 225 125" />
+		<path d="M 125 75 A 100 50 0 1 0 225 125" />
+		<path d="M 125 75 A 100 50 0 1 1 225 125" />
+
+	</g>
 </svg>
 </body>
 </html>
