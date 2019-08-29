@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>svg-circle</title>
+  <style>
+  .svg1{
+      display: block;
+      width: 500px;
+      height: 500px;
+      margin: auto;
+      border: thick double navy;
+      background-color: lightblue;
+    }
+    .svg1 circle{
+      fill: lavender;
+      stroke: navy;
+      stroke-width: 5;
+    }
+  </style>
+</head>
+<body>
+
+
+<h6>圆和椭圆</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" viewBox="0 0 200 200">
+	<g style="fill: none; stroke: black;">
+		<!-- circle -->
+		<circle cx="30" cy="30" r="20" />
+		<circle cx="80" cy="30" r="20" style="stroke-width: 5;"/>
+		<!-- ellipse -->
+		<ellipse cx="30" cy="90" rx="10" ry="30"/>
+		<ellipse cx="80" cy="90" rx="30" ry="10" style="stroke-width: 5;"/>
+  </g>
+</svg>
+
+<h6>阴影-绘制两个圆, 借助平移</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="310px" height="310px" viewBox="0 0 310 310" >
+	<title>5.Document Structure </title>
+ 	<ellipse cx="154" cy="154" rx="150" ry="120" srtle="fill: #999999;" />
+	<ellipse cx="152" cy="152" rx="150" ry="120" style="fill: #cceeff;" />
+	<image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./beijing.png" x="72" y="92" width="160" height="120"  />	
+</svg>
+
+<h6>圆-文字组合</h6>
+<svg class="svg1" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+  <title>An SVG circle</title>
+  <circle cx="125" cy="125" r="100"/>
+    <text x="125" y="125" dy="0.5em" text-anchor="middle">
+      Look Ma, Same Font!
+    </text>      
+</svg>
+</body>
+</html>

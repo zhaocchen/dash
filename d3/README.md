@@ -87,14 +87,21 @@
 ### svg 学习图例https://daaasheng.github.io/dash/d3/svg/
 
 - 画布
+	- width, height, 默认是
 - 直线（线条）<line></line>
 	- 轮廓 stroke
 	- 轮廓宽 stroke-width
 	- 透明度 stroke-opacity
 	- 虚线 stroke-dasharray
 	- 线帽 stroke-linecap
+- 矩形
+- 圆形
+	- <circle></circle>r
+	- <ellipse></ellipse> rx, ry
+	- 定位 cx, cy
 	- 填充(默认填充轮廓色) fill
-
+	- stroke
+	- stroke-width
 - 文本<text></text>
 	- 分割 <tspan></tspan>， 布局dx，dy
 	- 字体 font-style: italic
@@ -107,9 +114,8 @@
 	- 方向 direction: rtl
 	- 旋转 rotate
 - 曲线
-- 矩形
-- 圆形
-	- <circle></circle>r
-	- <ellipse></ellipse> rx, ry
-- 
+
+
+
+- 图片 <image></image>
 
