@@ -1,25 +1,28 @@
-## 实现汇总
+## z-charts实现汇总
 
-
-|#|图形|语言|难度|注释|
-|:-|:-:|:-:|:-:|:-:|
-|#|横向进度条|-|-|-|
-|#|环形进度条|-|-|-|
-|#|网格|-|-|-|
-|#|刻度|-|-|-|
-|#|竖直刻度|-|-|-|
-|#|直角坐标系|-|-|-|
-|#|环形坐标轴|-|-|-|
-|#|图例|-|-|-|
-|#|扇形|-|-|-|
-|#|3d扇形|-|-|-|
-|#|环形|-|-|-|
-|#|柱状图|-|-|-|
-|#|条形图(柱状横向)|-|-|-|
-|#|折线图|-|-|-|
-|#|面积图|-|-|-|
-|===|==组合图==|====|===|===|
-|#|折线图|-|-|-|
+- 简单图
+	- 横向进度条
+	- 环形进度条
+	- 网格
+	- 刻度
+	- 竖直刻度
+	- 直角坐标系
+	- 环形坐标轴
+	- 图例
+- 饼形图
+	- 饼形Pie
+	- 3d饼形
+	- 环形donut
+	- 3d环形donut
+- 条形图
+	- 柱状图Bar
+	- 条形图(柱状横向)Horizontal Bar
+	- 堆积条形图Stack Bar
+- 折线图
+	- 折线图line
+	- 面积图area
+	- 堆积面积图Stack Area
+- 仪表盘Gauge
 
 
 ## d3绘制demo（以v4为主）
@@ -81,22 +84,32 @@
 [path-w3](https://www.w3.org/TR/SVG/paths.html)
 
 
-### svg 学习图例
+### svg 学习图例https://daaasheng.github.io/dash/d3/svg/
 
 - 画布
-- 文本<text>
-	- 分割<tspan>， 布局dx，dy
-	- 字体font-style: italic
-	- 粗细font-weight: bold
-	- 对齐text-anchor: start|middle|end
-	- 上下标baseline-shift: super|sub
-	- 轮廓stroke: color;stroke-width: 0.5px; fill: none;
-	- 装饰text-decoration: underline|overline|line-through
-	- 书写方向writing-mode: tb
-	- 方向direction: rtl
-- 直线（线条）
+- 直线（线条）<line></line>
+	- 轮廓 stroke
+	- 轮廓宽 stroke-width
+	- 透明度 stroke-opacity
+	- 虚线 stroke-dasharray
+	- 线帽 stroke-linecap
+	- 填充(默认填充轮廓色) fill
+
+- 文本<text></text>
+	- 分割 <tspan></tspan>， 布局dx，dy
+	- 字体 font-style: italic
+	- 粗细 font-weight: bold
+	- 对齐 text-anchor: start|middle|end
+	- 上下标 baseline-shift: super|sub
+	- 轮廓 stroke: color;stroke-width: 0.5px; fill: none;
+	- 文本装饰 text-decoration: underline|overline|line-through
+	- 文本模式 writing-mode: tb
+	- 方向 direction: rtl
+	- 旋转 rotate
 - 曲线
 - 矩形
 - 圆形
+	- <circle></circle>r
+	- <ellipse></ellipse> rx, ry
 - 
 
