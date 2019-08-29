@@ -113,6 +113,8 @@
 	- 文本模式 writing-mode: tb
 	- 方向 direction: rtl
 	- 旋转 rotate
+- 文本路径<textPath></textPath>
+借助<use></use>对应id使用defs中的path
 - 曲线
 
 
