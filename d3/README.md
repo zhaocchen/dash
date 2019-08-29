@@ -115,8 +115,12 @@
 	- 旋转 rotate
 - 文本路径<textPath></textPath>
 借助<use></use>对应id使用defs中的path
-- 曲线
-
+- 折线 <polygon></polygon>
+	- 转折点 points
+	- fill
+	- stroke
+	- stroke-width
+	- 转角样式 stroke-linejoin: miter|round|bevel
 
 
 - 图片 <image></image>
