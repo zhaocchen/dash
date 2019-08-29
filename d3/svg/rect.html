@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>svg-rect</title>
+</head>
+<body>
+
+<h6>矩形</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" viewBox="0 0 200 200">
+	<!-- black interior, no outline -->
+	<rect x="10" y="10" width="80" height="40" />
+	<!-- no interior, black outline -->
+	<rect x="100" y="10" width="80" height="40" style="fill: none; stroke: black; "/>
+	<!-- blue interior, thick semi-transparent red outline -->
+	<rect x="10" y="60" width="80" height="40" style="fill: blue; stroke: red; stroke-width: 5; stroke-opacity: 0.6;"/>
+	<!-- semi-transparent yellow interior, dashed green outline -->
+	<rect x="100" y="60" width="80" height="40" style="fill: yellow; fill-opacity: 0.7; stroke: green; stroke-dasharray: 5 2;" />
+</svg>
+
+<h6>圆角矩形</h6>
+<svg xmlns="http://www.w3.org/2000/svg" width="200px" height="300px" viewBox="0 0 200 300">
+	<g style="fill: none; stroke: black;">
+		<rect x="10" y="10" width="80" height="30"/>
+		<!-- rx, ry equal -->  
+		<rect x="10" y="50" width="80" height="30" rx="2" ry="2"/>
+		<rect x="10" y="100" width="80" height="30" rx="20"/>
+		<rect x="10" y="150" width="80" height="30" ry="10"/>
+	</g>
+	<g style="fill: none; stroke: blue;">
+		<!-- rx, ry unequal -->  		
+		<rect x="10" y="200" width="80" height="30" rx="20" ry="10"/>
+		<rect x="10" y="250" width="80" height="30" rx="10" ry="20"/>
+	</g>
+</svg>
+
+</body>
+</html>
