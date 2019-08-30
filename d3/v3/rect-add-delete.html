@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>条形图 -- 交互</title>
+    <meta charset="utf-8">
+    <style>
+        text{
+            /*"text-anchor": "middle";*/
+            /* "font-family": "sans-serif";
+            "font-size": "11px";
+            "fill": "red"; */
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button class="refresh-btn">Fresh</button>
+    <button class="add-btn">ADD</button>
+    <button class="delete-btn">DELETE</button>
+</div>
+
+
+<script type="text/javascript" src="./d3.v3.js"></script>
+<script type="text/javascript">
+    /*SVG  SIZE*/
+    var w = 500;
+    var h = 250;
+    var barPadding = 1;
+
+    // CREAT SVG
+    svg = d3.select("body")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h);
+
+    // data
+    var dataset = [];
+    var maxValue = 25;
+    var newNumber = function() {
+        return Math.floor(Math.random() * maxValue);
+    };
+    dataset = Array.from({length: 15},  function() {
+        return newNumber();
+    });
+    var numValues = dataset.length;
+
+
+    // SCALE  
+    var xScale = d3.scale.ordinal()     // 有序比例尺  ？？？？
+        .domain(d3.range(dataset.length))
+        .rangeRoundBands([0, w], 0.05);
+    var yScale = d3.scale.linear()
+        .domain([0, maxValue])
+        .range([0, h]);
+
+
+    var initChart = function() {
+        svg.selectAll("rect")
+            .data(dataset)
+            .enter()
+            .append("rect")
+            .attr("x", function (d, i) {
+                return xScale(i);    
+            })
+            .attr("y", function (d) {
+                return h - yScale(d);
+            })
+            .attr("width", xScale.rangeBand())
+            .attr("height", function (d) {
+                return yScale(d);
+            })
+            .attr("fill", function (d) {
+                return "rgb(0,0," + d * 10 + ")";
+            });
+        svg.selectAll("text")
+            .data(dataset)
+            .enter()
+            .append("text")
+            .text(function (d) {
+                return d;
+            })
+            .attr("x", function (d, i) {
+                return xScale(i) + xScale.rangeBand() / 2;
+            })
+            .attr("y", function (d) {
+                return h - yScale(d) + 14;
+            })
+            .attr("text-anchor", "middle")
+           .attr("font-family", "sans-serif")
+           .attr("font-size", "11px")
+           .attr("fill", "red");
+        }
+    var updateChart = function() {
+        // svg.selectAll("rect").call(xScale);
+        svg.selectAll("rect")
+            .data(dataset)
+            .attr("x", function (d, i) {
+                return xScale(i);    
+            })
+            .attr("y", function (d) {
+                return h - yScale(d);
+            })
+            .attr("width", xScale.rangeBand())
+            .attr("height", function (d) {
+                return yScale(d);
+            })
+            .attr("fill", function (d) {
+                return "rgb(0,0," + d * 10 + ")";
+            });
+        svg.selectAll("text")
+            .data(dataset)
+            .text(function (d) {
+                return d;
+            })
+            .attr("x", function (d, i) {
+                return xScale(i) + xScale.rangeBand() / 2;
+            })
+            .attr("y", function (d) {
+                return h - yScale(d) + 14;
+            })
+            .attr("text-anchor", "middle")
+           .attr("font-family", "sans-serif")
+           .attr("font-size", "11px")
+           .attr("fill", "red");
+    };
+
+    initChart();   
+
+
+    
+
+    function freshData() {
+        // yScale.domain([0,d3.max(dataset)]);
+
+        //refresh rect
+        svg.selectAll("rect")
+           .data(dataset)
+           .transition()   //过渡动画
+           .delay(function(d,i){
+               return i * 100 ;
+           })     //过渡延迟
+           .duration(1000)    //过渡持续时间
+           .ease("circle")     //过渡的方式
+           .attr("y",function(d){
+             return h-yScale(d);
+           })
+           .attr("height",function(d){
+              return yScale(d);
+           });
+
+        //
+        svg.selectAll("text")
+           .data(dataset)
+           .transition()   //过渡动画
+           .delay(function(d,i){
+               return i * 100 ;
+           })     
+           .duration(1000)    //过渡持续时间1s
+           .ease("circle")     //过渡的方式
+           .attr("y",function(d){
+             return h - yScale(d) + 14;
+           });
+    }
+    d3.select(".refresh-btn").on("click", function() {
+        // 更新事件
+        // debugger;
+        dataset = Array.from({length: 15},  function() {
+            return newNumber();
+        });
+        updateChart();
+    });
+    //添加
+    d3.select(".add-btn")
+        .on("click", function () {
+            //添加数值
+            dataset.push(newNumber);
+            // freshData();
+            xScale.domain(d3.range(dataset.length));
+    // initChart();
+    // 选择所有条
+    var bars=svg.selectAll("rect")
+        .data(dataset); //绑定数据到元素集，返回更新的元素集
+
+    var texts=svg.selectAll("text")
+        .data(dataset);
+
+    //添加条形元素到最右边
+    bars.enter()
+        .append("rect")
+        .attr("x",w);//在SVG最右边，不可见
+    //
+    texts.enter()
+        .append("text");
+
+    //更新新矩形到可见范围内
+    //并在这个时候根据数据集为每个条设置对应的属性
+    bars.transition()
+        .duration(500)
+        .attr("x", function(d, i) {
+            return xScale(i) ;
+         })//每个X对应到它相应的档位上
+        .attr("y", function(d) {
+            return h - yScale(d) ;
+         }) 
+        .attr("width", xScale.rangeBand())//这里xScale比例尺已经设置间距了所以直接用
+        .attr("height", function(d) {
+            return yScale(d);
+        })
+        .attr("fill", function(d) {//设置RGB颜色与数值的关系
+            return "rgb(0, 0, " + (d * 10) + ")";
+        });
+
+    texts.transition()
+        .duration(500)
+        .text(function(d) {
+            return d;
+        })
+        .attr("text-anchor", "middle")
+        .attr("x", function(d, i) {
+            return xScale(i)+xScale.rangeBand()/2;
+        })
+        .attr("y", function(d) {
+            return h - yScale(d) + 14;
+        })
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "12px")
+        .attr("fill", "red");
+        });
+        
+d3.select(".delete-btn")
+    .on("click",function(){
+         //删除
+        var bars=svg.selectAll("rect")
+                    .data(dataset); 
+        var texts=svg.selectAll("text")
+            .data(dataset);
+        dataset.shift();
+        xScale.domain(d3.range(dataset.length));
+        
+        bars.exit()
+            .transition()
+            .duration(500)
+            .attr("x", -xScale.rangeBand())   //左边删除
+            .remove();
+        texts.exit()
+            .transition()
+            .duration(500)
+            .attr("x", -xScale.rangeBand())
+            .remove();
+    });
+</script>
+</body>
+</html>
