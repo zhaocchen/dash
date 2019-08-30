@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>有路径的文字</title>
+	<meta charset="utf-8">
+	<style type="text/css"> </style>
+</head>
+<body>
+
+
+<script type="text/javascript" src="../d3.v3.js"></script>
+<script type="text/javascript">
+	//SVG  SIZE
+	var w = 800;
+	var h = 500;	
+
+	// data
+
+	// CREAT SVG
+	var svg = d3.select("body")
+				.append("svg")
+				.attr("width",w)
+				.attr("height",h);
+
+	// SET SVG
+	svg.append('path')
+	   .attr({
+	   	id: "path1",
+	   	d:"M50 100 Q350 50 350 250 Q250 50 50 250"
+	   })
+	   .style({
+	   	fill:"none",
+	   	stroke:"green",
+	   	"stroke-width": 10
+	   });
+
+	svg.append("text")
+	   .attr("x",10)
+	   .attr("y",20)
+	   .style("fill","steelblue")
+	   .style("font-size","24px")
+	   .style("font-weight","bold")	  
+	   .append("textPath")              //P大写
+	   .attr({"xlink:href":"#path1"})
+	   .text("wenzitestwenzitestwenzitestwenzitest");              //text放在顺序中放最后
+
+</script>
+</body>
+</html>
