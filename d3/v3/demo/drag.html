@@ -1,0 +1,41 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>拖拽操作</title>  
+</head>  
+<body>  
+<script src = "../d3.v3.js"></script>  
+<script>  
+    var width =2000,  
+            height = 2000;  
+    var svg = d3.select("body").append("svg")  
+            .attr("width",width)  
+            .attr("height",height)  
+    var color = d3.scale.category20()  
+    //定义拖拽函数  
+    var drag = d3.behavior.drag()  
+            .on("drag",dragmove)  
+    function dragmove(d){  
+        d3.select(this)  
+                .attr("cx", d.cx = d3.event.x)  
+                .attr("cy", d.cy = d3.event.y)  
+    }  
+  
+    //绘制圆形  
+    var circles =[{cx:150,cy:200,r:30},  
+        {cx:250,cy:200,r:30}]  
+    svg.selectAll("circle")  
+            .data(circles)  
+            .enter()  
+            .append("circle")  
+            .attr("cx",function(d){return d.cx})  
+            .attr("cy",function(d){return d.cy})  
+            .attr("r", function (d) {  
+                return d.r  
+            })  
+            .attr("fill",color)  
+            .call(drag)  
+</script>  
+</body>  
+</html> 
