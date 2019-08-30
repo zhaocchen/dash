@@ -113,6 +113,7 @@
 	- 文本模式 writing-mode: tb
 	- 方向 direction: rtl
 	- 旋转 rotate
+	- 文字长度 textLength
 - 文本路径<textPath></textPath>
 借助<use></use>对应id使用defs中的path
 - 折线 <polygon></polygon>
@@ -121,7 +122,8 @@
 	- stroke
 	- stroke-width
 	- 转角样式 stroke-linejoin: miter|round|bevel
-
+- 路径 <path></path>
+	- fill-rule: nonzero|evenodd
 
 - 图片 <image></image>
 
