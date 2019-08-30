@@ -1,29 +1,32 @@
 ## z-charts实现汇总
 
 - 简单图
-	- 横向进度条
-	- 环形进度条
-	- 网格
-	- 刻度
-	- 竖直刻度
-	- 直角坐标系
-	- 环形坐标轴
-	- 图例
+  - 横向进度条
+  - 环形进度条
+  - 网格
+  - 刻度
+  - 竖直刻度
+  - 直角坐标系
+  - 环形坐标轴
+  - 图例
 - 饼形图
-	- 饼形Pie
-		- [v3](https://daaasheng.github.io/dash/d3/v3/pie.html)  
-	- 3d饼形
-	- 环形ring
-		- [v3](https://daaasheng.github.io/dash/d3/v3/ring.html)  
-	- 3d环形ring
+  - 饼形Pie
+  	- [v3](https://daaasheng.github.io/dash/d3/v3/pie.html)  
+  - 3d饼形
+  - 环形ring
+  	- [v3](https://daaasheng.github.io/dash/d3/v3/ring.html)  
+  - 3d环形ring
 - 条形图
-	- 柱状图Bar
-	- 条形图(柱状横向)Horizontal Bar
-	- 堆积条形图Stack Bar
+  - 柱状图Bar
+		- [v3](https://daaasheng.github.io/dash/d3/v3/bar.html) 
+  
+  - 条形图(柱状横向)Horizontal Bar
+		- [v3](https://daaasheng.github.io/dash/d3/v3/barH.html) 
+  - 堆积条形图Stack Bar
 - 折线图
-	- 折线图line
-	- 面积图area
-	- 堆积面积图Stack Area
+  - 折线图line
+  - 面积图area
+  - 堆积面积图Stack Area
 - 仪表盘Gauge
 
 
@@ -86,6 +89,16 @@
 [path-w3](https://www.w3.org/TR/SVG/paths.html)
 
 ### d3.v4 学习图例
+
+
+api差异
+```
+scale.linear() ->scaleLinear()
+svg.axis().scale(x).orient("buttom")  -> d3.axisBottom(x)
+svg.axis().scale(y).orient("left") -> axisLeft(y)
+scale.ordinal().rangeRoundBands([0, width], .1)  -> scaleBand().rangeRound([0, width]).padding(.1)
+rangeBand() -> bandwidth()
+```
 
 ### d3.v3 学习图例
 
