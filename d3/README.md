@@ -11,9 +11,11 @@
 	- 图例
 - 饼形图
 	- 饼形Pie
+		- [v3](https://daaasheng.github.io/dash/d3/v3/pie.html)  
 	- 3d饼形
-	- 环形donut
-	- 3d环形donut
+	- 环形ring
+		- [v3](https://daaasheng.github.io/dash/d3/v3/ring.html)  
+	- 3d环形ring
 - 条形图
 	- 柱状图Bar
 	- 条形图(柱状横向)Horizontal Bar
@@ -83,9 +85,15 @@
 
 [path-w3](https://www.w3.org/TR/SVG/paths.html)
 
+### d3.v4 学习图例
+
 ### d3.v3 学习图例
 
 - 绘制circle
+- layout.pie+svg.arc()
+- drag
+- zoom
+- force
 - [波浪水球](https://daaasheng.github.io/dash/d3/v3/demo/LiquidFillGauge.html)
 
 ### svg 学习图例https://daaasheng.github.io/dash/d3/svg/
