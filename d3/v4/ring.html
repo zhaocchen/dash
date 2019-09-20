@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ring-v4</title>
+	<meta charset="utf-8">
+	<style type="text/css"></style>
+</head>
+<body>
+
+<script type="text/javascript" src="./d3.v4.js"></script>
+<script type="text/javascript">
+	/*=========DATA=========*/
+	dataset = [5,10,20,45,6,25];
+	var pie = d3.pie(dataset);
+
+	/*===========COLOR=======*/
+	var color = d3.schemeCategory10;
+
+	/*=====SIZE SVG======*/
+	var w = 300;
+	var h = 300;
+	var svg = d3.select("body").append("svg").attr("width",w).attr("height",h);
+
+	/*=========ARC============*/
+	var innerRadius = w / 3;
+	var outerRadius = w /2
+	var arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius);
+	// 分组
+	var arcs = svg.selectAll("g.arc")
+				.data(pie(dataset))
+				.enter()
+				.append("g")
+				.attr("class",arc)
+				.attr("transform","translate(" + outerRadius + "," + outerRadius + ")");
+
+	// 绘制
+	arcs.append("path")
+		.attr("fill",function(d,i){
+			return color[i];
+		})
+		.attr("d",arc);
+	// 文字
+	arcs.append("text")
+	    .attr("transform",function(d){
+	    	return "translate(" + arc.centroid(d) + ")";
+	    })
+	    .attr("text-anchor","middle")
+	    .text(function(d){
+	    	return d.value;
+	    })
+</script>
+</body>
+</html>
