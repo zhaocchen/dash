@@ -17,12 +17,19 @@
   	- [v3](https://daaasheng.github.io/dash/d3/v3/ring.html)  
   - 3d环形ring
 - 条形图
-  - 柱状图Bar
+  - 柱状图(直方图)histogram
 		- [v3](https://daaasheng.github.io/dash/d3/v3/bar.html) 
+		- [v4简洁版](https://daaasheng.github.io/dash/d3/v4/histogramSimple.html) 
+		- [v4](https://daaasheng.github.io/dash/d3/v4/histogram.html)
   
   - 条形图(柱状横向)Horizontal Bar
 		- [v3](https://daaasheng.github.io/dash/d3/v3/barH.html) 
+		- [v4](https://daaasheng.github.io/dash/d3/v4/bar.html)
+  - 分组柱状图（图例）
+  	- [v4](https://daaasheng.github.io/dash/d3/v4/stackedHistogram.html) 
   - 堆积条形图Stack Bar
+  [参考1](https://blog.csdn.net/dkr380205984/article/details/81704435)
+
 - 折线图
   - 折线图line
   - 面积图area
@@ -88,8 +95,31 @@
 
 [path-w3](https://www.w3.org/TR/SVG/paths.html)
 
+[echarts传送门](https://www.echartsjs.com/examples/zh/index.html)
+
+[v-charts传送门](https://v-charts.js.org/#/)
+
 ### d3.v4 学习图例
 
+- 基础函数
+
+```
+var dataset = [ 30, 20 , 52 , 2 , 11 ];  
+d3.max(dataset) // 52
+d3.min(dataset) // 2
+d3.extent(dataset) // [2, 52]
+
+var dataset = [
+{a: 30},
+{a: 20},
+{a: 52},
+{a: 2},
+{a: 11},
+]
+d3.max(dataset, d => d.a) // 52
+d3.min(dataset, d => d.a) // 2
+d3.extent(dataset, d => d.a) // (2) [2, 52]
+```
 
 api差异
 ```

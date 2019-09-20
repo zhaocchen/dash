@@ -42,7 +42,6 @@
         // {label: "78广告", value: "145"},
         // {label: "98广告", value: "145"},
         {label: "电话营销", value: "120"}];
-    var xMarks = [0, 1, 2, 3, 4, 5];
 
     /*===========COLOR=======*/
     var color = d3.schemeCategory20;
@@ -65,17 +64,17 @@
     };
     var width = svgWidth - margin.left - margin.right;
     var height = svgHeight - margin.top - margin.bottom;
-    var x = d3.scaleLinear().domain([0, extentValue[1]]).range([0, width]);
-    var xAxis = d3.axisBottom(x).ticks(5).tickSize(0).tickPadding(6);
-    // var y = d3.scale.linear().domain([0, 10]).range([height, 0]);
-    var y = d3.scaleBand().rangeRound([height, 0]).padding(.1).domain(barData.map(function (d) {
-        return d.label;
+
+
+    // 比例尺
+    var x = d3.scaleBand().rangeRound([0, width]).padding(.1).domain(barData.map(function (d) {
+            return d.label;
     }));
-    // var yAxis = d3.svg.axis().scale(y).orient("left").ticks(5).tickSize(0).tickPadding(6);
-    var yAxis = d3.axisLeft(y).ticks(barData.length).tickSize(0).tickPadding(6);
+    var xAxis = d3.axisBottom(x).ticks(barData.length).tickSize(0).tickPadding(6);
+    var y = d3.scaleLinear().domain([0, extentValue[1]]).range([height, 0]);
+    var yAxis = d3.axisLeft(y).ticks(5).tickSize(0).tickPadding(6);
 
-
-    /*=========draw============*/
+    // 坐标轴
     var svg = d3.select("body").append("svg").attr("class", "bar-svg").attr("width", svgWidth).attr("height", svgHeight);
 
     var focus = svg.append("g").attr("class", "focus")
@@ -90,28 +89,52 @@
         .attr("transform", "translate(0,0)")
         .call(yAxis);
 
+    // 基准线
+    d3.select('.xAxis').append("line").attr("class", "xAxis-right")
+        .attr("transform", 'translate('+width+','+-height+')')
+        .attr("y2", height);
+    d3.selectAll('.yAxis line').attr('x2', width);
     d3.select('.yAxis').append("line").attr("class", "yAxis-top")
         .attr("transform", "translate(0,0)")
         .attr("x2", width);
-    d3.selectAll(".xAxis line").attr("y2", -height);
-    // d3.selectAll(".yAxis line").attr("x2", width);
 
-
-    focus.selectAll(".bar").data(barData).enter().append("rect").attr("class", "bar")
-        .attr("x", 0)
+    // 柱形
+    var barsG= focus.append("g").attr("class", "bars-g")
+            .attr("transform", "translate(0," + height + ")");
+    barsG.selectAll(".bar").data(barData).enter().append("rect").attr("class", "bar")
+        .attr("x", function (d) {
+            return x(d.label) + x.bandwidth() / 2 -25;
+        })
+        .transition().duration(750).ease(d3.easeLinear)
         .attr("y", function (d) {
-            return y(d.label) + y.bandwidth() / 2 - 25;
+            return -Math.abs(y(d.value) - y(0));
         })
         .attr("rx", 4).attr("ry", 4)
-        .transition().duration(750).ease(d3.easeLinear)
-        .attr("width", function (d) {
-            return Math.abs(x(d.value) - x(0));
+        .attr("width", 50)
+        .attr("height", function (d) {
+            return Math.abs(y(d.value) - y(0));
         })
-        .attr("height", 50)
         .attr("fill", function (d, i) {
             return color[i];
         });
 
+    // 数据标注
+    barsG.selectAll(".label").data(barData).enter().append("text").attr("class", "label")
+        .attr("x", function (d) {
+            return x(d.label) + x.bandwidth() / 2;
+        })
+        .transition().duration(750).ease(d3.easeLinear)
+        .attr("y", function (d) {
+            return -Math.abs(y(d.value) - y(0));
+        })
+        .attr("text-anchor", "middle")
+        .text(function (d) {
+            return d.value;
+        })
+
+    // hover提示
+
+    
 </script>
 </body>
 </html>
