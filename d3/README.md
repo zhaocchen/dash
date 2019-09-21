@@ -26,9 +26,10 @@
 		- [v3](https://daaasheng.github.io/dash/d3/v3/barH.html) 
 		- [v4](https://daaasheng.github.io/dash/d3/v4/bar.html)
   - 分组柱状图（图例）
-  	- [v4](https://daaasheng.github.io/dash/d3/v4/stackedHistogram.html) 
-  - 堆积条形图Stack Bar
+  		 
+  - 堆积条形图Stack Bar（图例）
   [参考1](https://blog.csdn.net/dkr380205984/article/details/81704435)
+		- [v4](https://daaasheng.github.io/dash/d3/v4/stackedHistogram.html)
 
 - 折线图
   - 折线图line
