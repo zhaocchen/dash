@@ -30,17 +30,28 @@
 <script type="text/javascript" src="./d3.v4.js"></script>
 <script type="text/javascript">
     /*=========DATA=========*/
+    /*  datalength <= 10 */
+    // var testData = [{label: "直接访问", value: "290"},
+    //     {label: "邮件营销", value: "230"},
+    //     // {label: "联盟广告", value: "320"},
+    //     // {label: "视频广告", value: "145"},
+    //     // {label: "视频广告", value: "145"},
+    //     // {label: "搜索引擎", value: "600"},
+    //     //  {label: "56广告", value: "145"},
+    //     // {label: "67广告", value: "145"},
+    //     // {label: "78广告", value: "145"},
+    //     // {label: "98广告", value: "145"},
+    //     {label: "电话营销", value: "120"}];
 
-    var testData = [
-        { 'date': '1/1', 'apple': 1393, 'pear': 1093, 'banana': 0.32 },
-        { 'date': '1/2', 'apple': 3530, 'pear': 3230, 'banana': 0.26 },
-        { 'date': '1/3', 'apple': 2923, 'pear': 2623, 'banana': 0.76 },
-        { 'date': '1/4', 'apple': 1723, 'pear': 1423, 'banana': 0.49 },
-        { 'date': '1/5', 'apple': 3792, 'pear': 3492, 'banana': 0.323 },
-        { 'date': '1/6', 'apple': 3593, 'pear': 4293, 'banana': 0.78 }
-        ];
-    var dataLen = testData.length
-    var lineList = testData.map(d => d.apple)
+        var testData = [
+            { 'date': '1/1', 'apple': 1393, 'pear': 1093, 'banana': 0.32 },
+            { 'date': '1/2', 'apple': 3530, 'pear': 3230, 'banana': 0.26 },
+            { 'date': '1/3', 'apple': 2923, 'pear': 2623, 'banana': 0.76 },
+            { 'date': '1/4', 'apple': 1723, 'pear': 1423, 'banana': 0.49 },
+            { 'date': '1/5', 'apple': 3792, 'pear': 3492, 'banana': 0.323 },
+            { 'date': '1/6', 'apple': 3593, 'pear': 4293, 'banana': 0.78 }
+          ];
+        var lineData = testData.map(d => d.apple)
 
     /*===========COLOR=======*/
     var color = d3.schemeCategory20;
@@ -64,12 +75,15 @@
 
 
     // 比例尺
-    var xScale = d3.scaleLinear().range([0, width]).domain([0, dataLen-1]);
+    var xScale = d3.scaleBand().rangeRound([0, width]).padding(.1).domain(testData.map(function (d) {
+            return d.date;
+    }));
+    var step = xScale.step();
     var xAxis = d3.axisBottom(xScale).ticks(testData.length).tickSize(5).tickPadding(6);
     var yScale = d3.scaleLinear().domain([0, maxValue]).range([height, 0]);
     var yAxis = d3.axisLeft(yScale).ticks(5).tickSize(0).tickPadding(6);
     var line = d3.line()
-                .x((d, i) => xScale(i))
+                .x((d, i) => i * (width - xScale.step()) / (testData.length- 1) + xScale.step() / 2 )
                 .y((d) => yScale(d))
                 // .curve(d3.curveBasis)
 
@@ -98,24 +112,24 @@
         .attr("x2", width);
 
     // 折线
-    var lineG = focus.append('g').attr('class', 'line-g')
+    var lineG = focus.append('g').attr('classs', 'line-g')
     lineG.append('path')
-          .attr('d', line(lineList))
+          .attr('d', line(lineData))
+          // .attr('transform', 'translate('+xScale.step() / 2+','+xScale.step() / 2+')')
           .attr('stroke', color[0])
           .attr('fill', 'none')
     
     // 空心点
-    lineG.selectAll(".dot")
-        .data(lineList)
-        .enter()
-        .append("circle") // Uses the enter().append() method
-        .attr("class", "dot") // Assign a class for styling
-        .attr("cx", function(d, i) { return xScale(i) })
-        .attr("cy", function(d) { return yScale(d) })
-        .attr("r", 5)
-        .attr('fill', 'none')
-        .attr('stroke', 'red')
-        .attr('stroke-width', 2)
+    lineG.selectAll('circle')
+          .data(lineData)
+          .enter()
+          .append('circle')
+          .attr('cx', (d, i) => xScale(testData[i].date) + xScale.step() / 2 )
+          .attr('cy', (d, i) => yScale(d))
+          .attr('r', 5)
+          .attr('fill', 'none')
+          .attr('stroke', 'red')
+          .attr('stroke-width', 2)
 
     // 数据标注
     // barsG.selectAll(".label").data(barData).enter().append("text").attr("class", "label")

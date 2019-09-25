@@ -35,8 +35,10 @@
   - 折线图line
 	  - [简易v4](https://daaasheng.github.io/dash/d3/v4/simpleLine.html)
 	  - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/lineOfTime.html)
+	  - [多条v4](https://daaasheng.github.io/dash/d3/v4/multiLine.html)      
   - 面积图area
-  	 - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/areaOfTime.html)
+      - [v4](https://daaasheng.github.io/dash/d3/v4/area.html)
+  	  - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/areaOfTime.html)
   - 堆积面积图Stack Area
 - 仪表盘Gauge
 

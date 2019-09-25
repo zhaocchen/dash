@@ -31,7 +31,7 @@
 <script type="text/javascript">
     /*=========DATA=========*/
 
-    var testData = [
+    var chartData = [
         { 'date': '1/1', 'apple': 1393, 'pear': 1093, 'banana': 0.32 },
         { 'date': '1/2', 'apple': 3530, 'pear': 3230, 'banana': 0.26 },
         { 'date': '1/3', 'apple': 2923, 'pear': 2623, 'banana': 0.76 },
@@ -39,17 +39,36 @@
         { 'date': '1/5', 'apple': 3792, 'pear': 3492, 'banana': 0.323 },
         { 'date': '1/6', 'apple': 3593, 'pear': 4293, 'banana': 0.78 }
         ];
-    var dataLen = testData.length
-    var lineList = testData.map(d => d.apple)
+    var chartSettings = {
+        map: {
+            apple: '苹果',
+            pear: '梨',
+        },
+        metrics: [{
+            key: 'apple',
+            label: '苹果'
+        }, {
+            key: 'pear',
+            label: '梨'
+        }],
+        dimension: [{
+            key: 'date',
+            label: '日期'
+        }]
+      }
+    var dataLen = chartData.length
+    var multiList = chartSettings.metrics.map(d => d.key)
 
     /*===========COLOR=======*/
     var color = d3.schemeCategory20;
+    var bgColor = '#fff'
 
     /*=====SIZE SVG======*/
     var svgWidth = 960;
     var svgHeight = 600;
-    var minValue = d3.min(testData, (d) => d.apple);
-    var maxValue = d3.max(testData, (d) => d.apple);
+    var extentList = multiList.map((key,i) => d3.extent(chartData, (d) => d[key]));
+    var minValue = d3.min(extentList, (d) => d[0]);
+    var maxValue = d3.max(extentList, (d) => d[1]);
 
 
     /*=========computed============*/
@@ -65,7 +84,7 @@
 
     // 比例尺
     var xScale = d3.scaleLinear().range([0, width]).domain([0, dataLen-1]);
-    var xAxis = d3.axisBottom(xScale).ticks(testData.length).tickSize(5).tickPadding(6);
+    var xAxis = d3.axisBottom(xScale).ticks(chartData.length).tickSize(5).tickPadding(6);
     var yScale = d3.scaleLinear().domain([0, maxValue]).range([height, 0]);
     var yAxis = d3.axisLeft(yScale).ticks(5).tickSize(0).tickPadding(6);
     var line = d3.line()
@@ -97,25 +116,30 @@
         .attr("transform", "translate(0,0)")
         .attr("x2", width);
 
-    // 折线
-    var lineG = focus.append('g').attr('class', 'line-g')
-    lineG.append('path')
+
+    multiList.forEach((key,i) => {
+        // 折线
+        var lineG = focus.append('g').attr('class', 'line-and-dots')
+        var lineList = chartData.map(d => d[key])
+        lineG.append('path')
           .attr('d', line(lineList))
-          .attr('stroke', color[0])
+          .attr('stroke', color[i])
           .attr('fill', 'none')
+
+        // 空心点
+        lineG.selectAll(".dot")
+            .data(lineList)
+            .enter()
+            .append("circle") // Uses the enter().append() method
+            .attr("class", "dot") // Assign a class for styling
+            .attr("cx", function(d, i) { return xScale(i) })
+            .attr("cy", function(d) { return yScale(d) })
+            .attr("r", 5)
+            .attr('fill', color[i])
+            .attr('stroke', bgColor)
+            .attr('stroke-width', 2)
+    })   
     
-    // 空心点
-    lineG.selectAll(".dot")
-        .data(lineList)
-        .enter()
-        .append("circle") // Uses the enter().append() method
-        .attr("class", "dot") // Assign a class for styling
-        .attr("cx", function(d, i) { return xScale(i) })
-        .attr("cy", function(d) { return yScale(d) })
-        .attr("r", 5)
-        .attr('fill', 'none')
-        .attr('stroke', 'red')
-        .attr('stroke-width', 2)
 
     // 数据标注
     // barsG.selectAll(".label").data(barData).enter().append("text").attr("class", "label")
