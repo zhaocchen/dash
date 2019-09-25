@@ -31,9 +31,12 @@
   [参考1](https://blog.csdn.net/dkr380205984/article/details/81704435)
 		- [v4](https://daaasheng.github.io/dash/d3/v4/stackedHistogram.html)
 
-- 折线图
+- 折线图  	
   - 折线图line
+	  - [简易v4](https://daaasheng.github.io/dash/d3/v4/simpleLine.html)
+	  - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/lineOfTime.html)
   - 面积图area
+  	 - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/areaOfTime.html)
   - 堆积面积图Stack Area
 - 仪表盘Gauge
 
@@ -120,6 +123,21 @@ var dataset = [
 d3.max(dataset, d => d.a) // 52
 d3.min(dataset, d => d.a) // 2
 d3.extent(dataset, d => d.a) // (2) [2, 52]
+//=================时间timeParse+timeFormat========================
+d3.timeParse("%Y")('2007')
+// Mon Jan 01 2007 00:00:00 GMT+0800 (中国标准时间)
+d3.timeParse("%m/%d/%Y")("11/12/2015")
+// Thu Nov 12 2015 00:00:00 GMT+0800 (中国标准时间)
+```
+
+- 轴线
+
+```
+// ====最小单位， 参数为指向单位的线长度===
+tickSize(0)
+tickSize(5)
+xScale = 
+xScale.step()
 ```
 
 api差异
