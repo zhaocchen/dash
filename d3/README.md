@@ -18,28 +18,28 @@
   - 3d环形ring
 - 条形图
   - 柱状图(直方图)histogram
-		- [v3](https://daaasheng.github.io/dash/d3/v3/bar.html) 
-		- [v4简洁版](https://daaasheng.github.io/dash/d3/v4/histogramSimple.html) 
-		- [v4](https://daaasheng.github.io/dash/d3/v4/histogram.html)
-  
-  - 条形图(柱状横向)Horizontal Bar
-		- [v3](https://daaasheng.github.io/dash/d3/v3/barH.html) 
-		- [v4](https://daaasheng.github.io/dash/d3/v4/bar.html)
-  - 分组柱状图（图例）
-  		 
-  - 堆积条形图Stack Bar（图例）
-  [参考1](https://blog.csdn.net/dkr380205984/article/details/81704435)
-		- [v4](https://daaasheng.github.io/dash/d3/v4/stackedHistogram.html)
+  	- [v3](https://daaasheng.github.io/dash/d3/v3/bar.html) 
+  	- [v4简洁版](https://daaasheng.github.io/dash/d3/v4/histogramSimple.html) 
+  	- [v4](https://daaasheng.github.io/dash/d3/v4/histogram.html)
 
+  - 条形图(柱状横向)Horizontal Bar
+  	- [v3](https://daaasheng.github.io/dash/d3/v3/barH.html) 
+  	- [v4](https://daaasheng.github.io/dash/d3/v4/bar.html)
+  - 分组柱状图（图例）
+  	
+  - 堆积条形图Stack Bar（图例）  		
+  	- [v4](https://daaasheng.github.io/dash/d3/v4/stackedHistogram.html)
+  	- [参考1](https://blog.csdn.net/dkr380205984/article/details/81704435)
 - 折线图  	
   - 折线图line
-	  - [简易v4](https://daaasheng.github.io/dash/d3/v4/simpleLine.html)
-	  - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/lineOfTime.html)
-	  - [多条v4](https://daaasheng.github.io/dash/d3/v4/multiLine.html)      
+    - [简易v4](https://daaasheng.github.io/dash/d3/v4/simpleLine.html)
+    - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/lineOfTime.html)
+    - [多条v4](https://daaasheng.github.io/dash/d3/v4/multiLine.html)      
   - 面积图area
       - [v4](https://daaasheng.github.io/dash/d3/v4/area.html)
-  	  - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/areaOfTime.html)
+        - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/areaOfTime.html)
   - 堆积面积图Stack Area
+- 南丁格尔玫瑰图(coxcomb)
 - 仪表盘Gauge
 
 
