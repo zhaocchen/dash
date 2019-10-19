@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>pie-v4</title>
+	<title>南丁格尔玫瑰图-d3.v4</title>
 	<meta charset="utf-8">
 	<style type="text/css"></style>
 </head>
@@ -30,22 +30,31 @@
 	// computed
 	var w = 600;
 	var h = 600;
-	var r = d3.min([w, h]) - 100;
+	var diameter = d3.min([w, h]) - 100;
+	var innerRadius = 0;
+	var outerRadius = diameter / 2
 	var color = d3.schemeCategory10;
-	dataset = chartData.map(d => d.value);
+	var dataset = chartData.map(d => d.value);
 	var maxVal = d3.max(dataset);
 	var pie = d3.pie(dataset)
 		.sort(null) // 禁止排序
+	var radiusScale = 	d3.scaleLinear().range([innerRadius, outerRadius]).domain([0, maxVal])
 
 	/*=====SIZE SVG======*/
-	var svg = d3.select("body").append("svg").attr("width",w).attr("height",h)
-		.attr('viewBox', [0, 0, 1200, 1200])
+	var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h)
+						.attr('viewBox', [0, 0, 2 * w, 2 * h])
+						// .attr('viewBox', `0, 0, ${w}, ${h}`)
 
 	/*=========ARC============*/
-	var innerRadius = 0;
-	var outerRadius = w /2
-	var arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius);
-	var textArc = d3.arc().innerRadius(innerRadius + 100).outerRadius(outerRadius);
+	var arc = d3.arc()
+		.innerRadius(innerRadius)
+		.outerRadius(d => radiusScale(d.data));
+	var textArc = d3.arc()
+		.innerRadius(innerRadius + 100)
+		.outerRadius(outerRadius);
 	// 分组
 	var arcs = svg.selectAll("g.arc")
 								.data(pie(dataset))
@@ -57,20 +66,20 @@
 	// 绘制
 	arcs.append("path")
 			.attr("fill",function(d,i){
+				console.log(d, i);
 				return color[i];
 			})
-			.attr("d",arc);
+			.attr("d", arc);
 	// 文字
-	arcs.append("text")
-		.transition().duration(250)
-	    .attr("transform",function(d){
-	    	return "translate(" + textArc.centroid(d) + ")";
-	    })
-	    .attr("text-anchor","middle")
-	    .attr("font-size","24")
-	    .text(function(d){
-	    	return d.value;
-	    })
+	// arcs.append("text")
+	// 	.transition().duration(250)
+	//     .attr("transform",function(d){
+	//     	return "translate(" + textArc.centroid(d) + ")";
+	//     })
+	//     .attr("text-anchor","middle")
+	//     .text(function(d){
+	//     	return d.value;
+	//     })
 </script>
 </body>
 </html>
