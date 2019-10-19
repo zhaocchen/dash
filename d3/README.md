@@ -10,8 +10,9 @@
   - 图例
 - 事件
   - hover
-  - 拖拽
-  - 放缩
+  - 拖拽drag
+  - 放缩zoom
+  - force
 - 进度条
   - 横向进度条
   - 环形进度条
@@ -72,65 +73,14 @@
 
 [v-charts传送门](https://v-charts.js.org/#/)
 
-### d3.v4 学习图例
-
-- 基础函数
-
-```
-var dataset = [ 30, 20 , 52 , 2 , 11 ];  
-d3.max(dataset) // 52
-d3.min(dataset) // 2
-d3.extent(dataset) // [2, 52]
-
-var dataset = [
-{a: 30},
-{a: 20},
-{a: 52},
-{a: 2},
-{a: 11},
-]
-d3.max(dataset, d => d.a) // 52
-d3.min(dataset, d => d.a) // 2
-d3.extent(dataset, d => d.a) // (2) [2, 52]
-//=================时间timeParse+timeFormat========================
-d3.timeParse("%Y")('2007')
-// Mon Jan 01 2007 00:00:00 GMT+0800 (中国标准时间)
-d3.timeParse("%m/%d/%Y")("11/12/2015")
-// Thu Nov 12 2015 00:00:00 GMT+0800 (中国标准时间)
-```
-
-- 轴线
-
-```
-// ====最小单位， 参数为指向单位的线长度===
-tickSize(0)
-tickSize(5)
-xScale = 
-xScale.step()
-```
-
-api差异
-```
-scale.linear() ->scaleLinear()
-svg.axis().scale(x).orient("buttom")  -> d3.axisBottom(x)
-svg.axis().scale(y).orient("left") -> axisLeft(y)
-scale.ordinal().rangeRoundBands([0, width], .1)  -> scaleBand().rangeRound([0, width]).padding(.1)
-rangeBand() -> bandwidth()
-```
-
-### d3.v3 学习图例
-
-- 绘制circle
-- layout.pie+svg.arc()
-- drag
-- zoom
-- force
-- [波浪水球](https://daaasheng.github.io/dash/d3/v3/demo/LiquidFillGauge.html)
+ [波浪水球](https://daaasheng.github.io/dash/d3/v3/demo/LiquidFillGauge.html)
 
 ### svg 学习图例https://daaasheng.github.io/dash/d3/svg/
 
 - 画布
-  - width, height, 默认是
+  - width, height, 默认是300*150
+  - xmlns='http://www.w3.org/2000/svg' 
+  - transform='translate(left,right)'
 - 直线（线条）<line></line>
   - 轮廓 stroke
   - 轮廓宽 stroke-width
@@ -166,7 +116,10 @@ rangeBand() -> bandwidth()
   - stroke-width
   - 转角样式 stroke-linejoin: miter|round|bevel
 - 路径 <path></path>
+  - fill: none
+  - fill-opacity: 
   - fill-rule: nonzero|evenodd
 
 - 图片 <image></image>
+- 插入外部标签
 
