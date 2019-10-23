@@ -12,8 +12,8 @@
 |43|字符串相乘|py2|b|--|
 |989|数组形式的整数加法|py2|a|--|
 |69|x的平方根|py2|a|牛顿迭代法|
-|1137（147周赛）|[第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/)|py2|a|循环|
-|119|杨辉三角|py2|a|嵌套循环|
+|1137（147周赛）|[第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/)|py2|a|迭代|
+|119|杨辉三角|py2|a|迭代|
 |54|旋转矩阵|py2\题解|b|操作数组|
 |56|合并区间|py2|b|排序+迭代|
 |57|插入区间|py2|c|排序+迭代|
