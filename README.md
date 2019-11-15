@@ -11,21 +11,21 @@ description： demo of web
 
 [力扣代码](<https://github.com/daaasheng/dash/tree/master/leetcode>)
 
-[css](https://daaasheng.github.io/dash/css)
-
 [vue实现](https://daaasheng.github.io/dash/vue "https://daaasheng.github.io/dash/vue")
 
 ### 可视化
 
 #### canvas
 
-[投掷骰子](https://daaasheng.github.io/dash/game/craps/craps.html)
-
-
-
 [d3实现](https://daaasheng.github.io/dash/d3)
 
 [echarts实现](https://daaasheng.github.io/dash/echarts)
+
+[游戏-投掷骰子](https://daaasheng.github.io/dash/game/craps/craps.html)
+
+
+
+
 
 
 
