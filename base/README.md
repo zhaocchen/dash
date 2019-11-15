@@ -1,19 +1,14 @@
 
 
-[阴影](https://daaasheng.github.io/dash/css/box-shadow.html)
 
-[斜线](line.html)
+## 
 
-### bootstrap
+	修饰, 统计函数调用次数 --101
 
-[主题](theme.html)
+## es7
 
-[标题和副标题](title.html)
+Decorator, 修饰器，修饰类或方法。方法的修饰器需要借助oldMethod.apply(null, arguments)
 
-[列表](list.html)
 
-[代码引用](code.html)
 
-[滚动和回到顶部--未实现](scroll.html)
-
-[表格](table.html)
+[实现防抖和节流](https://daaasheng.github.io/dash/js/debounce-throttle.html)
