@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <title>canvas</title>
     <style>
-        canvas{
-          /*border: 1px solid red    */
+        canvas {
+            /*border: 1px solid red    */
         }
     </style>
 </head>
 <body>
-    <canvas width="800" height="500" id="canvas"></canvas>
+<canvas width="800" height="500" id="canvas"></canvas>
 
-    <script>
-        var ctx = document.getElementById('canvas').getContext('2d');
-        let flag = 42.5
-        for (var i=0;i<8;i++){
-            for (var j=0;j<8;j++){
-            ctx.fillStyle = 'rgb(' + Math.floor(255-flag*i) + ',' + 
-                            Math.floor(255-flag*j) + ',0)';
+<script>
+    var ctx = document.getElementById('canvas').getContext('2d');
+    let flag = 42.5
+    for (var i = 0; i < 8; i++) {
+        for (var j = 0; j < 8; j++) {
+            ctx.fillStyle = 'rgb(' + Math.floor(255 - flag * i) + ',' +
+                Math.floor(255 - flag * j) + ',0)';
             // ctx.fillRect(j*25,i*25,25,25);
-            ctx.fillRect(j*25,i*25,25,25);
-            }
+            ctx.fillRect(j * 25, i * 25, 25, 25);
         }
-    </script>
+    }
+</script>
 </body>
 </html>
