@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>2d绘制矩形</title>
+</head>
+<body>
+
+
+<canvas id="rectCanvas">your browser does not support the canvas tag</canvas>
+
+
+<script type="text/javascript">
+
+
+    var drawing = document.getElementById('rectCanvas');
+    if (drawing.getContext) {
+        var context = drawing.getContext('2d');
+        //矩形
+        context.fillStyle = '#ff0000';
+        context.fillRect(10, 10, 50, 50);
+
+        context.fillStyle = "rgba(0,0,255,0.5)";
+        context.fillRect(30, 30, 50, 50);
+
+        context.clearRect(40, 40, 10, 10);
+
+        //矩形框
+        context.strokeStyle = '#ff0000';
+        context.strokeRect(100, 10, 50, 50);
+
+        context.strokeStyle = 'rgba(0,0,255,0.5)';
+        context.strokeRect(130, 30, 50, 50);
+    }
+
+
+</script>
+</body>
+</html>
+
