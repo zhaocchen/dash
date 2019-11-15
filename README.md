@@ -11,8 +11,6 @@ description： demo of web
 
 [力扣代码](<https://github.com/daaasheng/dash/tree/master/leetcode>)
 
-[vue实现](https://daaasheng.github.io/dash/vue "https://daaasheng.github.io/dash/vue")
-
 ### 可视化
 
 #### canvas
