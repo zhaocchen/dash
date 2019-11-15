@@ -1,67 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>box-shadow</title>
-	<style type="text/css">
-	body{
-		margin: 0 auto;
-		width: 100%;
-		height: 100%;
-		background-color: #eee;
+    <title>box-shadow</title>
+    <style type="text/css">
+        body {
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            background-color: #eee;
 
-	}
-	.bg{
-		width: 100%;
-		height: 100%;
-	}
+        }
 
-	.base-box{
-		width: 200px;
-		height: 200px;
-		background-color: #3DD9C4;
-		margin: 15px;
-	}
+        .bg {
+            width: 100%;
+            height: 100%;
+        }
 
-	.box0{
-		box-shadow:0px 0px 8px #f00;
-	}
-	.box1{
-		box-shadow:3px 3px 8px #f00;
-	}
-	.box2{
-		box-shadow:-2px 0px 8px #f00,0px -2px 8px #000,0px 2px 8px #9e038a,2px 0px 8px #0f0;
-	}
-	.box3{
-		box-shadow: inset 0px 0px 30px red;
-	}
-	.box4{
-		border:5px solid transparent;
-		border-image: linear-gradient( red , blue);
-	}
-	.box5{
-		border:5px solid transparent;
-		border-image: linear-gradient( red , blue) 30 30;
-	}
-	.box6{
-		border:5px solid transparent;
-		border-image: -webkit-linear-gradient( red, blue, yellow, black, white, green) 1 1;
-	}
-		
-	</style>
+        .base-box {
+            width: 200px;
+            height: 200px;
+            background-color: #3DD9C4;
+            margin: 15px;
+        }
+
+        .box0 {
+            box-shadow: 0px 0px 8px #f00;
+        }
+
+        .box1 {
+            box-shadow: 3px 3px 8px #f00;
+        }
+
+        .box2 {
+            box-shadow: -2px 0px 8px #f00, 0px -2px 8px #000, 0px 2px 8px #9e038a, 2px 0px 8px #0f0;
+        }
+
+        .box3 {
+            box-shadow: inset 0px 0px 30px red;
+        }
+
+        .box4 {
+            border: 5px solid transparent;
+            border-image: linear-gradient(red, blue);
+        }
+
+        .box5 {
+            border: 5px solid transparent;
+            border-image: linear-gradient(red, blue) 30 30;
+        }
+
+        .box6 {
+            border: 5px solid transparent;
+            border-image: -webkit-linear-gradient(red, blue, yellow, black, white, green) 1 1;
+        }
+
+    </style>
 
 </head>
 <body>
 <div class="bg" id="main"></div>
 
 <script type="text/javascript">
-	var parent = document.getElementById('main');
-	var boxList = Array.from({length: 7}, (v, i) => i);
-	boxList.forEach(function(d, i) {
-		var box = document.createElement('div');
-		box.setAttribute("class",'base-box box'+i);
-		box.innerHTML = i;
-		parent.appendChild(box);
-	});
+    var parent = document.getElementById('main');
+    var boxList = Array.from({length: 7}, (v, i) => i);
+    boxList.forEach(function (d, i) {
+        var box = document.createElement('div');
+        box.setAttribute("class", 'base-box box' + i);
+        box.innerHTML = i;
+        parent.appendChild(box);
+    });
 </script>
 </body>
 </html>
