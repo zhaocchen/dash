@@ -13,9 +13,10 @@
   - 拖拽drag
   - 放缩zoom
   - force
-- 进度条
-  - 横向进度条
-  - 环形进度条
+- 进度条progress
+  - 横向进度条progress-line（基本、动画、圆角、高度、颜色区间、渐变、内部数值）
+  - 环形进度条progress-circle
+  - 仪表盘progress-dashboard
 - 饼形图
   - 饼形Pie
   	- [v3](https://daaasheng.github.io/dash/d3/v3/pie.html)
