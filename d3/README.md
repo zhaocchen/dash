@@ -8,15 +8,29 @@
   - [直角坐标轴](https://daaasheng.github.io/dash/d3/v4/axis-rect.html)
   - 环形坐标轴
   - 图例
+  
 - 事件
   - hover
   - 拖拽drag
   - 放缩zoom
   - force
+  
 - 进度条progress
-  - 横向进度条progress-line（基本、动画、圆角、高度、颜色区间、渐变、内部数值）
-  - 环形进度条progress-circle
-  - 仪表盘progress-dashboard
+  [横向进度条效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-line.html)
+  [环形进度条效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-circle.html)
+  [仪表盘效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-dashboard.html)
+
+|参数|说明|类型|可选值|默认值|
+|:-|:-:|-:|-:|-:|
+|percentage|百分比(必填)|Number|0-100|0|
+|type|类型|String|line/circle/dashboard|line|
+|width|画布宽度|Number|-|360(line)/180|
+|strokeWidth|进度条宽度|Number|-|12|
+|color|进度条颜色|String/array|#6位十六进制|\#409eff|
+|bgColor|进度条背景颜色|String|#6位十六进制|\#ebeef5|
+|showText|是否显示文字内容|Boolean|true/false|false|
+|form|文本格式化方法|Function|||
+
 - 饼形图
   - 饼形Pie
   	- [v3](https://daaasheng.github.io/dash/d3/v3/pie.html)
@@ -27,6 +41,7 @@
   	- [v3](https://daaasheng.github.io/dash/d3/v3/ring.html)  
   	- [v4](https://daaasheng.github.io/dash/d3/v4/ring.html)  
   - 3d环形ring
+  
 - 条形图
   - 柱状图(直方图)histogram
   	- [v3](https://daaasheng.github.io/dash/d3/v3/bar.html) 
@@ -41,6 +56,7 @@
   - 堆积条形图Stack Bar（图例）  		
   	- [v4](https://daaasheng.github.io/dash/d3/v4/stackedHistogram.html)
   	- [参考1](https://blog.csdn.net/dkr380205984/article/details/81704435)
+  
 - 折线图  	
   - 折线图line
     - [简易v4](https://daaasheng.github.io/dash/d3/v4/simpleLine.html)
@@ -50,8 +66,11 @@
       - [v4](https://daaasheng.github.io/dash/d3/v4/area.html)
         - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/areaOfTime.html)
   - 堆积面积图Stack Area
+  
 - 南丁格尔玫瑰图(coxcomb/rose)
+  
   - [v4](https://daaasheng.github.io/dash/d3/v4/rose.html)  
+  
 - 散点
 
 - 地图
