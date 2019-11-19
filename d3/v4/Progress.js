@@ -25,12 +25,10 @@ class Progress {
         var svg = d3.select(this.el)
                     .append("svg")
                     
-        if (this.type === 'circle') {
-            this.renderCircle();
-        } else if (this.type === 'dashboard') {
-            this.renderDashboard();
-        } else {
+        if (this.type === 'line') {
             this.renderLine();
+        } else {
+            this.renderCircle();
         }           
         
     }
@@ -79,10 +77,18 @@ class Progress {
         var outerRadius = radius;
         var innerRadius = radius - this.setting.strokeWidth
 
-		this.scale.range([0, 2 * Math.PI]).domain([0, 100])
+        if (this.type === 'circle') {
+            var degress = Math.PI
+            this.scale.range([0, 2 * degress]).domain([0, 100])
+
+        } else {
+            var degress = 5 / 6 * Math.PI
+		    this.scale.range([-degress, degress]).domain([0, 100])
+        }
+        
         this.arc.outerRadius(outerRadius)
 					.innerRadius(innerRadius)
-                    .startAngle(0)
+                    .startAngle(this.scale(0))
                     
         var svg = d3.select(this.el).select('svg')
         .attr("width", this.width)
@@ -111,7 +117,6 @@ class Progress {
             .attr('text-anchor', 'middle')
         }
     }
-    renderDashboard() {}
     updateColor(color) {
         // 
 
