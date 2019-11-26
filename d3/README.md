@@ -1,20 +1,9 @@
-## z-charts实现汇总
+# z-charts实现汇总
 
-- 简单图  
-  - 网格
-  - 刻度
-  - 竖直刻度
-  - 时间轴
-  - [直角坐标轴](https://daaasheng.github.io/dash/d3/v4/axis-rect.html)
-  - 环形坐标轴
-  - 图例
-  
-- 事件
-  - hover
-  - 拖拽drag
-  - 放缩zoom
-  - force
-  
+### 基础图
+
+说明：核心简略图+标记+hover提示+图例(图例位置)+hover动画+放缩操作+自定义
+
 - 进度条progress
   [横向进度条效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-line.html)
   [环形进度条效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-circle.html)
@@ -35,13 +24,23 @@
   - 饼形Pie
   	- [v3](https://daaasheng.github.io/dash/d3/v3/pie.html)
     - [v4](https://daaasheng.github.io/dash/d3/v4/pie-v4.html)  
-    - [3d效果v4](https://daaasheng.github.io/dash/d3/v4/pie-3d-v4.html)  
-  - 3d饼形
+    - [3d效果v4](https://daaasheng.github.io/dash/d3/v4/pie-3d-v4.html)    
   - 环形ring
   	- [v3](https://daaasheng.github.io/dash/d3/v3/ring.html)  
   	- [v4](https://daaasheng.github.io/dash/d3/v4/ring.html)  
-  - 3d环形ring
-  
+    - 南丁格尔玫瑰图(coxcomb/rose)
+    - 南丁格尔玫瑰图-中间镂空(coxcomb/rose)  
+      - [v4](https://daaasheng.github.io/dash/d3/v4/rose.html)    
+list: label标记，hover放大偏移, 图例legend
+
+|参数|说明|类型|可选值|默认值|
+|:-|:-:|-:|-:|-:|
+|columns|维度和指标的集合(必填)|Array|-|-|
+|rows|数据的集合(必填)|Array|-|-|
+|type|类型|String|pie/ring/rose|pie|
+|dimension | 维度| | | |
+|metrics  | 指标 | | | |
+
 - 条形图
   - 柱状图(直方图)histogram
   	- [v3](https://daaasheng.github.io/dash/d3/v3/bar.html) 
@@ -56,7 +55,14 @@
   - 堆积条形图Stack Bar（图例）  		
   	- [v4](https://daaasheng.github.io/dash/d3/v4/stackedHistogram.html)
   	- [参考1](https://blog.csdn.net/dkr380205984/article/details/81704435)
-  
+
+|参数|说明|类型|可选值|默认值|
+|:-|:-:|-:|-:|-:|
+|columns|维度和指标的集合(必填)|Array|-|-|
+|rows|数据的集合(必填)|Array|-|-|
+|type|类型|String|histogram/bar|histogram|
+|stack|堆叠|Boolean|true/false|false|
+
 - 折线图  	
   - 折线图line
     - [简易v4](https://daaasheng.github.io/dash/d3/v4/simpleLine.html)
@@ -66,18 +72,29 @@
       - [v4](https://daaasheng.github.io/dash/d3/v4/area.html)
         - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/areaOfTime.html)
   - 堆积面积图Stack Area
-  
-- 南丁格尔玫瑰图(coxcomb/rose)
-  
-  - [v4](https://daaasheng.github.io/dash/d3/v4/rose.html)  
-  
+
+|参数|说明|类型|可选值|默认值|
+|:-|:-:|-:|-:|-:|
+|columns|维度和指标的集合(必填)|Array|-|-|
+|rows|数据的集合(必填)|Array|-|-|
+|type|类型|String|line/area|line|
+
 - 散点
+- 雷达图radar
+- 热力图hotmap
 
 - 地图
+
+### 组合及定制图
 
 - 仪表盘Gauge
   - [油表](https://daaasheng.github.io/dash/d3/v4/gauge-oil.html)
   - [油表2](https://daaasheng.github.io/dash/d3/v4/axis-circle.html)
+
+### 3d
+
+- 3d饼形
+- 3d环形ring
 
 ### 参考
 
@@ -94,6 +111,23 @@
 [v-charts传送门](https://v-charts.js.org/#/)
 
  [波浪水球](https://daaasheng.github.io/dash/d3/v3/demo/LiquidFillGauge.html)
+
+### d3 学习图例
+
+- 简单图  
+  - 网格
+  - 刻度
+  - 竖直刻度
+  - 时间轴
+  - [直角坐标轴](https://daaasheng.github.io/dash/d3/v4/axis-rect.html)
+  - 环形坐标轴
+  - 图例
+  
+- 事件
+  - hover
+  - 拖拽drag
+  - 放缩zoom
+  - force
 
 ### svg 学习图例https://daaasheng.github.io/dash/d3/svg/
 
