@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>what is canvas</title>
+</head>
+<body>
+
+<canvas id="canvas" width="400" height="400">
+Please use a browser that supports "canvas"
+</canvas>
+
+
+<script type="text/javascript">
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	ctx.fillStyle ='rgba(255,0,0,1.0)';//设置填充色为红色
+	ctx.fillRect(0,0,200,200);//使用填充色填充为矩形
+
+</script>
+</body>
+</html>
