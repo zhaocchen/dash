@@ -4,6 +4,12 @@
 
 [编辑器1](http://www.myjscode.com/threejs/editor/index.html)
 
+
+
+```html
+initThree  -> 
+```
+
 ### 基础
 
 ```
