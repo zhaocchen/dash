@@ -14,14 +14,37 @@
 <body>
 
 <script src="three.v73.js"></script>
+<script src="stats.js"></script>
 
 <script>
 
-var renderer, camera, scene;
+var  fov = 45;
+	var stats ;
+
+	function initStats(params) {
+		stats = new Stats();
+stats.setMode(1); // 0: fps, 1: ms
+// 将stats的界面对应左上角
+stats.domElement.style.position = 'absolute';
+stats.domElement.style.left = '0px';
+stats.domElement.style.top = '0px';
+document.body.appendChild( stats.domElement );
+setInterval( function () {
+    stats.begin();
+    // 你的每一帧的代码
+	stats.end();
+	fov += 0.1
+}, 1000 / 60 );
+	}
+
+var renderer, camera, scene, light;
+
+var width = window.innerWidth;
+	var height = window.innerHeight;
+	var scale = width / height
 
 function initThree() {
-	var width = window.innerWidth;
-	var height = window.innerHeight;
+	
 	renderer = new THREE.WebGLRenderer({
 		antialias: true
 	})
@@ -31,7 +54,7 @@ function initThree() {
 }
 
 function initCamera() {
-	camera = new THREE.PerspectiveCamera;
+	camera = new THREE.PerspectiveCamera(45, scale, 1, 1000);
 	camera.position.x = 0
 	camera.position.y = 0          
 	camera.position.z = 5
@@ -41,6 +64,13 @@ function initCamera() {
 
 function initScene() {
 	scene = new THREE.Scene();
+}
+
+function initLight() {
+	light = new THREE.AmbientLight(0x99200D, 1.0, 0);
+    light.position.set(0, 0, 0)
+    scene.add(light)
+
 }
 
 var cube;
@@ -60,12 +90,18 @@ function render() {
 	cube.rotation.x += 0.001
 	cube.rotation.z += 0.001
 	requestAnimationFrame(render)
+	stats.update();
+
+	// 改变透视
+	camera.fov = fov;
+	camera.updateProjectionMatrix();
 }
 
-
+initStats();
 initThree();
 initCamera();
 initScene();
+initLight();
 initCube();
 render();
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Component</title>
+	<style>
+		.root{
+			width: 600px;
+			height: 600px;
+		}
+	</style>
+</head>
+<body>
+	<div id="root"></div>
+<!-- <script src="./react.v16.js"></script>
+<script src="./react-dom.v16.js"></script> -->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+
+
+<script type="text/babel">
+
+
+function tick() {
+    ReactDOM.render(
+        <h1>{ new Date().toLocaleTimeString() }</h1>,
+        document.querySelector('#root')
+    )
+}
+
+// tick();
+
+setInterval(tick, 1000);
+
+
+</script>
+</body>
+</html>
