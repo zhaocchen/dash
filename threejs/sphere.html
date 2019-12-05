@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>object</title>
+	<style>
+
+	body{
+			margin: 0 auto;
+		}
+	
+	
+	</style>
+</head>
+<body>
+
+<script src="three.v73.js"></script>
+
+<script>
+
+var renderer, camera, scene;
+
+function initThree() {
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+	renderer = new THREE.WebGLRenderer({
+		antialias: true
+	})
+	renderer.setSize(width, height)
+	document.body.appendChild(renderer.domElement)
+	renderer.setClearColor(0xF0F0F0, 1.0)
+}
+
+function initCamera() {
+	// camera = new THREE.PerspectiveCamera;
+	// camera.position.x = 0
+	// camera.position.y = 0          
+	// camera.position.z = 5
+	camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
+	camera.position.set(0, 400, 600);
+	camera.lookAt(new THREE.Vector3(0, 0, 0));
+
+
+}
+
+function initScene() {
+	scene = new THREE.Scene();
+}
+
+var cube;
+function initCube() {
+	var geometry = new THREE.CubeGeometry(1,1,1)
+	var materal = new THREE.MeshBasicMaterial({
+		color: 0x0D3099
+	})
+	cube = new THREE.Mesh(geometry, materal)
+	scene.add(cube)
+}
+
+var sphere;
+
+function initSphere() {
+	var sphereGeometry = new THREE.SphereGeometry(50, 50, 50, 50);
+	var sphereMaterial = new THREE.MeshLambertMaterial({color: 0x3CB371});
+	var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+	sphere.position.x = 200;
+	sphere.position.y = 50;
+	sphere.name = "sphere";
+	// sphere.position.z = 200;
+	scene.add(sphere);
+}
+
+function render() {
+
+	renderer.render(scene, camera)
+	// cube.rotation.x += 0.001
+	// cube.rotation.x += 0.001
+	// cube.rotation.z += 0.001
+	// requestAnimationFrame(render)
+}
+
+
+initThree();
+initCamera();
+initScene();
+// initCube();
+initSphere()
+render();
+
+
+</script>
+
+</body>
+</html>
