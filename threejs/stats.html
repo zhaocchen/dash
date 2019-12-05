@@ -22,17 +22,17 @@
 
 	function initStats(params) {
 		stats = new Stats();
-stats.setMode(1); // 0: fps, 1: ms
-// 将stats的界面对应左上角
-stats.domElement.style.position = 'absolute';
-stats.domElement.style.left = '0px';
-stats.domElement.style.top = '0px';
-document.body.appendChild( stats.domElement );
-setInterval( function () {
-    stats.begin();
-    // 你的每一帧的代码
-    stats.end();
-}, 1000 / 60 );
+		stats.setMode(1); // 0: fps, 1: ms
+		// 将stats的界面对应左上角
+		stats.domElement.style.position = 'absolute';
+		stats.domElement.style.left = '0px';
+		stats.domElement.style.top = '0px';
+		document.body.appendChild( stats.domElement );
+		setInterval( function () {
+			stats.begin();
+			// 你的每一帧的代码
+			stats.end();
+		}, 1000 / 60 );
 	}
 
 var renderer, camera, scene;
