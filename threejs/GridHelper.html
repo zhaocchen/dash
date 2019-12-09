@@ -104,9 +104,10 @@
                 
                 
             }
-            
+			
+			var helper;
             function initGrid(){
-                var helper = new THREE.GridHelper( 1000, 50 );
+                helper = new THREE.GridHelper( 1000, 50 );
                 helper.setColors( 0x0000ff, 0x808080 );
                 scene.add( helper );
             }
