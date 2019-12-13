@@ -21,7 +21,15 @@ thingjs
 - 渲染器（renderer）： webGL、canvas2D、css3D
 - 控制器(Control): 键盘鼠标移动相机
 
+ setLookAt(eyeX,eyeY,eyeZ,atX,atY,atZ,upX,upY,upZ) 
 
+- 视点
+
+- 观察点
+
+- 上方向
+
+  
 
  getContext（'canvas'）
 

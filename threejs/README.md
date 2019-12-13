@@ -49,11 +49,6 @@ function initScene() {
 
 ##  相机（透视）
 
- 透视投影有一个基本点，就是远处的物体比近处的物体小 .
-
-- 正投影 ，  OrthographicCamera( left, right, top, bottom, near, far ) 
-- 透视投影 ，  PerspectiveCamera( fov, aspect, near, far ) 
-
 ```js
 var camera;
 function initCanera() {
@@ -260,3 +255,8 @@ stats.update();
 
 ```
 
+工具
+
+- stats
+-  dat.GUI()  *图形调试控件* 
+-  *轨迹球控件* 
