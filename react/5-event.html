@@ -37,16 +37,20 @@ class Hello extends React.Component {
 		clearInterval(this.timerID);
 	}
 	tick() {
-		console.log(this.state.date);
+		// console.log(this.state.date);
 		this.setState({
 			date: new Date()
 		});
 	}
 	handleSubmit(evt) {
-			console.log(evt);
+			// console.log(evt);
+			console.log('submit', evt)
+			console.log('this', this)
 			alert('提交成功!')
 		}
-	plus() {
+	plus(e) {
+		console.log('click', e)
+		console.log('this', this)
 		this.setState({
 			count: this.state.count +1 
 		})
