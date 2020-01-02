@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>zoom</title>
+	<meta charset="utf-8">
+	<style type="text/css"></style>
+</head>
+<body>
+
+<script type="text/javascript" src="./d3.v4.js"></script>
+<script type="text/javascript">
+	// data
+	var circles = [{
+        cx: 150,
+        cy: 200,
+        r: 40
+    }, {
+        cx: 250,
+        cy: 200,
+        r: 40
+    }]
+
+	// computed
+	var w = 1200;
+	var h = 1200;
+
+	// var event = d3.event;
+	var zoom = d3.zoom()
+					.on('zoom', function(d) {
+						console.log(d, d3.event)
+						var event = d3.event
+						var transform = d3.zoomTransform(this)
+						d3.select(this)
+						.transition()
+						.attr('transform', transform)
+					})
+	
+
+	/*=====SIZE SVG======*/
+	var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h)
+						.attr('viewBox', [0, 0, w, h])
+
+	svg.selectAll('circle')
+	.data(circles)
+	.enter()
+	.append('circle')
+	.attr('cx', d => d.cx)
+	.attr('cy', d => d.cy)
+	.attr('r', d => d.r)
+	.attr('fill', 'red')
+	
+	svg.call(zoom)
+
+	
+</script>
+</body>
+</html>
