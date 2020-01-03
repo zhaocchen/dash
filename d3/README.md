@@ -135,13 +135,18 @@ list: label标记，hover放大偏移, 图例legend
   - width, height, 默认是300*150
   - xmlns='http://www.w3.org/2000/svg' 
   - transform='translate(left,right)'
+  
 - 直线（线条）<line></line>
+  
+  - x1,x2,y1,y2
   - 轮廓 stroke
   - 轮廓宽 stroke-width
   - 透明度 stroke-opacity
   - 虚线 stroke-dasharray
   - 线帽 stroke-linecap
-- 矩形
+  
+- 矩形<rect></rect>
+
 - 圆形
   - <circle></circle>r
   - <ellipse></ellipse> rx, ry
@@ -149,6 +154,7 @@ list: label标记，hover放大偏移, 图例legend
   - 填充(默认填充轮廓色) fill
   - stroke
   - stroke-width
+  
 - 文本<text></text>
   - 分割 <tspan></tspan>， 布局dx，dy
   - 字体 font-style: italic
@@ -161,19 +167,37 @@ list: label标记，hover放大偏移, 图例legend
   - 方向 direction: rtl
   - 旋转 rotate
   - 文字长度 textLength
+  
 - 文本路径<textPath></textPath>
   借助<use></use>对应id使用defs中的path
+  
 - 折线 <polygon></polygon>
   - 转折点 points
   - fill
   - stroke
   - stroke-width
   - 转角样式 stroke-linejoin: miter|round|bevel
+  
 - 路径 <path></path>
   - fill: none
   - fill-opacity: 
   - fill-rule: nonzero|evenodd
 
 - 图片 <image></image>
-- 插入外部标签
+
+- 插入外部标签<object>
+
+- 动画animate
+
+  - attributeName 
+
+  - from/to
+  - dur ="5s"
+  - 
+
+- 动画animateTransform（不推荐）
+
+- 动画animateMotion
+
+- 动画animateMotion+mpath（不推荐）
 
