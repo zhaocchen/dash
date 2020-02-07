@@ -1,16 +1,16 @@
-var http = require("http");    // require Ö¸ÁîÀ´ÔØÈë http Ä£¿é
+var http = require("http");    // require æŒ‡ä»¤æ¥è½½å…¥ http æ¨¡å—
 
 http.createServer(function(request, response) {
 
-    // ·¢ËÍ HTTP Í·²¿ 
-	// HTTP ×´Ì¬Öµ: 200 : OK
-	// ÄÚÈİÀàĞÍ: text/plain
+    // å‘é€ HTTP å¤´éƒ¨ 
+	// HTTP çŠ¶æ€å€¼: 200 : OK
+	// å†…å®¹ç±»å‹: text/plain
   response.writeHead(200, {"Content-Type": "text/plain"});
 
-   // ·¢ËÍÏìÓ¦Êı¾İ "Hello World"
+   // å‘é€å“åº”æ•°æ® "Hello World"
   response.write("Hello World\n");
   response.end();
 }).listen(8888);
 
-// ÖÕ¶Ë´òÓ¡ÈçÏÂĞÅÏ¢
+// ç»ˆç«¯æ‰“å°å¦‚ä¸‹ä¿¡æ¯
 console.log('Server running at http://127.0.0.1:8888/');
