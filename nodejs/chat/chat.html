@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chat</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<h1>IM</h1>
+<div id="app">
+    <input type="text" v-model="inputText"/>
+    <button @click="handleSend">发送</button>
+</div>
+
+<script>
+var host = 'http://localhost:8888'
+var app = new Vue({
+    el: '#app',
+    data: {
+        inputText: '',
+        messageList: [],
+    },
+    methods: {
+        handleSend: async function() {
+            let res = await axios.post(`${host}/send`, {
+                message: this.inputText
+            })
+            this.messageList = res.data
+        }
+    }
+})
+</script>
+</body>
+</html>
