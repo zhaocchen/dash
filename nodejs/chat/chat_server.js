@@ -30,3 +30,6 @@ app.listen(8888, () => {
     console.log('listen at 8888')
 })
 
+// run server
+// Access http://localhost:8888/ in multiple windows of browser
+

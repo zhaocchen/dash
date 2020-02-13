@@ -11,6 +11,12 @@
 <div id="app">
     <input type="text" v-model="inputText"/>
     <button @click="handleSend">发送</button>
+    <button @click="handleClear">清空</button>
+    <ul>
+        <li v-for="(item, index) in messageList" :key="index">
+        {{ item }}
+        </li>
+    </ul>
 </div>
 
 <script>
@@ -20,14 +26,27 @@ var app = new Vue({
     data: {
         inputText: '',
         messageList: [],
+        timer: null,
     },
     methods: {
         handleSend: async function() {
             let res = await axios.post(`${host}/send`, {
                 message: this.inputText
             })
+            this.inputText = ''
+            this.messageList = res.data
+        },
+        handleClear: async () => {
+            let res = await axios.post(`${host}/clear`)
             this.messageList = res.data
         }
+    },
+    mounted() {
+        // 轮询
+        this.timer = setInterval(async () => {
+            const res = await axios.get(`${host}/all`)
+            this.messageList = res.data
+        }, 1000)
     }
 })
 </script>
