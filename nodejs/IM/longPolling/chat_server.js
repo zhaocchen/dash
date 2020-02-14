@@ -3,6 +3,7 @@ var app = express()
 var bodyParser = require('body-parser')
 var path = require('path')
 
+// 用于req.body获取值的
 app.use(bodyParser.json())
 
 const msgList = ['init']

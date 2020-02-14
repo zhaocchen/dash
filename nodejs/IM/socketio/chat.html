@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chat</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+</head>
+<body>
+
+<h1>IM</h1>
+<div id="app">
+    <input type="text" v-model="inputText"/>
+    <button @click="handleSend">发送</button>
+    <button @click="handleClear">清空</button>
+    <ul>
+        <li v-for="(item, index) in messageList" :key="index">
+        {{ item }}
+        </li>
+    </ul>
+</div>
+
+<script>
+var host = 'http://localhost:8888'
+// const socket = io.connect(host, { path: '/socket.io' })
+const socket = io()
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        inputText: '',
+        messageList: [],
+        timer: null,
+    },
+    methods: {
+        handleSend: async function() {
+            let res = await axios.post(`${host}/send`, {
+                message: this.inputText
+            })
+            this.inputText = ''
+            this.messageList = res.data
+        },
+        handleClear: async () => {
+            let res = await axios.post(`${host}/clear`)
+            this.messageList = res.data
+        }
+    },
+    mounted() {
+        // 轮询
+        /* this.timer = setInterval(async () => {
+            const res = await axios.get(`${host}/all`)
+            this.messageList = res.data
+        }, 1000) */
+        socket.on('chat', data => {
+            this.messageList = data
+        })
+    }
+})
+</script>
+</body>
+</html>
