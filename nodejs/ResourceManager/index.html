@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>资源管理器</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/socket.io/2.3.0/socket.io.dev.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.common.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <div>
+        <h1>CPU占用率:{{cpuUtilization}} %
+         </h1>        
+        <div id="chart1" style="width: 600px;height:400px;"></div>
+    </div>
+</div>
+
+<script>
+const socket = io()
+var app = new Vue({
+    el: '#app',
+    data: {
+        cpuUtilization: 0,
+        cpuList: [],
+    },
+    mounted() {
+        this.cpuList = Array.from({length: 60}, () => 0)
+        var chart1 = echarts.init(document.getElementById('chart1'));
+        var option1 = {
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: []
+            },
+            yAxis: {
+                type: 'value',
+                max: 100
+            },
+            series: [{
+                symbol:'none',
+                data: [],
+                type: 'line',
+                areaStyle: {
+                    color: '#85BCDC'
+                },
+                lineStyle: {
+                    color: '#85BCDC'
+                }
+            }]
+        };
+
+        const update = () => {
+            option1.series[0].data = this.cpuList
+            chart1.setOption(option1)
+
+        }
+        update()
+
+        socket.on('update', data => {
+            console.log(data)
+            this.cpuUtilization = (data.cpuUtilization).toFixed(2)
+            this.cpuList.push(this.cpuUtilization)
+            this.cpuList.shift()
+            update()
+        })
+
+        
+
+    },
+})
+
+</script>
+</body>
+</html>
