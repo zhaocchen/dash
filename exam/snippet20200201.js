@@ -1,0 +1,1 @@
+(new Set([...document.getElementsByTagName('*')])).size
