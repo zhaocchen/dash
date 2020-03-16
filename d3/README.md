@@ -5,9 +5,9 @@
 说明：核心简略图+标记+hover提示+图例(图例位置)+hover动画+放缩操作+自定义
 
 - 进度条progress
-  [横向进度条效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-line.html)
-  [环形进度条效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-circle.html)
-  [仪表盘效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-dashboard.html)
+  - [横向进度条效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-line.html)
+  - [环形进度条效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-circle.html)
+  - [仪表盘效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-dashboard.html)
 
 |参数|说明|类型|可选值|默认值|
 |:-|:-:|-:|-:|-:|
