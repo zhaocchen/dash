@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>radar</title>
+</head>
+<body>
+	<p>雷达图</p>
+	<div id="p1"></div>
+
+<script type="text/javascript" src="./d3.v4.js"></script>
+<script type="text/javascript">
+
+class Radar {
+    constructor (el, data, setting) {
+        
+        this.el = el;
+        this.data = data;
+        this.options = {
+            filter: 'glow', // define your own filter; false = no filter;
+
+            width: window.innerWidth,
+            height: window.innerHeight,
+
+            // Margins for the SVG
+            margins: {
+            top: 100,
+            right: 100,
+            bottom: 100,
+            left: 100
+            },
+
+            circles: {
+            levels: 4,
+            maxValue: 0,
+            labelFactor: 1.2,
+            opacity: 0.1,
+            fill: "#CDCDCD",
+            color: "#CDCDCD"
+            },
+
+            areas: {
+            colors: {}, // color lookup by key
+            opacity: 0.35,
+            borderWidth: 2,
+            rounded: false,
+            dotRadius: 4,
+            sort: true, // sort layers by approximation of size, smallest on top
+            filter: []
+            },
+
+            axes: {
+            lineColor: "white",
+            lineWidth: "1px",
+            wrapWidth: 60, // The number of pixels after which a label needs to be given a new line
+            filter: [],
+            invert: [],
+            ranges: {
+                "Large Screen": [0, 1]
+            } // { axisname: [min, max], axisname: [min, max]  }
+            },
+
+            legend: {
+            display: true,
+            symbol: 'circle', // 'circle', 'cross', 'diamond', 'triangle-up', 'triangle-down'
+            toggle: 'circle',
+            position: {
+                x: 44,
+                y: 44
+            }
+            },
+
+            color: d3.schemeCategory10 //Color function
+        };
+        Object.assign(this.options, setting)
+        this.init();
+
+    }
+    init() {
+        console.log(this)
+
+        var svg = d3.select(this.el).append('svg')
+                    .attr('class', 'chart-svg')
+                    .attr('width', 300)
+                    .attr('height', 300)
+        
+        var axisGrid = svg.append('g').attr('class', 'axis-group')
+            
+        
+        var gridCircle = axisGrid.selectAll('.grid-circle')
+            .data(d3.range(1, 5))
+            .attr("r", function(d, i) {
+                return 300 / 5 * d;
+            })
+            .style("fill", '#000')
+           // .style("fill-opacity", options.circles.opacity)
+            .style("stroke", '#000')
+        
+    }
+}
+
+
+	
+var testData = {
+    columns: ['date', 'apple'],
+    rows: [
+        { 'date': '1/1', 'apple': 1393, 'pear': 1093, 'banana': 0.32 },
+        { 'date': '1/2', 'apple': 3530, 'pear': 3230, 'banana': 0.26 },
+        { 'date': '1/3', 'apple': 2923, 'pear': 2623, 'banana': 0.76 },
+        { 'date': '1/4', 'apple': 1723, 'pear': 1423, 'banana': 0.49 },
+        { 'date': '1/5', 'apple': 3792, 'pear': 3492, 'banana': 0.323 },
+        { 'date': '1/6', 'apple': 3593, 'pear': 4293, 'banana': 0.78 }
+    ],
+}
+
+
+const P1 = new Radar('#p1', testData);
+</script>
+</body>
+</html>
