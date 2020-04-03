@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form>
+	<p>
+		<label>x</label>
+		<input type="number" name="x" id="pointX">
+	</p>
+	<p>
+		<label>y</label>
+		<input type="number" name="y" id="pointY">
+	</p>
+	<p>
+		<input type="button" name="btn" value="添加" id="btn">
+	</p>
+</form>
+
+<svg width="960" height="600">
+	
+	<polyline  points="0,0 0,20 20,20 20,40 40,40 40,60"
+style="fill:white;stroke:black;stroke-width:2" id="line"></polyline>
+
+<circle cx="30" cy="220" r="5" stroke="black"
+stroke-width="0" fill="red"/>
+</svg>
+
+
+<script type="text/javascript">
+	var points = [[10, 20], [20, 200], [30, 220], [40, 300], [100, 400]];
+
+	function renderLine() {
+		if (points.length > 1) {
+				document.querySelector("#line").setAttribute("points", points.join(" "))
+				// item(0).setAttribute('points','xxxxx')
+			}
+	}
+
+	function getDistance(p1, p2) {
+		return Math.sqrt((p2[1] - p1[1]) ** 2 + (p2[0] - p1[0]) ** 2)
+	}
+
+	function getMiddlePoint(points) {
+		var len = points.length;
+		// if (len < 2) {
+		// 	return null;
+		// } else (len == 2) {
+		// 	return [(p2[0] - p1[0]) / 2, (p2[1] - p1[1]) / 2]
+		// } else {
+   //          var all = 0;
+			// var i = 0;
+			// while (i < (len-1)) {
+   //              var distance = getDistance(points[i], points[i+1])
+			// 	console.log(i, distance)
+			// 	i++
+   //              all += distance
+			// }
+   //          console.log('总长度', all)
+
+		// }
+	}
+
+	document.querySelector('#btn').addEventListener('click', function() {
+			var x = document.querySelector('#pointX').value
+			var y = document.querySelector('#pointY').value
+			points.push([x, y])
+			console.log(points.join(" "))
+			renderLine();
+			
+
+	})
+
+	renderLine();
+	// 找中点
+			getMiddlePoint(points)
+</script>
+</body>
+</html>
