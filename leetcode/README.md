@@ -6,6 +6,7 @@
 |#|题目|语言|难度|注释|
 |:-|:-:|:-:|:-:|:-:|
 |412|Fizz Buzz|py2/js|a|Array.from|
+|189|旋转数组|js|a|Array.splice/slice/unshift|
 |342|4的幂|py2|a|--|
 |66|加一|py2|a|操作list|
 |13|罗马数字转整数|py2|a|字典|
