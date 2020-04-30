@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<label for="avatar">Choose a profile picture:</label>
+
+<input type="file"
+       id="avatar" name="avatar"
+       accept="image/png, image/jpeg"
+       oninnput="onInput(event)"
+       onchange="onChange(this, event)"
+       >
+<img src="" id="show" width="200">
+       <script>
+        function onInput(e) {
+  console.log('input', e)
+}
+
+
+function onChange(cur, e) {
+   console.log('change', e)
+   console.log(e.target.value)
+   console.log(cur.files[0])
+   // const newsrc = e.target.value  // error
+   
+   // const newsrc = getObjectURL(cur.files[0])
+    // document.getElementById('show').src=newsrc;
+
+    getBase64(cur.files[0], (imageUrl) => {
+        document.getElementById('show').src=imageUrl;
+        // 预览
+        const avatarValue = document.getElementById("avatar").value
+        console.log(avatarValue, typeof(avatar), Object.prototype.toString.call(avatar))
+    })
+  
+}
+
+  //建立一個可存取到該file的url
+    function getObjectURL(file) {
+        var url = null ;
+        // 下面函数执行的效果是一样的，只是需要针对不同的浏览器执行不同的 js 函数而已
+        if (window.createObjectURL!=undefined) { // basic
+            url = window.createObjectURL(file) ;
+        } else if (window.URL!=undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file) ;
+        } else if (window.webkitURL!=undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file) ;
+        }
+        return url ;
+    }
+
+    function getBase64(file, callback) {
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+            console.log(reader.result)
+            callback(reader.result)
+        });
+        reader.readAsDataURL(file);
+    }
+       
+       </script>
+</body>
+</html>
