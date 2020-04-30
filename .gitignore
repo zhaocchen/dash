@@ -1,2 +1,3 @@
 /nodejs/node_modules
 /nodejs/yarn-error.log
+*/**/node_modules/
