@@ -4,32 +4,30 @@
  */
 var permutation = function(s) {
     const list = [...s]
-    const res = []
     const permutations = []
-    function dfs (p) {
+    function dfs (p, res) {
+        // console.log(p, res);
         //截止条件
         if(res.length === p.length) {
             // console.log(res.join(""))
-            const permutationStr = res.join("")
-            if (!permutations.includes(res.join(""))) {
-                permutations.push(res.join(""))
-            }
+            permutations.push(res.join(""))
             return;
         }
         //筛选
         for(let i=0; i < p.length; i++) {
             const v = p[i]
             if (v) {
-                res.push(v)
-                p[i] = null
-                dfs(p)
-                res.pop()
-                p[i] = v
+                // 剪枝
+                if ((p.slice(0, i)).includes(v)) {
+                    continue
+                }
+                const newP = [...p]
+                newP.splice(i, 1, null)
+                dfs(newP, [...res, v])
             }
         }
     }
-    // console.log(list)
-    dfs(list)
+    dfs(list, [])
     return permutations
 };
 
@@ -38,6 +36,7 @@ var permutation = function(s) {
 var testData = [
     // "abc",
     "abb",
+    // "zg",
 ]
 for (let v of testData) {
     console.log(permutation(v));
