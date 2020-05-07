@@ -23,7 +23,8 @@ var search = function(nums, target) {
 
 var testData = [
     // {nums: [-1,0,3,5,9,12], target: 9},
-    {nums: [-1,0,3,5,9,12], target: 2},
+    // {nums: [-1,0,3,5,9,12], target: 2},
+    {nums: [1], target: 1},
 ]
 
 for (let v of testData) {
