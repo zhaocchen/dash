@@ -43,7 +43,7 @@
 |#|题目|语言|难度|注释|
 |:-|:-:|:-:|:-:|:-:|
 |75|颜色分类|py2|b|冒泡排序|
-|179|最大数|py2|b|冒泡排序|
+|179|最大数|py2、js|b|冒泡排序、sort|
 |177| 第N高的薪水|sql|b|DESC LIMIT|
 |561| [数组拆分I](<https://leetcode-cn.com/problems/array-partition-i/>) |py2|a|冒泡排序会超时，推荐sort\sorted|
 |4| 寻找两个有序数组的中位数 |py2|c|sort|
