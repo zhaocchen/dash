@@ -81,6 +81,10 @@
 
 优势：
 
+https://www.geeksforgeeks.org/top-20-dynamic-programming-interview-questions/
+
+
+
 
 |#|题目|语言|难度|注释|
 |:-|:-:|:-:|:-:|:-:|
@@ -129,7 +133,7 @@
 1. 元素个数无上限。
 2. 插入/删除元素， 无需创建空间， 无需移动插入位置以后的元素。
 
-
+https://www.geeksforgeeks.org/data-structures/linked-list/
 
 代码快速访问 https://github.com/daaasheng/dash/tree/master/leetcode/linkedList/leet1.js
 
@@ -297,7 +301,15 @@ if __name__ == "__main__":
 
 ### 其他
 
-#### 基础函数
+#### 内置方法
+
+代码快速访问 https://github.com/daaasheng/dash/tree/master/leetcode/mmdd.js
+
+| #    | 题目     | 语言 | 难度 | 注释        |
+| ---- | -------- | ---- | ---- | ----------- |
+| 0519 | 寻找组合 | js   | --   | （应用）Map |
+
+#### 实现内置方法
 
 | #        | 题目             | 语言 | 难度 | 注释                                     |
 | -------- | ---------------- | ---- | ---- | ---------------------------------------- |
