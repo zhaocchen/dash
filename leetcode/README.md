@@ -61,9 +61,7 @@
 |229|求众数II|js|b|摩尔投票|
 |268|（查找）缺失数字|js|a|二分查找|
 
-常见五大算法
-
-
+### 常见五大算法
 
 - 分治
 - 动态规划
@@ -71,9 +69,12 @@
 - 回溯
 - 支限
 
-#### 分治法+动态规划+贪心法+回溯法+支限界法
 
-动态规划
+#### 分治法
+
+
+
+#### 动态规划
 
 核心思想：
 
@@ -96,6 +97,10 @@
 |887| 扔鸡蛋（谷歌） |js|c|动态规划|
 |552| 学生出勤记录II | -- | c | 组合问题-动态规划 |
 
+#### 贪心
+
+
+
 #### 回溯算法backtracking
 
 | #      |       题目       | 语言 | 难度 |    注释    |
@@ -110,105 +115,11 @@
 | 216    |   组合总和III    |      |      |            |
 |        |                  |      |      |            |
 
-#### 其他数据结构
+#### 分支
 
+### 其他数据结构
 
-|#|题目|语言|难度|注释|
-|:-|:-:|:-:|:-:|:-:|
-|--| ---------------链表----------- |--|--|--|
-|237| 删除链表中的节点 |py2|a|链表删除|
-|2| 两数相加 |py2|b|链表合并|
-|445| 两数相加II |py2|b||
-|355| 设计推特 |js|b|增删改查|
-|treenode| --------------二叉树--------- |--|--|--|
-|965| 单值二叉树 |py2|a|创建二叉树|
-|101| 对称二叉树 |py2|a|遍历二叉树|
-|102| 二叉树的层序遍历 |py2|b|层序遍历|
-|107|  ||||
-|637| [二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/) |py2|a|层序遍历|
-|110| 平衡二叉树 |py2|a|DFS|
-|662| 二叉树最大宽度 |py2|b|DFS(一些节点为空)，creatTree不适用|
-|226| 翻转二叉树 |py2|a|遍历二叉树|
-|617| 合并二叉树 |py2|a|遍历二叉树|
-|1184(153周赛)| 公交站间的距离 |py2|a|--|
-|1185(153周赛)| 一周中的第几天 |py2|a|Zeller公式：w=([c/4]-2c+y+[y/4]+[13(m+1)/5]+d-1)mod7<br />注：1582-10-15之后|
-|1186| 删除一次得到子数组最大和 ||b||
-|1187| 使数组严格递增 ||c||
-
-#### 基础函数
-
-| #        | 题目             | 语言 | 难度 | 注释                                     |
-| -------- | ---------------- | ---- | ---- | ---------------------------------------- |
-| 50       | 幂函数 Pow(x, n) | Js   | b    | x ** n<br />快速幂                       |
-| ~~1108~~ | ~~IP地址无效化~~ |      |      |                                          |
-| m5       | 替换空格         | js   | a    | spilt().join()<br/>replace(/\/g, newStr) |
-|          |                  |      |      |                                          |
-
-
-
-
-
-#### 数学问题
-
-
-|#|题目|语言|难度|注释|
-|:-|:-:|:-:|:-:|:-:|
-|1603| 交点 |js|c|？|
-
-### 统计
-
-- 平均值
-- 中位数
-- 众数
-
-## 数组
-
-字典序： ....
-
-- 二分法搜索(长度大于1)
-
-```
-function bs(nums, target, start_index, end_index) {
-  while(start_index <= end_index) {
-    mid_index = (start_index+end_index) / 2
-    cur_num = nums[mid_index]
-    if (target == cur_num) {
-      return mid_index
-    } else if (target < cur_num) {
-      end_index = mid_index - 1
-    } else {
-      start_index = mid_index + 1
-    }
-  }
-  return -1
-}
-
-=======================递归写法==============================
-function bs(nums, target, start_index, end_index) {
-  if(start_index > end_index) {
-    return -1
-  }
-  mid_index = (start_index+end_index) / 2
-  cur_num = nums[mid_index]
-  if (target == cur_num) {
-    return mid_index
-  } else if (target < cur_num) {
-    return bs(nums, target, start_index, mid_index - 1)
-  } else {
-    return bs(nums, target, mid_index + 1, end_index)
-  }
-}
-
-```
-
-动态规划：
-
-1. 状态
-2. 状态转移方程
-
-
-
-## 链表
+#### 链表
 
 链表, 线性数据结构。相比数组, 元素不存储在相邻位置， 通指针链接。
 
@@ -217,36 +128,22 @@ function bs(nums, target, start_index, end_index) {
 1. 元素个数无上限。
 2. 插入/删除元素， 无需创建空间， 无需移动插入位置以后的元素。
 
-```py
-====================单链表======================
-# Definition for singly-linked list.
-class listNode(object):
-  def __init__(self, x):
-    self.val = x
-    self.next = None
-    
-def creatLinkedList(data, index):
-  pNode = None
-  if index < len(data):
-    if not data[index]:
-      return
-    pNode = listNode(data[index])
-    pNode.next = creatLinkedList(data, index + 1)
-  return pNode
-
-def linkedList2list(head):
-  pNode = head
-  res = []
-  while pNode:
-    res.append(pNode.val)
-    pNode = pNode.next
-  return res
 
 
-```
+代码快速访问 https://github.com/daaasheng/dash/tree/master/leetcode/linkedList/leet1.js
+
+| #    |              题目              | 语言 | 难度 |   注释   |
+| :--- | :----------------------------: | :--: | :--: | :------: |
+| --   | ---------------链表----------- |  --  |  --  |    --    |
+| 206  |            反转链表            |  js  |  a   | 链表遍历 |
+| 237  |        删除链表中的节点        | py2  |  a   | 链表删除 |
+| 2    |            两数相加            | py2  |  b   | 链表合并 |
+| 445  |           两数相加II           | py2  |  b   |          |
+| 355  |            设计推特            |  js  |  b   | 增删改查 |
 
 
-## 二叉树
+
+#### 二叉树
 
 Traversals遍历二叉树(先序遍历, 中序遍历, 后序遍历, 深度优先DFS, 广度优先BFS)
 
@@ -376,6 +273,99 @@ def postOrder(root):
 if __name__ == "__main__":
   creatTree([1,2,3,4,5,6,7], 0)
 ```
+
+
+
+
+|#|题目|语言|难度|注释|
+|:-|:-:|:-:|:-:|:-:|
+|treenode| --------------二叉树--------- |--|--|--|
+|965| 单值二叉树 |py2|a|创建二叉树|
+|101| 对称二叉树 |py2|a|遍历二叉树|
+|102| 二叉树的层序遍历 |py2|b|层序遍历|
+|107|  ||||
+|637| [二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/) |py2|a|层序遍历|
+|110| 平衡二叉树 |py2|a|DFS|
+|662| 二叉树最大宽度 |py2|b|DFS(一些节点为空)，creatTree不适用|
+|226| 翻转二叉树 |py2|a|遍历二叉树|
+|617| 合并二叉树 |py2|a|遍历二叉树|
+|1184(153周赛)| 公交站间的距离 |py2|a|--|
+|1185(153周赛)| 一周中的第几天 |py2|a|Zeller公式：w=([c/4]-2c+y+[y/4]+[13(m+1)/5]+d-1)mod7<br />注：1582-10-15之后|
+|1186| 删除一次得到子数组最大和 ||b||
+|1187| 使数组严格递增 ||c||
+
+### 其他
+
+#### 基础函数
+
+| #        | 题目             | 语言 | 难度 | 注释                                     |
+| -------- | ---------------- | ---- | ---- | ---------------------------------------- |
+| 50       | 幂函数 Pow(x, n) | Js   | b    | x ** n<br />快速幂                       |
+| ~~1108~~ | ~~IP地址无效化~~ |      |      |                                          |
+| m5       | 替换空格         | js   | a    | spilt().join()<br/>replace(/\/g, newStr) |
+|          |                  |      |      |                                          |
+
+
+
+
+
+#### 数学问题
+
+
+|#|题目|语言|难度|注释|
+|:-|:-:|:-:|:-:|:-:|
+|1603| 交点 |js|c|？|
+
+#### 统计
+
+- 平均值
+- 中位数
+- 众数
+
+#### 数组
+
+字典序： ....
+
+- 二分法搜索(长度大于1)
+
+```
+function bs(nums, target, start_index, end_index) {
+  while(start_index <= end_index) {
+    mid_index = (start_index+end_index) / 2
+    cur_num = nums[mid_index]
+    if (target == cur_num) {
+      return mid_index
+    } else if (target < cur_num) {
+      end_index = mid_index - 1
+    } else {
+      start_index = mid_index + 1
+    }
+  }
+  return -1
+}
+
+=======================递归写法==============================
+function bs(nums, target, start_index, end_index) {
+  if(start_index > end_index) {
+    return -1
+  }
+  mid_index = (start_index+end_index) / 2
+  cur_num = nums[mid_index]
+  if (target == cur_num) {
+    return mid_index
+  } else if (target < cur_num) {
+    return bs(nums, target, start_index, mid_index - 1)
+  } else {
+    return bs(nums, target, mid_index + 1, end_index)
+  }
+}
+
+```
+
+动态规划：
+
+1. 状态
+2. 状态转移方程
 
 
 
