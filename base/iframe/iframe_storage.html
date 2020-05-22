@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>iframe</title>
+</head>
+<body>
+<iframe name="win" id="iframe"
+src="./iframe_inner1.html"
+> </iframe>
+
+<script>
+sessionStorage.setItem('token', '789')
+
+console.log('page', sessionStorage.getItem('token'))
+</script>
+</body>
+</html>

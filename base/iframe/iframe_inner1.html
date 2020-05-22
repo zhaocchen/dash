@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title></title>
+</head>
+<body>
+hello
+
+<script>
+sessionStorage.setItem('token', '123')
+console.log(window.parent)
+console.log('inner', sessionStorage.getItem('token'))
+</script>
+</body>
+</html>
