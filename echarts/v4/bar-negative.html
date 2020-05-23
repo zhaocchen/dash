@@ -17,7 +17,7 @@
 
 <script crossorigin="anonymous" integrity="sha384-i+fXrQ+G3+h2478EWpSpIXivtKbbze+0SNOXJGizkAp6DVG/m2fE6hiWeDwskVvp" src="https://lib.baomitu.com/echarts/4.7.0/echarts.js"></script>
 <script>
-var myChart = echarts.init(document.getElementById('chartBox'));
+var myChart = echarts.init(document.getElementById('chartBox'), null, {renderer: 'svg'});
 
 var option = {
     tooltip: {
