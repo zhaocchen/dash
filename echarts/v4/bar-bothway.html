@@ -1,65 +1,35 @@
-<template>
-    <div class="chart-box" >
-        <div :style="{width: '100%', height: '100%'}"  ref="dis"></div>
-    </div>
-</template>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>zchart</title>
+  <style>
+  .chart-box {
+      width: 600px;
+      height: 600px;
+  }
+  </style>
+</head>
+<body>
+<div id="chartBox" class="chart-box"></div>
 
+
+<script crossorigin="anonymous" integrity="sha384-i+fXrQ+G3+h2478EWpSpIXivtKbbze+0SNOXJGizkAp6DVG/m2fE6hiWeDwskVvp" src="https://lib.baomitu.com/echarts/4.7.0/echarts.js"></script>
 <script>
-import echarts from 'echarts'
 
-const legend = ['总人数', '女性', '男性'];
+const chartData = {
+    legend: ['女性', '男性'],
+    yAxis: ['0-6', '7-17', '18-29', '30-39', '40-49', '50-59', '60-64', '65-69', '70-79', '80-89', '90以上'],
+    series: [
+        [-50, -60, -101, -134, -190, -230, -210, -110, -100, -30, -12],
+        [60, 110, 121, 174, 390, 450, 420, 320, 120, 80, 40],
+    ]
+}
 
-// const chartData = {
-    // legend: ['总人数', '女性', '男性'],
-    // yAxis: ['0-6', '7-17', '18-29', '30-39', '40-49', '50-59', '60-64', '65-69', '70-79', '80-89', '90以上'],
-    // series: [
-    //     [-120, -132, -101, -134, -190, -230, -210, -210, -210, -210, -210],
-    //     [320, 302, 341, 374, 390, 450, 420, 420, 420, 420, 420],
-    // ]
-// }
+var myChart = echarts.init(document.getElementById('chartBox'));
 
-export default {
-    name: 'AgeDistribution',
-    props: {
-        data: {
-            type: Array,
-            default() {
-                return [
-                    {label: "0-6", male: 10, female: 20},
-                    {label: "7-17", male: 4, female: 20},
-                    {label: "18-29", male: 10, female: 20},
-                    {label: "30-39", male: 10, female: 20},
-                    {label: "40-49", male: 10, female: 20},
-                    {label: "50-59", male: 10, female: 30},
-                    {label: "60-64", male: 10, female: 20},
-                    {label: "65-69", male: 10, female: 20},
-                    {label: "70-79", male: 10, female: 20},
-                    {label: "80-89", male: 10, female: 20},
-                    {label: "90以上", male: 2, female: 20}
-                ]
-            }
-        }
-    },
-    data() {
-        return {
-            dom: null,
-            females: [],
-            males: []
-        };
-    },
-    computed: {
-        yAxisList() { return this.data.map(d => d.label) },
-    },
-    mounted() {
-        this.$nextTick(() => {
-            this.init();
-            this.updateData()
-        })
-    }, 
-    methods: {
-        init() {
-            let option = {
-                color: [{
+const color = [{
                             type: 'linear',
                             x: 0,
                             y: 0,
@@ -83,13 +53,9 @@ export default {
                                 offset: 1, color: '#FE7125' // 100% 处的颜色
                             }],
                             globalCoord: false // 缺省为 false
-                        }],
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-                        type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                    },
-                    formatter: (params) => {
+                        }]
+
+const tooltipFormatter = (params) => {
                         if (!params.length) return ''
                         let s = params[0].axisValueLabel + '<br/>'
                         for (const iterator of params) {
@@ -99,132 +65,76 @@ export default {
                         }
                         return s
                     }
-                },
-                legend: {
-                    top: '5%',
-                    // height: 100,
-                    textStyle: {
-                        color: '#fff'
-                    },
-                    data: legend
-                },
-                grid: {
-                    left: '3%',
-                    right: '4%',
-                    bottom: '3%',
-                    containLabel: true
-                },
-                xAxis: [
-                    {
-                        type: 'value',
-                        axisLine: {
-                            show: true,
-                            position: 'left',
-                            lineStyle: {
-                                color: '#6195F4'
-                            }
-                        },
-                        splitLine: {
-                            lineStyle: {
-                                color: ['rgba(97,149,244, 0.3)'] 
-                            }
-                        },
-                        axisLabel: {
-                            color: '#fff',
-                            formatter: (value) => {
+
+
+const axisFormatter = (value) => {
                                 // 负数取反 显示的就是正数了
                                 if (value < 0) return -value
                                 else return value
                             }
-                        }
-                    }
-                ],
-                yAxis: [
-                    {
-                        type: 'category',
-                        axisLine: {
-                            show: true,
-                            lineStyle: {
-                                color: '#6195F4'
-                            }
-                        },
-                        axisLabel: {
-                            color: '#fff'
-                        },
-                        axisTick: {
-                            show: false
-                        },
-                        data: this.yAxisList,
-                        
-                    }
-                ],
-                series: [
-                    {
-                        name: legend[2],
-                        type: 'bar',
-                        stack: '总量',
-                        label: {
-                            show: true,
-                            color: '#FFFFFF',
-                            position: 'right'
-                        },
-                        // data: chartData.chartData.males
-                    },
-                    {
-                        name: legend[1],
-                        type: 'bar',
-                        stack: '总量',
-                        label: {
-                            show: true,
-                            color: '#FFFFFF',
-                            position: 'left',
-                            formatter: (value) => {
+const seriesoFrmatter = (value) => {
                                 // 值都是负数的 所以需要取反一下
                                 return -value.data
                             }
-                        },
-                        // data: this.chartData.female
-                    }
-                ]
-            };
-            this.dom = echarts.init(this.$refs.dis);
-            this.dom.setOption(option)
+var option = {
+    color,
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
         },
-        updateData() {
-            this.females = this.data.map(d => -d.female)
-            this.males = this.data.map(d => d.male)
-            var option = this.dom.getOption();
-            option.yAxis[0].data = this.yAxisList;
-            option.series[1].data = this.data.map(d => -d.female);
-            option.series[0].data = this.data.map(d => d.male);
-            this.dom.setOption(option);
-        }
+        formatter: tooltipFormatter
     },
-    watch: {
-        // value: {
-        //     handler(newVal, oldVal) {
-        //         if (this.dom) {
-        //             this.setOption(newVal ? newVal : oldVal)
-        //         } else {
-        //             this.init()
-        //         }
-        //     }, deep: true
-        // }
-        data: {
-            // eslint-disable-next-line no-unused-vars
-            handler(newVal, oldVal) {
-                this.updateData()
-            },
-            deep: true
+    legend: {
+        data: chartData.legend
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'value',
+           // axisLabel: axisFormatter
         }
-    }
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false
+            },
+            data: chartData.yAxis
+        }
+    ],
+    series: [
+        {
+            name: chartData.legend[1],
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true
+            },
+            data: chartData.series[1]
+        },
+        {
+            name: chartData.legend[0],
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'left',
+                formatter: seriesoFrmatter
+            },
+            data: chartData.series[0]
+        }
+    ]
+};
 
-}
+
+myChart.setOption(option);
 </script>
-
-<style lang="less" scoped>
-.chart-box {
-    width: 100%;
-    height: 100%;
-}
-</style>
+</body>
+</html>
