@@ -148,17 +148,20 @@ https://www.geeksforgeeks.org/top-20-dynamic-programming-interview-questions/
 
 https://www.geeksforgeeks.org/data-structures/linked-list/
 
+https://www.geeksforgeeks.org/linked-list-in-java/
+
 代码快速访问 https://github.com/daaasheng/dash/tree/master/leetcode/linkedList/leet1.js
 
-| #    |              题目              | 语言 | 难度 |      注释      |
-| :--- | :----------------------------: | :--: | :--: | :------------: |
-| --   | ---------------链表----------- |  --  |  --  |       --       |
-| m22  |      链表中倒数第k个节点       |  js  |  a   |    快慢指针    |
-| 206  |            反转链表            |  js  |  a   |    链表遍历    |
-| 237  |        删除链表中的节点        | py2  |  a   |    链表删除    |
-| 2    |           两数相加?            | py2  |  b   |    链表合并    |
-| 445  |          两数相加II?           | py2  |  b   |                |
-| 355  |           设计推特?            |  js  |  b   | (应用)增删改查 |
+| #    |              题目              | 语言 | 难度 |           注释           |
+| :--- | :----------------------------: | :--: | :--: | :----------------------: |
+| --   | ---------------链表----------- |  --  |  --  |            --            |
+| m22  |      链表中倒数第k个节点       |  js  |  a   |         快慢指针         |
+| 160  |            相交链表            |  js  |  a   | 快慢指针（创建相交链表） |
+| 206  |            反转链表            |  js  |  a   |         链表遍历         |
+| 237  |        删除链表中的节点        | py2  |  a   |         链表删除         |
+| 2    |           两数相加?            | py2  |  b   |         链表合并         |
+| 445  |          两数相加II?           | py2  |  b   |                          |
+| 355  |           设计推特?            |  js  |  b   |      (应用)增删改查      |
 
 
 
