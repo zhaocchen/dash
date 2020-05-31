@@ -28,23 +28,19 @@ function array2list (arr) {
  */
 var removeDuplicateNodes = function(head) {
     if (head == null || head.next == null) return head
-    // const unique_arr = []
     const unique_set = new Set([])
-    let sentinel = new ListNode(0)
-    sentinel.next = head
-    curNode = sentinel
-    while (head !== null) {
-        // if (unique_arr.includes(head.val)) {
-        if (unique_set.has(head.val)) {
-            curNode.next = head.next
+    let curNode = head
+    let fastNode = head
+    while (fastNode !== null) {
+        if (unique_set.has(fastNode.val)) {
+            curNode.next = fastNode.next
         } else {
-            // unique_arr.push(head.val)
-            unique_set.add(head.val)
-            curNode = head
+            unique_set.add(fastNode.val)
+            curNode = fastNode
         }
-        head = head.next
+        fastNode = fastNode.next
     }
-    return sentinel.next
+    return head
 //     console.log(head)
 };
 
