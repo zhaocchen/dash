@@ -1,20 +1,8 @@
+const { array2list } = require('./index')
+
 function ListNode(val) {
     this.val = val;
     this.next = null;
-}
-
-/**
- * 数组转链表
- * @param {*} arr 
- */
-function array2list (arr) {
-    let list = null
-    for (let v of arr.reverse()) {
-        const oldList = list
-        list = new ListNode(v)
-        list.next = oldList
-    }
-    return list
 }
 
 /**
@@ -33,9 +21,9 @@ var getDecimalValue = function(head) {
 };
 
 var testData = [
-    [1,0,1],
-    [0,0],
-    [1,0,0,1,0,0,1,1,1,0,0,0,0,0,0],
+    [1,0,1],  // 5
+    [0,0], // 5
+    [1,0,0,1,0,0,1,1,1,0,0,0,0,0,0], // 18880
 ]
 
 for (let v of testData) {

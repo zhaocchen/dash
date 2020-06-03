@@ -1,3 +1,4 @@
+var exports = module.exports
 
 /**
  * 链表节点
@@ -12,7 +13,7 @@ function ListNode(val) {
  * 数组转链表
  * @param {*} arr 
  */
-function array2list (arr) {
+exports.array2list =  function (arr) {
     let list = null
     for (let v of arr.reverse()) {
         const oldList = list
@@ -26,7 +27,7 @@ function array2list (arr) {
  * 链表转数组
  * @param {*} list 
  */
-function list2array (list) {
+exports.list2array = function (list) {
     let res = []
     while (list !== null) {
         res.push(list.val)
@@ -35,12 +36,4 @@ function list2array (list) {
     return res
 }
 
-const testArr = [1, 2, 3, 4, 5]
 
-const testList = array2list(testArr)
-
-console.log(testList)
-
-const newArr = list2array(testList)
-
-console.log(newArr)

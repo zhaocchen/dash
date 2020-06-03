@@ -1,17 +1,5 @@
-/*
- * @lc app=leetcode.cn id=226 lang=javascript
- *
- * [226] 翻转二叉树
- */
+const { createTree } = require('./index.js')
 
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * function TreeNode(val) {
- *     this.val = val;
- *     this.left = this.right = null;
- * }
- */
 /**
  * @param {TreeNode} root
  * @return {TreeNode}
@@ -23,5 +11,13 @@ var invertTree = function(root) {
     [root.left, root.right] = [invertTree(root.right), invertTree(root.left)]
     return root
 };
-// @lc code=end
 
+var testData = [
+    [4,2,7,1,3,6,9],
+]
+
+for (let v of testData) {
+    const tree = createTree(v)
+    console.log(tree)
+    console.log(invertTree(tree))
+}
