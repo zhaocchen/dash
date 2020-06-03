@@ -8,6 +8,7 @@
 |#|题目|语言|难度|注释|
 |:-|:-:|:-:|:-:|:-:|
 |7|整数反转|Py2、js|a|取余、取整|
+|9|回文数|js|a|整数反转|
 |412|Fizz Buzz|py2/js|a|Array.from|
 |189|旋转数组|js|a|Array.splice/slice/unshift|
 |342|4的幂|py2|a|--|
