@@ -320,7 +320,7 @@ if __name__ == "__main__":
 |637| [二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/) |py2|a|层序遍历|
 |110| 平衡二叉树 |py2|a|DFS|
 |662| 二叉树最大宽度 |py2|b|DFS(一些节点为空)，creatTree不适用|
-|226| 翻转二叉树 |py2|a|遍历二叉树|
+|226| 翻转二叉树 |py2/js|a|递归|
 |617| 合并二叉树 |py2|a|遍历二叉树|
 |1184(153周赛)| 公交站间的距离 |py2|a|--|
 |1185(153周赛)| 一周中的第几天 |py2|a|Zeller公式：w=([c/4]-2c+y+[y/4]+[13(m+1)/5]+d-1)mod7<br />注：1582-10-15之后|
