@@ -36,6 +36,7 @@
 |58| 最后一个单词的长度 | js | a | Array.split(reg) |
 |151| 翻转字符串里的单词 | js | b | Array.reverse |
 |819| 最常见的单词 | js | a | Map |
+|8| 字符串转换整数 (atoi) | js | b | 判断细节处理 |
 
 #### 查找(搜索)
 
