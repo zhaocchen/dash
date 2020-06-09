@@ -96,6 +96,8 @@ list: label标记，hover放大偏移, 图例legend
 - 3d饼形
 - 3d环形ring
 
+[颜色渐变+透明度渐变](https://daaasheng.github.io/dash/d3/linearGradient/area.html)
+
 ### 参考
 
 [油表参考1](http://bl.ocks.org/metormote/6392996)
