@@ -12,7 +12,7 @@
 |412|Fizz Buzz|py2/js|a|Array.from|
 |189|旋转数组|js|a|Array.splice/slice/unshift|
 |342|4的幂|py2|a|--|
-|66|加一|py2|a|操作list|
+|66|加一|js\py2|a|操作list|
 |13|罗马数字转整数|py2|a|字典|
 |371|两整数之和|py2|a|--|
 |67|二进制求和|py2|a|--|
