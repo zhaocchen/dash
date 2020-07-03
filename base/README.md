@@ -11,4 +11,4 @@ Decorator, 修饰器，修饰类或方法。方法的修饰器需要借助oldMet
 
 
 
-[实现防抖和节流](https://daaasheng.github.io/dash/js/debounce-throttle.html)
+[实现防抖和节流](https://zhaocchen.github.io/dash/js/debounce-throttle.html)

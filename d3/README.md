@@ -5,9 +5,9 @@
 说明：核心简略图+标记+hover提示+图例(图例位置)+hover动画+放缩操作+自定义
 
 - 进度条progress
-  - [横向进度条效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-line.html)
-  - [环形进度条效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-circle.html)
-  - [仪表盘效果图-v4](https://daaasheng.github.io/dash/d3/v4/progress-dashboard.html)
+  - [横向进度条效果图-v4](https://zhaocchen.github.io/dash/d3/v4/progress-line.html)
+  - [环形进度条效果图-v4](https://zhaocchen.github.io/dash/d3/v4/progress-circle.html)
+  - [仪表盘效果图-v4](https://zhaocchen.github.io/dash/d3/v4/progress-dashboard.html)
 
 |参数|说明|类型|可选值|默认值|
 |:-|:-:|-:|-:|-:|
@@ -22,15 +22,15 @@
 
 - 饼形图
   - 饼形Pie
-  	- [v3](https://daaasheng.github.io/dash/d3/v3/pie.html)
-    - [v4](https://daaasheng.github.io/dash/d3/v4/pie-v4.html)  
-    - [3d效果v4](https://daaasheng.github.io/dash/d3/v4/pie-3d-v4.html)    
+  	- [v3](https://zhaocchen.github.io/dash/d3/v3/pie.html)
+    - [v4](https://zhaocchen.github.io/dash/d3/v4/pie-v4.html)  
+    - [3d效果v4](https://zhaocchen.github.io/dash/d3/v4/pie-3d-v4.html)    
   - 环形ring
-  	- [v3](https://daaasheng.github.io/dash/d3/v3/ring.html)  
-  	- [v4](https://daaasheng.github.io/dash/d3/v4/ring.html)  
+  	- [v3](https://zhaocchen.github.io/dash/d3/v3/ring.html)  
+  	- [v4](https://zhaocchen.github.io/dash/d3/v4/ring.html)  
     - 南丁格尔玫瑰图(coxcomb/rose)
     - 南丁格尔玫瑰图-中间镂空(coxcomb/rose)  
-      - [v4](https://daaasheng.github.io/dash/d3/v4/rose.html)    
+      - [v4](https://zhaocchen.github.io/dash/d3/v4/rose.html)    
 list: label标记，hover放大偏移, 图例legend
 
 |参数|说明|类型|可选值|默认值|
@@ -43,17 +43,17 @@ list: label标记，hover放大偏移, 图例legend
 
 - 条形图
   - 柱状图(直方图)histogram
-  	- [v3](https://daaasheng.github.io/dash/d3/v3/bar.html) 
-  	- [v4简洁版](https://daaasheng.github.io/dash/d3/v4/histogramSimple.html) 
-  	- [v4](https://daaasheng.github.io/dash/d3/v4/histogram.html)
+  	- [v3](https://zhaocchen.github.io/dash/d3/v3/bar.html) 
+  	- [v4简洁版](https://zhaocchen.github.io/dash/d3/v4/histogramSimple.html) 
+  	- [v4](https://zhaocchen.github.io/dash/d3/v4/histogram.html)
 
   - 条形图(柱状横向)Horizontal Bar
-  	- [v3](https://daaasheng.github.io/dash/d3/v3/barH.html) 
-  	- [v4](https://daaasheng.github.io/dash/d3/v4/bar.html)
+  	- [v3](https://zhaocchen.github.io/dash/d3/v3/barH.html) 
+  	- [v4](https://zhaocchen.github.io/dash/d3/v4/bar.html)
   - 分组柱状图（图例）
   	
   - 堆积条形图Stack Bar（图例）  		
-  	- [v4](https://daaasheng.github.io/dash/d3/v4/stackedHistogram.html)
+  	- [v4](https://zhaocchen.github.io/dash/d3/v4/stackedHistogram.html)
   	- [参考1](https://blog.csdn.net/dkr380205984/article/details/81704435)
 
 |参数|说明|类型|可选值|默认值|
@@ -65,12 +65,12 @@ list: label标记，hover放大偏移, 图例legend
 
 - 折线图  	
   - 折线图line
-    - [简易v4](https://daaasheng.github.io/dash/d3/v4/simpleLine.html)
-    - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/lineOfTime.html)
-    - [多条v4](https://daaasheng.github.io/dash/d3/v4/multiLine.html)      
+    - [简易v4](https://zhaocchen.github.io/dash/d3/v4/simpleLine.html)
+    - [时间标记横轴v4](https://zhaocchen.github.io/dash/d3/v4/lineOfTime.html)
+    - [多条v4](https://zhaocchen.github.io/dash/d3/v4/multiLine.html)      
   - 面积图area
-      - [v4](https://daaasheng.github.io/dash/d3/v4/area.html)
-        - [时间标记横轴v4](https://daaasheng.github.io/dash/d3/v4/areaOfTime.html)
+      - [v4](https://zhaocchen.github.io/dash/d3/v4/area.html)
+        - [时间标记横轴v4](https://zhaocchen.github.io/dash/d3/v4/areaOfTime.html)
   - 堆积面积图Stack Area
 
 |参数|说明|类型|可选值|默认值|
@@ -88,15 +88,15 @@ list: label标记，hover放大偏移, 图例legend
 ### 组合及定制图
 
 - 仪表盘Gauge
-  - [油表](https://daaasheng.github.io/dash/d3/v4/gauge-oil.html)
-  - [油表2](https://daaasheng.github.io/dash/d3/v4/axis-circle.html)
+  - [油表](https://zhaocchen.github.io/dash/d3/v4/gauge-oil.html)
+  - [油表2](https://zhaocchen.github.io/dash/d3/v4/axis-circle.html)
 
 ### 3d
 
 - 3d饼形
 - 3d环形ring
 
-[颜色渐变+透明度渐变](https://daaasheng.github.io/dash/d3/linearGradient/area.html)
+[颜色渐变+透明度渐变](https://zhaocchen.github.io/dash/d3/linearGradient/area.html)
 
 ### 参考
 
@@ -112,7 +112,7 @@ list: label标记，hover放大偏移, 图例legend
 
 [v-charts传送门](https://v-charts.js.org/#/)
 
- [波浪水球](https://daaasheng.github.io/dash/d3/v3/demo/LiquidFillGauge.html)
+ [波浪水球](https://zhaocchen.github.io/dash/d3/v3/demo/LiquidFillGauge.html)
 
 ### d3 学习图例
 
@@ -121,7 +121,7 @@ list: label标记，hover放大偏移, 图例legend
   - 刻度
   - 竖直刻度
   - 时间轴
-  - [直角坐标轴](https://daaasheng.github.io/dash/d3/v4/axis-rect.html)
+  - [直角坐标轴](https://zhaocchen.github.io/dash/d3/v4/axis-rect.html)
   - 环形坐标轴
   - 图例
   
@@ -131,7 +131,7 @@ list: label标记，hover放大偏移, 图例legend
   - 放缩zoom
   - force
 
-### svg 学习图例https://daaasheng.github.io/dash/d3/svg/
+### svg 学习图例https://zhaocchen.github.io/dash/d3/svg/
 
 - 画布
   - width, height, 默认是300*150

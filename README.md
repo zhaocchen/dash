@@ -3,23 +3,23 @@
 	<p align="center">zhaocchen@163.com</p>
 </p>
 
-blog: https://daaasheng.github.io/
+blog: https://zhaocchen.github.io/
 
 author： zhaocchen@163.com
 
 description： demo of web
 
-[力扣代码](<https://github.com/daaasheng/dash/tree/master/leetcode>)
+[力扣代码](<https://github.com/zhaocchen/dash/tree/master/leetcode>)
 
 ### 可视化
 
 #### canvas
 
-[d3实现](https://daaasheng.github.io/dash/d3)
+[d3实现](https://zhaocchen.github.io/dash/d3)
 
-[echarts实现](https://daaasheng.github.io/dash/echarts)
+[echarts实现](https://zhaocchen.github.io/dash/echarts)
 
-[游戏-投掷骰子](https://daaasheng.github.io/dash/game/craps/craps.html)
+[游戏-投掷骰子](https://zhaocchen.github.io/dash/game/craps/craps.html)
 
 
 
