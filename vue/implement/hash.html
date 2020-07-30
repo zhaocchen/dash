@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>hash</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+window.onhashchange = event => {
+    console.log(event);
+    console.log('oldURL', event.oldURL);
+    console.log('newURL', event.newURL);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('hash:', location.hash);
+})
+</script>
+  
+</body>
+</html>
