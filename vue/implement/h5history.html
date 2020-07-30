@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>h5 history</title>
+</head>
+<body>
+<button id="btn">切换路由</button>
+
+<script type="text/javascript">
+
+
+document.getElementById('btn').addEventListener('click', () => {
+    console.log('切换路由到', 'list.html')
+    history.pushState({name: 'list.html'}, '', 'list.html')
+})
+
+window.onpopstate = event => {
+    // 监听前进、后退
+    console.log(event);
+    console.log('state', event.state, 'pathname', location.pathname);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('pathname:', location.pathname);
+})
+
+
+// http-server
+
+</script>
+  
+</body>
+</html>
