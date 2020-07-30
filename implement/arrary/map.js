@@ -1,11 +1,13 @@
-
-
+// var new_array = arr.map(function callback(currentValue[, index[, array]]) {
+//     // Return element for new_array 
+//    }[, thisArg])
 /**
  * 
  * @param {*} fn 
  * @param {*} context 
  */
-const newMap = function (fn, context) {
+
+Array.prototype._map = function (fn, context) {
     let arr = Array.prototype.slice.call(this)
     let mappedArr = new Array(arr.length)
     for (let index = 0; index < arr.length; index++) {
@@ -15,20 +17,9 @@ const newMap = function (fn, context) {
     return mappedArr
 }
 
-// var new_array = arr.map(function callback(currentValue[, index[, array]]) {
-//     // Return element for new_array 
-//    }[, thisArg])
-Array.prototype.newMap = newMap
-
 var a = [1, 2, 3]
 
-// console.log(a.map((v, i, data) => {
-//     console.log(v, i, data)
-//     return Math.pow(v, 2)
-// }))
-
-
-console.log(a.newMap((v, i, data) => {
+console.log(a._map((v, i, data) => {
     console.log(v, i, data)
     return Math.pow(v, 2)
 }))
