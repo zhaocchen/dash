@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<Button onclick="onClick(event)">测试</Button>
+
+<script type="text/javascript">
+// 不同操作系统组合键， 多选状态急校验
+function onClick(event) {
+    // console.log("hello", event == window.event)
+    const isMac = /macintosh|mac os x/i.test(navigator.userAgent);
+    const isWin = /windows|win32/i.test(navigator.userAgent);
+    console.log(event.ctrlKey, event.metaKey)
+    if (isWin && event.ctrlKey) {
+      console.log("ctrl按下状态！")
+    }
+    if (isMac && event.metaKey) {
+      console.log("ctrl按下状态！")
+    }
+}
+</script>
+</body>
+</html>
