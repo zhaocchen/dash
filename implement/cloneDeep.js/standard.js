@@ -32,10 +32,10 @@ function cloneDeep(obj, weakMap = new WeakMap()) {
 
   if (isFunction(obj)) {
     let res = null;
-    const bodyReg = /(?<={)(.|\n)+(?=})/m;
-    const paramReg = /(?<=\().+(?=\)\s+{)/;
     const funcString = obj.toString();
     if (obj.prototype) {
+      const bodyReg = /(?<={)(.|\n)+(?=})/m;
+      const paramReg = /(?<=\().+(?=\)\s+{)/;
       const param = paramReg.exec(funcString);
       const body = bodyReg.exec(funcString);
       if (body) {
