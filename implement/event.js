@@ -1,8 +1,6 @@
-class Event {
-    constructor() {
-        this._events = this._events || new Map(); // map方式存储
-        this._maxListeners = this._maxListeners || 10; // 设置监听上限
-    }
+function Event(_events) {
+    this._events = _events || new Map(); // map方式存储
+    this._maxListeners = this._maxListeners || 10; // 设置监听上限
 }
 
 Event.prototype.emit = function(type, ...args) {
@@ -65,7 +63,7 @@ emitter.addEventListener('click', data => {
 });
 
 emitter.addEventListener('click', data => {
-    console.log(data);
+    console.log(data+'2');
 })
 
 
@@ -79,3 +77,5 @@ emitter.removeEventListener('click', data => {
 // emitter.removeEventListener('dbclick', data => {
 //     console.log(data);
 // })
+
+console.log(emitter, emitter.__proto__, Event.prototype)
