@@ -3,7 +3,7 @@ function Overload (obj, name, fn) {
     obj[name] = function () {
         if  (fn.length == arguments.length) {
             return fn.apply(this, arguments);
-        } else {
+        } else if (typeof old == 'function') {
             return old.apply(this, arguments);
         }
     }
